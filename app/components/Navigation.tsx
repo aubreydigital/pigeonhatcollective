@@ -1,5 +1,5 @@
 'use client';
-
+import { FaTwitter, FaInstagram, FaFacebook } from 'react-icons/fa';
 import { useState } from 'react';
 import Link from 'next/link';
 
@@ -16,17 +16,17 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0 text-center">
-              <Link href="/" className="text-white text-xs font-semibold">
-                pigeon hat collective
-              </Link>
+              {/* <Link href="/" className="text-white text-xs font-semibold"> */}
+                <h1 className="text-white text-xs font-semibold">pigeon hat collective</h1>
+              {/* </Link> */}
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-                <Link
-                  href="/"
+              <Link
+                  href="/merch"
                   className="text-gray-300 hover:bg-transparent hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
-                  Home
+                  Merch
                 </Link>
                 <Link
                   href="/about"
@@ -147,6 +147,18 @@ const Navigation = () => {
             {/* Dropdown menu */}
           </div>
         </div>
+      </div>
+      {/* Social links */}
+      <div className="hidden md:flex items-center justify-end pr-4">
+        <Link href="https://twitter.com" className="text-white hover:text-gray-300 ml-4">
+          <FaTwitter className="w-3 h-3" />
+        </Link>
+        <Link href="https://instagram.com" className="text-white hover:text-gray-300 ml-4">
+          <FaInstagram className="w-3 h-3" />
+        </Link>
+        <Link href="https://facebook.com" className="text-white hover:text-gray-300 ml-4">
+          <FaFacebook className="w-3 h-3" />
+        </Link>
       </div>
     </nav>
   );

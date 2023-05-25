@@ -1,0 +1,36 @@
+/* HomePage.module.css */
+
+/* .container {
+  background-image: url('/images/splash.jpg');
+  /* Additional styles for the container */
+
+.heading {
+  color: #333;
+  font-size: 24px;
+  /* Additional styles for the heading */
+}
+
+/* HomePage.module.css */
+
+.container {
+  position: relative;
+}
+
+.splash-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.event-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+}

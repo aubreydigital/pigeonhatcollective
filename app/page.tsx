@@ -3,6 +3,10 @@ import Image from 'next/image'
 import React, { useEffect, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import 'animate.css';
+import styles from './HomePage.module.css';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { CarouselProps } from 'react-responsive-carousel';
 
 const HomePage: React.FC = () => {
   const [showContent, setShowContent] = useState(false);
@@ -12,7 +16,12 @@ const HomePage: React.FC = () => {
   }, []);
 
   return (
-    <div className="container mx-auto py-8">
+    <div className={`animate__animated animate__fadeIn ${styles.content}`}>
+      {/* <img
+        src="/images/splash.jpg"
+        alt="Splash"
+        className={styles['splash-image']}
+      /> */}
       <div className="text-center py-8">
       <CSSTransition
         in={showContent}
@@ -21,18 +30,119 @@ const HomePage: React.FC = () => {
         unmountOnExit
       >
         <div>
-      <section><h1 className="text-xs text-center p-1 pb-5 lg:text-xl font-sans">greetings earthlings</h1></section>
-    <section className="mb-8">
+        
+        <section className="mb-8" style={{ height: '500px'}}>
       <h2 className="text-2xl font-bold mb-4 text-center">Upcoming Events</h2>
-      <div className="grid grid-cols-1 gap-4" style={{ height: '20em'}}>
-        {/* Event cards */}
+      <div className="grid grid-cols-1 gap-4" style={{ height: '50em' }}>
+        {/* Event carousel */}
+        <Carousel
+  showArrows={true}
+  showThumbs={false}
+  showStatus={false}
+  infiniteLoop={true}
+  centerMode={true}
+  centerSlidePercentage={33.33}
+>
+  {/* Event cards */}
+  {[
+    <div className={styles['event-card']} key={1}>
+      <img
+        src="/images/events/060123.jpg"
+        alt="Event Image"
+        className={`absolute inset-0 w-full h-full ${styles['event-image']}`}
+      />
+      <div className="bg-white p-4 rounded shadow h-full">
+        <h3 className="text-lg font-semibold mb-2">Event 1</h3>
+        <p>Date: 20th June 2023</p>
+        <p>Location: City, Country</p>
+      </div>
+
+    </div>,
+        <div className={styles['event-card']} key={2}>
+        <img
+          src="/images/events/060123.jpg"
+          alt="Event Image"
+          className={`absolute inset-0 w-full h-full ${styles['event-image']}`}
+        />
         <div className="bg-white p-4 rounded shadow h-full">
-          <h3 className="text-lg font-semibold mb-2">Event 1</h3>
-          <p>Date: 20th June 2023</p>
+          <h3 className="text-lg font-semibold mb-2">Event 2</h3>
+          <p>Date: 24th June 2023</p>
           <p>Location: City, Country</p>
         </div>
-        </div>
+  
+      </div>,
+              <div className={styles['event-card']} key={3}>
+              <img
+                src="/images/events/060123.jpg"
+                alt="Event Image"
+                className={`absolute inset-0 w-full h-full ${styles['event-image']}`}
+              />
+              <div className="bg-white p-4 rounded shadow h-full">
+                <h3 className="text-lg font-semibold mb-2">Event 2</h3>
+                <p>Date: 25th June 2023</p>
+                <p>Location: City, Country</p>
+              </div>
+        
+            </div>,
+                          <div className={styles['event-card']} key={4}>
+                          <img
+                            src="/images/events/060123.jpg"
+                            alt="Event Image"
+                            className={`absolute inset-0 w-full h-full ${styles['event-image']}`}
+                          />
+                          <div className="bg-white p-4 rounded shadow h-full">
+                            <h3 className="text-lg font-semibold mb-2">Event 2</h3>
+                            <p>Date: 13th July 2023</p>
+                            <p>Location: City, Country</p>
+                          </div>
+                    
+                        </div>,
+                                      <div className={styles['event-card']} key={5}>
+                                      <img
+                                        src="/images/events/060123.jpg"
+                                        alt="Event Image"
+                                        className={`absolute inset-0 w-full h-full ${styles['event-image']}`}
+                                      />
+                                      <div className="bg-white p-4 rounded shadow h-full">
+                                        <h3 className="text-lg font-semibold mb-2">Event 2</h3>
+                                        <p>Date: 18th July 2023</p>
+                                        <p>Location: City, Country</p>
+                                      </div>
+                                
+                                    </div>,
+                                                  <div className={styles['event-card']} key={6}>
+                                                  <img
+                                                    src="/images/events/060123.jpg"
+                                                    alt="Event Image"
+                                                    className={`absolute inset-0 w-full h-full ${styles['event-image']}`}
+                                                  />
+                                                  <div className="bg-white p-4 rounded shadow h-full">
+                                                    <h3 className="text-lg font-semibold mb-2">Event 2</h3>
+                                                    <p>Date: 25th July 2023</p>
+                                                    <p>Location: City, Country</p>
+                                                  </div>
+                                            
+                                                </div>,
+                                                              <div className={styles['event-card']} key={7}>
+                                                              <img
+                                                                src="/images/events/060123.jpg"
+                                                                alt="Event Image"
+                                                                className={`absolute inset-0 w-full h-full ${styles['event-image']}`}
+                                                              />
+                                                              <div className="bg-white p-4 rounded shadow h-full">
+                                                                <h3 className="text-lg font-semibold mb-2">Event 2</h3>
+                                                                <p>Date: 27th July 2023</p>
+                                                                <p>Location: City, Country</p>
+                                                              </div>
+                                                        
+                                                            </div>
+    // Add more event cards here
+  ]}
+</Carousel>
+      </div>
     </section>
+
+
     </div>
       </CSSTransition>
     </div>

@@ -5,11 +5,11 @@ import Navigation from '../components/Navigation'
 const inter = Press_Start_2P({ weight: '400', subsets: ['latin'] })
 
 export const metadata: object = {
-  title: 'about | pigeon hat collective',
-  description: 'contact phone email social media music and arts collective based in las vegas nevada',
+  title: 'merch | pigeon hat collective',
+  description: 'Merch phone email social media music and arts collective based in las vegas nevada',
 }
 
-export default function AboutLayout({
+export default function MerchLayout({
   children,
 }: {
   children: React.ReactNode
