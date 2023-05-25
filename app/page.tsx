@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import 'animate.css';
@@ -10,11 +11,23 @@ import { CarouselProps } from 'react-responsive-carousel';
 
 const HomePage: React.FC = () => {
   const [showContent, setShowContent] = useState(false);
+  const [windowWidth, setWindowWidth] = useState<number>(0);
 
   useEffect(() => {
     setShowContent(true);
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    handleResize(); // Get initial window width
+    window.addEventListener('resize', handleResize); // Update window width on resize
+
+    return () => {
+      window.removeEventListener('resize', handleResize); // Clean up listener on component unmount
+    };
   }, []);
 
+  const centerSlidePercentage = windowWidth >= 1024 ? 33.33 : 100;
   return (
     <div className={`animate__animated animate__fadeIn ${styles.content}`}>
       {/* <img
@@ -31,9 +44,9 @@ const HomePage: React.FC = () => {
       >
         <div>
         
-        <section className="mb-8" style={{ height: '500px'}}>
+        <section className="mb-8 my-4">
       <h2 className="text-2xl font-bold mb-4 text-center">Upcoming Events</h2>
-      <div className="grid grid-cols-1 gap-4" style={{ height: '50em' }}>
+      <div className="grid grid-cols-1 gap-4">
         {/* Event carousel */}
         <Carousel
   showArrows={true}
@@ -41,7 +54,9 @@ const HomePage: React.FC = () => {
   showStatus={false}
   infiniteLoop={true}
   centerMode={true}
-  centerSlidePercentage={33.33}
+  centerSlidePercentage={centerSlidePercentage}
+  autoPlay={true} // Enable auto-play
+  interval={2500} // Set interval duration (in milliseconds)
 >
   {/* Event cards */}
   {[
@@ -60,7 +75,7 @@ const HomePage: React.FC = () => {
     </div>,
         <div className={styles['event-card']} key={2}>
         <img
-          src="/images/events/060123.jpg"
+          src="/images/events/062323.jpg"
           alt="Event Image"
           className={`absolute inset-0 w-full h-full ${styles['event-image']}`}
         />
@@ -168,19 +183,19 @@ const HomePage: React.FC = () => {
       </div>
     </section>
 
-    <section className="mb-8">
+    <section className="mb-8 text-center">
       <h2 className="text-2xl font-bold mb-4">Social Links</h2>
-      <div className="flex space-x-4">
+      <div className="text-center space-x-4">
         {/* Social links */}
-        <a href="#" className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+        <Link href="#" className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
 Twitter
-</a>
-<a href="#" className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
+</Link>
+<Link href="#" className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
 Instagram
-</a>
-<a href="#" className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded">
+</Link>
+<Link href="#" className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded">
 Facebook
-</a>
+</Link>
 </div>
 </section>
 

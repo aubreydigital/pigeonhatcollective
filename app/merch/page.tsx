@@ -1,3 +1,11 @@
+import Link from "next/link";
+import Image from "next/image";
+
+export const metadata: object = {
+  'title': 'pigeon hat collective | merch',
+  'description': 'pigeon hat collective '
+}
+
 const MerchPage: React.FC = () => {
 
   const tshirtImageUrl = process.env.PUBLIC_URL + '/images/tshirt.jpg';
@@ -47,13 +55,16 @@ const MerchPage: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {merchandise.map((item) => (
           <div key={item.id} className="bg-white p-4 rounded shadow">
-            <img
+            <Link href={'/merch/'+item.id}>
+            <Image
               src={item.image}
               alt={item.title}
+              height={48}
+              width={48}
               className="w-full h-48 object-cover mb-4"
             />
             <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-            <p className="text-gray-500">{item.price}</p>
+            <p className="text-gray-500">{item.price}</p></Link>
           </div>
         ))}
       </div>

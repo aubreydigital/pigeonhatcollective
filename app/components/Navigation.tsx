@@ -16,9 +16,9 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0 text-center">
-              {/* <Link href="/" className="text-white text-xs font-semibold"> */}
+              <Link href="/" className="text-white text-xs font-semibold">
                 <h1 className="text-white text-xs font-semibold">pigeon hat collective</h1>
-              {/* </Link> */}
+              </Link>
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
@@ -115,10 +115,10 @@ const Navigation = () => {
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <Link
-            href="/"
+            href="/merch"
             className="text-gray-300 hover:bg-transparent hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
-            Home
+            Merch
           </Link>
           <Link
             href="/about"
@@ -139,25 +139,18 @@ const Navigation = () => {
             Contact
           </Link>
         </div>
-        <div className="pt-4 pb-3 border-t border-gray-700">
-          <div className="flex items-center px-5">
-            <div className="flex-shrink-0">
-              {/* User avatar */}
-            </div>
-            {/* Dropdown menu */}
-          </div>
-        </div>
+
       </div>
       {/* Social links */}
       <div className="hidden md:flex items-center justify-end pr-4">
         <Link href="https://twitter.com" className="text-white hover:text-gray-300 ml-4">
-          <FaTwitter className="w-3 h-3" />
+          <FaTwitter className="w-6 h-6" />
         </Link>
         <Link href="https://instagram.com" className="text-white hover:text-gray-300 ml-4">
-          <FaInstagram className="w-3 h-3" />
+          <FaInstagram className="w-6 h-6" />
         </Link>
         <Link href="https://facebook.com" className="text-white hover:text-gray-300 ml-4">
-          <FaFacebook className="w-3 h-3" />
+          <FaFacebook className="w-6 h-6" />
         </Link>
       </div>
     </nav>
