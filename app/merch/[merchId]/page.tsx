@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link'
 import Image from 'next/image'
-
+// import { useRouter } from 'next/router';
 const merchandise = [
   {
     id: 1,
@@ -48,17 +48,15 @@ const merchandise = [
   },
 ];
 
-const MerchItemPage: React.FC = (id) => {
-
-  const merchItem = merchandise.find((item) => item.id === Number(id.params.id));
+export default function MerchItemPage ({ params }: { params: { merchId: number } }) {
+console.log(params)
+const merchItem = merchandise.find((item) => item.id === Number(params.merchId));
 
   if (!merchItem) {
     // Handle case when merchandise item is not found
     return <div>Merchandise item not found</div>;
   }
-
   const { title, price, image, description } = merchItem;
-
   return (
     <div className="mx-auto text-center">
       <h2>{title}</h2>
@@ -69,4 +67,10 @@ const MerchItemPage: React.FC = (id) => {
   );
 };
 
-export default MerchItemPage;
+export async function generateStaticParams() { 
+  return merchandise.map((item) => ({
+    merchId: item.id,
+  }));
+}
+
+// export default MerchItemPage;
