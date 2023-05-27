@@ -78,15 +78,15 @@ const HomePage: React.FC = () => {
     //   </div>
 
     // // </div>
-    <EventCard windowWidth={windowWidth} height="75vh" />,
-    <EventCard windowWidth={windowWidth} height="75vh" />,
-    <EventCard windowWidth={windowWidth} height="75vh" />,
-    <EventCard windowWidth={windowWidth} height="75vh" />,
-    <EventCard windowWidth={windowWidth} height="75vh" />,
-    <EventCard windowWidth={windowWidth} height="75vh" />,
-    <EventCard windowWidth={windowWidth} height="75vh" />,
-    <EventCard windowWidth={windowWidth} height="75vh" />,
-    <EventCard windowWidth={windowWidth} height="75vh" />,
+    <EventCard key='1' windowWidth={windowWidth} />,
+    <EventCard key='2' windowWidth={windowWidth} />,
+    <EventCard key='3' windowWidth={windowWidth} />,
+    <EventCard key='4' windowWidth={windowWidth} />,
+    <EventCard key='5' windowWidth={windowWidth} />,
+    <EventCard key='6' windowWidth={windowWidth} />,
+    <EventCard key='7' windowWidth={windowWidth} />,
+    <EventCard key='8' windowWidth={windowWidth} />,
+    <EventCard key='9' windowWidth={windowWidth} />,
 
     // Add more event cards here
   ]}
