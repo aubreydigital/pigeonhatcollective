@@ -9,6 +9,8 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { CarouselProps } from 'react-responsive-carousel';
 import EventCard from './components/EventCard';
+import { FaTwitter, FaInstagram, FaFacebook } from 'react-icons/fa';
+
 
 const HomePage: React.FC = () => {
   const [showContent, setShowContent] = useState(false);
@@ -76,15 +78,15 @@ const HomePage: React.FC = () => {
     //   </div>
 
     // // </div>
-    <EventCard key='1' windowWidth={windowWidth} />,
-    <EventCard key='2' windowWidth={windowWidth} />,
-    <EventCard key='3' windowWidth={windowWidth} />,
-    <EventCard key='4' windowWidth={windowWidth} />,
-    <EventCard key='5' windowWidth={windowWidth} />,
-    <EventCard key='6' windowWidth={windowWidth} />,
-    <EventCard key='7' windowWidth={windowWidth} />,
-    <EventCard key='8' windowWidth={windowWidth} />,
-    <EventCard key='9' windowWidth={windowWidth} />,
+    <EventCard windowWidth={windowWidth} height="75vh" />,
+    <EventCard windowWidth={windowWidth} height="75vh" />,
+    <EventCard windowWidth={windowWidth} height="75vh" />,
+    <EventCard windowWidth={windowWidth} height="75vh" />,
+    <EventCard windowWidth={windowWidth} height="75vh" />,
+    <EventCard windowWidth={windowWidth} height="75vh" />,
+    <EventCard windowWidth={windowWidth} height="75vh" />,
+    <EventCard windowWidth={windowWidth} height="75vh" />,
+    <EventCard windowWidth={windowWidth} height="75vh" />,
 
     // Add more event cards here
   ]}
@@ -97,15 +99,20 @@ const HomePage: React.FC = () => {
       </CSSTransition>
     </div>
     <section className="mb-8">
-      <h2 className="text-2xl font-bold mb-4">Latest Blog Posts</h2>
-      <div className="grid grid-cols-3 gap-4">
-        {/* Blog post cards */}
-        <div className="bg-white p-4 rounded shadow">
-          <h3 className="text-lg font-semibold mb-2">Blog Post 1</h3>
-          <p>Author: John Doe</p>
-          <p>Date: 5th June 2023</p>
-        </div>
-        <div className="bg-white p-4 rounded shadow">
+  <h2 className="text-2xl text-center font-bold mb-4">Latest Blog Post</h2>
+  <div className="grid grid-cols-1 mx-auto max-w-2xl rounded gap-4" style={{ height: '400px' }}>
+    {/* Blog post cards */}
+    <div className="relative bg-cover rounded bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/pigeon.jpg')" }}>
+      <div className="absolute inset-0 flex flex-col items-center justify-center">
+        <h3 className="text-lg rounded font-semibold mb-2 bg-white bg-opacity-75 p-2">Blog Post 1</h3>
+        <p className="bg-white rounded bg-opacity-75 p-2">Author: John Doe</p>
+        <p className="bg-white rounded my-2 bg-opacity-75 p-2">Date: 5th June 2023</p>
+        <p className="bg-white rounded my-4 mx-10 bg-opacity-75 p-2 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore autem labore repellat deserunt maiores possimus veritatis aspernatur debitis, incidunt excepturi praesentium. Suscipit iure beatae incidunt ex omnis ea inventore nam?</p>
+
+      </div>
+    </div>
+
+        {/* <div className="bg-white p-4 rounded shadow">
           <h3 className="text-lg font-semibold mb-2">Blog Post 2</h3>
           <p>Author: Jane Smith</p>
           <p>Date: 10th June 2023</p>
@@ -114,24 +121,22 @@ const HomePage: React.FC = () => {
           <h3 className="text-lg font-semibold mb-2">Blog Post 3</h3>
           <p>Author: Alex Johnson</p>
           <p>Date: 15th June 2023</p>
-        </div>
+        </div> */}
       </div>
     </section>
 
-    <section className="mb-8 text-center">
-      <h2 className="text-2xl font-bold mb-4">Social Links</h2>
-      <div className="text-center space-x-4">
-        {/* Social links */}
-        <Link href="#" className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
-Twitter
-</Link>
-<Link href="#" className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
-Instagram
-</Link>
-<Link href="#" className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded">
-Facebook
-</Link>
-</div>
+    <section className="mb-8 mx-auto text-center">
+    <div className="flex text-center justify-center">
+        <Link href="https://twitter.com" className="text-black hover:text-gray-300 ml-4">
+          <FaTwitter className="w-10 h-10 lg:w-20 lg:h-20" />
+        </Link>
+        <Link href="https://instagram.com" className="text-black hover:text-gray-300 ml-4">
+          <FaInstagram className="w-10 h-10 lg:w-20 lg:h-20" />
+        </Link>
+        <Link href="https://facebook.com" className="text-black hover:text-gray-300 ml-4">
+          <FaFacebook className="w-10 h-10 lg:w-20 lg:h-20" />
+        </Link>
+      </div>
 </section>
 
 <section>

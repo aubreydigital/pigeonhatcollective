@@ -29,7 +29,7 @@ const EventsPage: React.FC = () => {
   return (
     <div className="container mx-auto py-8 px-5 text-white text-shadow text-center">
       <h1 className="text-2xl font-bold text-black text-shadow mb-4">Upcoming Events</h1>
-      <div className="grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {events.map((event) => (
           <Link href={`/blog/${event.id}`} key={event.id}>
               <div

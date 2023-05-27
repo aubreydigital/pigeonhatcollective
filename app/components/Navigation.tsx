@@ -29,6 +29,12 @@ const Navigation = () => {
                   Merch
                 </Link>
                 <Link
+                  href="/artists"
+                  className="text-gray-300 hover:bg-transparent hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  Artists
+                </Link>
+                <Link
                   href="/about"
                   className="text-gray-300 hover:bg-transparent hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >

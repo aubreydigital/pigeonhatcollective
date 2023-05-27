@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { FaPhone, FaEnvelope, FaFacebook, FaTwitter } from 'react-icons/fa';
-
+import { FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
+import EventCard from './EventCard';
 const Footer: React.FC = () => {
   // Example event data
   const latestEvent = {
@@ -12,8 +12,8 @@ const Footer: React.FC = () => {
 
   // Example blog post data
   const latestBlogPost = {
-    title: 'Latest Blog Post',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae condimentum velit. Nullam quis vestibulum velit.',
+    title: 'Recent Post',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae condimentum velit. Nullam quis vestibulum velit Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta illum rem dignissimos, blanditiis assumenda nam iusto nemo enim tempora, magni, unde dolor quibusdam! Dolorem quas harum cumque nihil ipsa facilis.',
     link: '/blog/latest',
   };
 
@@ -25,49 +25,46 @@ const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-center footer-content">
-      <h1 className="pt-5 text-white sm:text-base lg:xl font-semibold">pigeon hat collective</h1>
-        <div className="grid grid-cols-3 gap-4 mt-8">
+      <h1 className="pt-7 text-white sm:text-base lg:xl text-white">pigeon hat collective</h1>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8">
           {/* Latest Event */}
-          <div>
+          {/* <div className="hidden lg:block">
             <h2 className="text-2xl font-bold">{latestEvent.title}</h2>
             <p className="text-gray-400">{latestEvent.description}</p>
             <Link href={latestEvent.link} legacyBehavior>
               <a className="text-blue-600 hover:text-blue-800">Read more</a>
             </Link>
-          </div>
+          </div> */}
+          <EventCard height="35vh" />
 
           {/* Latest Blog Post */}
-          <div>
-            <h2 className="text-2xl font-bold">{latestBlogPost.title}</h2>
-            <p className="text-gray-400">{latestBlogPost.content.substring(0, 100)}</p>
+          <div className="hidden lg:block">
+            <h2 className="text-2xl italic">{latestBlogPost.title}</h2>
+            <p className="text-gray-400">{latestBlogPost.content.substring(0, 200)}...</p>
             <Link href="/blog" legacyBehavior>
-              <a className="text-blue-600 hover:text-blue-800">Read more</a>
+              <a className="text-purple-600 hover:text-purple-800">Read more</a>
             </Link>
           </div>
 
           {/* Contact Info and Social Links */}
-          <div>
-            <h2 className="text-2xl font-bold">Contact</h2>
-            <p>
-              <FaPhone className="inline-block mr-2" />
-              {contactInfo.phone}
-            </p>
-            <p>
-              <FaEnvelope className="inline-block mr-2" />
-              <Link href={`mailto:${contactInfo.email}`}>{contactInfo.email}</Link>
-            </p>
-            <div className="mt-4">
-              <Link href="#" className="text-blue-600 hover:text-blue-800 mx-2">
-                <FaFacebook />
-              </Link>
-              <Link href="#" className="text-blue-600 hover:text-blue-800 mx-2">
-                <FaTwitter />
-              </Link>
+          <div className="text-center">
+          <h2 className="hidden lg:block text-2xl italic mb-4">Contact</h2>
+          <div className="mt-4 flex justify-center items-center mx-auto text-center">
+        <Link href="https://www.facebook.com/pigeonhatcollective" target="_blank" className="text-3xl text-black-600 hover:text-black-800 mx-2">
+          <FaFacebook />
+        </Link>
+        <Link href="https://www.instagram.com/pigeonhatcollective" target='_blank' className="text-black-600 text-3xl hover:text-black-800 mx-2">
+          <FaInstagram />
+        </Link>
+        <Link href="https://www.twitter.com/pigeonhatcollective" target="_blank" className="text-black-600 text-3xl hover:text-black-800 mx-2">
+          <FaTwitter />
+        </Link>
+
             </div>
           </div>
         </div>
         <div className="mt-12 pb-7">
-          <p>&copy; {new Date().getFullYear()} Pigeon Hat Collective</p>
+          <p className="text-xs lg:text-base">&copy; {new Date().getFullYear()} Pigeon Hat Collective</p>
         </div>
       </div>
     </footer>
