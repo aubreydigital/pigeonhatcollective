@@ -11,12 +11,12 @@ import { CarouselProps } from 'react-responsive-carousel';
 import EventCard from './components/EventCard';
 import { FaTwitter, FaInstagram, FaFacebook } from 'react-icons/fa';
 
-
 const HomePage: React.FC = () => {
   const [showContent, setShowContent] = useState(false);
   const [windowWidth, setWindowWidth] = useState<number>(0);
 
   useEffect(() => {
+    
     setShowContent(true);
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -140,7 +140,7 @@ const HomePage: React.FC = () => {
 </section>
 
 <section>
-    <h2 className="text-2xl font-bold mb-4">Featured Videos</h2>
+    <h2 className="text-center text-2xl font-bold mb-4">Featured Videos</h2>
     <div className="grid grid-cols-3 gap-4">
       {/* Video cards */}
       <div className="bg-white p-4 rounded shadow">

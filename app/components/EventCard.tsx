@@ -6,7 +6,7 @@ import styles from '../HomePage.module.css';
 const EventCard = (windowWidth: any, key: number) => {
 
   return (
-    <div className={`${styles['event-card']}`} key={key} style={{height: '75vh'}}>
+    <div className={`${styles['event-card']}`} key={key} style={{height: '60vh'}}>
       <Image
         src="/images/events/060123.jpg"
         alt="Event Image"

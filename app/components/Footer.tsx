@@ -35,8 +35,12 @@ const Footer: React.FC = () => {
               <a className="text-blue-600 hover:text-blue-800">Read more</a>
             </Link>
           </div> */}
-          <EventCard height="35vh" />
-
+          <div className="hidden lg:block p-4 rounded">
+        <h3 className="text-lg font-semibold mb-2">Event 1</h3>
+        <p>Date: 20th June 2023</p>
+        <p>Location: City, Country</p>
+        <button className="p-2 bg-white mt-5 rounded shadow" type="button">Buy Tickets</button>
+          </div>
           {/* Latest Blog Post */}
           <div className="hidden lg:block">
             <h2 className="text-2xl italic">{latestBlogPost.title}</h2>
