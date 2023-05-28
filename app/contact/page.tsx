@@ -1,4 +1,4 @@
-import React from 'react';
+import Link from "next/link";
 
 export const metadata: object = {
   title: 'contact | pigeon hat collective',
@@ -11,15 +11,14 @@ const ContactsPage: React.FC = () => {
       <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-4">
         <div>
           <h2 className="sm:text-base lg:text-xl font-semibold mb-2">General Inquiries</h2>
-          <p>Email: info@example.com</p>
-          <p>Phone: 123-456-7890</p>
-          <p>Address: 123 Main St, City, Country</p>
+          <p>Email: <Link className="hover:text-white" href="mailto:questions@phcollective.com">questions@phcollective.com</Link></p>
+          <p>89103 Las Vegas, NV</p>
+          
         </div>
         <div>
           <h2 className="sm:text-base lg:text-xl font-semibold mb-2">Support</h2>
-          <p>Email: support@example.com</p>
-          <p>Phone: 987-654-3210</p>
-          <p>Address: 456 Elm St, City, Country</p>
+          <p>Email: <Link className="hover:text-white" href="mailto:questions@phcollective.com">support@phcollective.com</Link></p>
+          <p>89141 Las Vegas, NV</p>
         </div>
       </div>
     </div>

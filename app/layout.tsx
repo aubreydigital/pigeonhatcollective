@@ -1,7 +1,7 @@
-import './globals.css'
+import '../styles/globals.css'
 import { Press_Start_2P } from 'next/font/google'
-import Navigation from './components/Navigation'
-import Footer from './components/Footer'
+import Navigation from '../components/Navigation'
+import Footer from '../components/Footer'
 
 const inter = Press_Start_2P({ weight: '400', subsets: ['latin'] })
 
@@ -18,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <div className="text-center justify-center flex">
         <Navigation />
+        </div>
         {children}
         <Footer /></body>
     </html>

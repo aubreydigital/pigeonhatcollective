@@ -2,7 +2,6 @@
 import { FaTwitter, FaInstagram, FaFacebook } from 'react-icons/fa';
 import { useState } from 'react';
 import Link from 'next/link';
-
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -11,13 +10,13 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-center">
+    <nav className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
+          <div className="flex items-center justify-center">
             <div className="flex-shrink-0 text-center">
               <Link href="/" className="text-white text-xs font-semibold">
-                <h1 className="text-white text-xs font-semibold">pigeon hat collective</h1>
+                <h1 className="text-white text-xs font-semibold pr-4">pigeon hat collective</h1>
               </Link>
             </div>
             <div className="hidden md:block">
@@ -46,24 +45,24 @@ const Navigation = () => {
                 >
                   Events
                 </Link>
-                <Link
+                {/* <Link
                   href="/contact"
                   className="text-gray-300 hover:bg-transparent hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Contact
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
           <div className="hidden md:block">
             <div className="ml-4 flex items-center md:ml-6">
-              <button className="p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+              <button className="p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black-800 focus:ring-white">
                 <span className="sr-only">View notifications</span>
                 {/* <!-- Notification icon --> */}
               </button>
               <div className="ml-3 relative">
                 <div>
-                  <button className="max-w-xs flex items-center text-sm rounded-full text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu" aria-expanded="false" aria-haspopup="true">
+                  <button className="max-w-xs flex items-center text-sm rounded-full text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black-800 focus:ring-white" id="user-menu" aria-expanded="false" aria-haspopup="true">
                     <span className="sr-only">Open user menu</span>
                     {/* <!-- User avatar --> */}
                   </button>
@@ -75,7 +74,7 @@ const Navigation = () => {
           <div className="-mr-2 flex md:hidden">
             {/* Mobile menu button */}
             <button
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
               aria-expanded={isMenuOpen}
               onClick={toggleMenu}
             >
@@ -148,14 +147,14 @@ const Navigation = () => {
 
       </div>
       {/* Social links */}
-      <div className="hidden md:flex items-center justify-end pr-4">
-        <Link href="https://twitter.com" className="text-white hover:text-gray-300 ml-4">
+      <div className="hidden md:flex items-center justify-center pr-4 pb-5">
+        <Link href="https://twitter.com/pigeonhatc" target="_blank" className="text-white hover:text-gray-300 ml-4">
           <FaTwitter className="w-6 h-6" />
         </Link>
-        <Link href="https://instagram.com" className="text-white hover:text-gray-300 ml-4">
+        <Link href="https://instagram.com/pigeonhatcollective" target="_blank" className="text-white hover:text-gray-300 ml-4">
           <FaInstagram className="w-6 h-6" />
         </Link>
-        <Link href="https://facebook.com" className="text-white hover:text-gray-300 ml-4">
+        <Link href="https://facebook.com/pigeonhatcollective" target="_blank" className="text-white hover:text-gray-300 ml-4">
           <FaFacebook className="w-6 h-6" />
         </Link>
       </div>

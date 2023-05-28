@@ -12,32 +12,37 @@ const ArtistPage: React.FC = () => {
     {
       id: 1,
       title: 'Trash Animals',
+      query: 'trash_animals',
       price: 'alt psychedelic folk rock',
-      image: '/images/tshirt.jpg',
+      image: '/assets/images/artists/trashAnimals.jpg',
     },
     {
       id: 2,
       title: 'Kurian',
+      query: 'kurian',
       price: 'hip hop',
-      image: '/images/dd.jpg',
+      image: '/assets/images/artists/kurian.jpg',
     },
     {
       id: 3,
-      title: 'The String Riflemen',
+      title: 'The String Rifleband',
+      query: 'the_string_rifleband',
       price: 'alternative rock',
-      image: '/images/stickers.jpg',
+      image: '/assets/images/artists/theStringRiflemen.jpg',
     },
     {
       id: 4,
       title: 'Aubrey Digital',
       price: 'folk hop',
-      image: '/images/pin.jpg',
+      query: 'aubrey_digital',
+      image: '/assets/images/artists/aubreyDigital.jpg',
     },
     {
       id: 5,
       title: 'Switterbeet',
       price: 'indie rock',
-      image: '/images/hoodie.jpg',
+      query: 'switterbeet',
+      image: '/assets/images/artists/switterbeet.jpg',
     }
   ];
 
@@ -47,7 +52,7 @@ const ArtistPage: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {artists.map((item) => (
           <div key={item.id} className="bg-white p-4 rounded shadow">
-            <Link href={'/merch/'+item.id}>
+            <Link href={'/artists/'+item.query}>
             <Image
               src={item.image}
               alt={item.title}

@@ -1,7 +1,9 @@
+'use client';
 import React from 'react';
 import Link from 'next/link';
-import { FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
+import { FaInstagram, FaFacebook, FaTwitter, FaTiktok } from 'react-icons/fa';
 import EventCard from './EventCard';
+
 const Footer: React.FC = () => {
   // Example event data
   const latestEvent = {
@@ -24,8 +26,9 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="footer">
+      
       <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-center footer-content">
-      <h1 className="pt-7 text-white sm:text-base lg:xl text-white">pigeon hat collective</h1>
+      <h1 style={{ fontFamily: 'Press Start 2P' }} className="pt-7 text-white sm:text-base lg:xl text-white">pigeon hat collective</h1>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8">
           {/* Latest Event */}
           {/* <div className="hidden lg:block">
@@ -36,10 +39,10 @@ const Footer: React.FC = () => {
             </Link>
           </div> */}
           <div className="hidden lg:block p-4 rounded">
-        <h3 className="text-lg font-semibold mb-2">Event 1</h3>
-        <p>Date: 20th June 2023</p>
-        <p>Location: City, Country</p>
-        <button className="p-2 bg-white mt-5 rounded shadow" type="button">Buy Tickets</button>
+        <h3 className="text-lg font-semibold mb-2">Their Home Too Festival II</h3>
+        <p>Date: 27th May 2023</p>
+        <p>Location: Starboard Tack - Las Vegas, NV</p>
+        {/* <button className="p-2 bg-white mt-5 rounded shadow" type="button">Buy Tickets</button> */}
           </div>
           {/* Latest Blog Post */}
           <div className="hidden lg:block">
@@ -63,6 +66,9 @@ const Footer: React.FC = () => {
         <Link href="https://www.twitter.com/pigeonhatcollective" target="_blank" className="text-black-600 text-3xl hover:text-black-800 mx-2">
           <FaTwitter />
         </Link>
+        <Link href="https://www.tiktok.com/@pigeonhatcollective" target="_blank" className="text-black-600 text-3xl hover:text-black-800 mx-2">
+          <FaTiktok />
+        </Link>
 
             </div>
           </div>
@@ -73,6 +79,10 @@ const Footer: React.FC = () => {
       </div>
     </footer>
   );
+
+  <style jsx>{`
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+`}</style>
 };
 
 export default Footer;

@@ -9,38 +9,38 @@ const EventsPage: React.FC = () => {
   const events = [
     {
       id: 1,
-      title: 'Concert 1',
+      title: 'Their Home Too Festival',
       type: 'Concert',
-      date: 'June 1, 2023',
-      location: 'City, Country',
-      flyer: '/images/events/060123.jpg',
+      date: 'May 27, 2023',
+      location: 'Las Vegas, Nevada',
+      flyer: 'assets/images/events/052723.jpg',
     },
-    {
-      id: 2,
-      title: 'Donation Event 1',
-      type: 'Donation Event',
-      date: 'June 5, 2023',
-      location: 'City, Country',
-      flyer: '/images/events/062323.jpg',
-    },
+    // {
+    //   id: 2,
+    //   title: 'Donation Event 1',
+    //   type: 'Donation Event',
+    //   date: 'June 5, 2023',
+    //   location: 'City, Country',
+    //   flyer: '/images/events/062323.jpg',
+    // },
     // Add more events as needed
   ];
 
   return (
     <div className="container mx-auto py-8 px-5 text-white text-shadow text-center">
       <h1 className="text-2xl font-bold text-black text-shadow mb-4">Upcoming Events</h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4">
         {events.map((event) => (
           <Link href={`/blog/${event.id}`} key={event.id}>
               <div
                 className="bg-white p-4 rounded"
                 style={{ backgroundImage: `url(${event.flyer})` }}
               >
-                <div className="rounded" style={{width:'7rem', height: '11rem'}} />
-                <h3 className="text-lg text-shadow font-semibold mb-2">{event.title}</h3>
-                <p className="text-shadow">Type: {event.type}</p>
-                <p className="text-shadow">Date: {event.date}</p>
-                <p className="text-shadow">Location: {event.location}</p>
+                <div className="rounded flex" style={{width:'7rem', height: '11rem'}} />
+                <h3 className="text-lg bg-black p-3 inline-block rounded text-shadow font-semibold mb-2">{event.title}</h3><br />
+                {/* <p className="text-shadow bg-black p-3 inline-block rounded">Type: {event.type}</p><br/> */}
+                <p className="text-shadow bg-black p-3 inline-block rounded">Date: {event.date}</p><br />
+                <p className="text-shadow bg-black p-3 inline-block rounded">Location: {event.location}</p>
               </div>
           </Link>
         ))}

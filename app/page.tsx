@@ -4,12 +4,13 @@ import Link from 'next/link'
 import React, { FC, useEffect, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import 'animate.css';
-import styles from './HomePage.module.css';
+import styles from '../styles/HomePage.module.css';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { CarouselProps } from 'react-responsive-carousel';
-import EventCard from './components/EventCard';
-import { FaTwitter, FaInstagram, FaFacebook } from 'react-icons/fa';
+import EventCard from '../components/EventCard';
+import { FaTwitter, FaInstagram, FaFacebook, FaTiktok } from 'react-icons/fa';
+import YouTube from 'react-youtube';
 
 const HomePage: React.FC = () => {
   const [showContent, setShowContent] = useState(false);
@@ -34,6 +35,13 @@ const HomePage: React.FC = () => {
 
   
   return (
+    <CSSTransition
+    in={showContent}
+    timeout={1000}
+    classNames="fade"
+    unmountOnExit
+  >
+
     <div className={`animate__animated animate__fadeIn ${styles.content}`}>
       {/* <img
         src="/images/splash.jpg"
@@ -41,12 +49,6 @@ const HomePage: React.FC = () => {
         className={styles['splash-image']}
       /> */}
       <div className="text-center py-8">
-      <CSSTransition
-        in={showContent}
-        timeout={1000}
-        classNames="fade"
-        unmountOnExit
-      >
         <div>
         
         <section className="mb-8 my-4">
@@ -96,13 +98,12 @@ const HomePage: React.FC = () => {
 
 
     </div>
-      </CSSTransition>
     </div>
     <section className="mb-8">
-  <h2 className="text-2xl text-center font-bold mb-4">Latest Blog Post</h2>
+  <h2 className="text-2xl text-center font-bold mb-4">News Feed</h2>
   <div className="grid grid-cols-1 mx-auto max-w-2xl rounded gap-4" style={{ height: '400px' }}>
     {/* Blog post cards */}
-    <div className="relative bg-cover rounded bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/pigeon.jpg')" }}>
+    <div className="relative bg-cover rounded bg-center bg-no-repeat" style={{ backgroundImage: "url('/assets/images/pigeon.jpg')" }}>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <h3 className="text-lg rounded font-semibold mb-2 bg-white bg-opacity-75 p-2">Blog Post 1</h3>
         <p className="bg-white rounded bg-opacity-75 p-2">Author: John Doe</p>
@@ -127,40 +128,82 @@ const HomePage: React.FC = () => {
 
     <section className="mb-8 mx-auto text-center">
     <div className="flex text-center justify-center">
-        <Link href="https://twitter.com" className="text-black hover:text-gray-300 ml-4">
+        <Link href="https://twitter.com/pigeonhatc" className="text-black hover:text-gray-300 ml-4">
           <FaTwitter className="w-10 h-10 lg:w-20 lg:h-20" />
         </Link>
-        <Link href="https://instagram.com" className="text-black hover:text-gray-300 ml-4">
+        <Link href="https://instagram.com/pigeonhatcollective" className="text-black hover:text-gray-300 ml-4">
           <FaInstagram className="w-10 h-10 lg:w-20 lg:h-20" />
         </Link>
-        <Link href="https://facebook.com" className="text-black hover:text-gray-300 ml-4">
+        <Link href="https://facebook.com/pigeonhatcollective" className="text-black hover:text-gray-300 ml-4">
           <FaFacebook className="w-10 h-10 lg:w-20 lg:h-20" />
+        </Link>
+        <Link href="https://www.tiktok.com/@pigeonhatcollective" className="text-black hover:text-gray-300 ml-4">
+          <FaTiktok className="w-10 h-10 lg:w-20 lg:h-20" />
         </Link>
       </div>
 </section>
 
 <section>
-    <h2 className="text-center text-2xl font-bold mb-4">Featured Videos</h2>
-    <div className="grid grid-cols-3 gap-4">
-      {/* Video cards */}
-      <div className="bg-white p-4 rounded shadow">
-        <h3 className="text-lg font-semibold mb-2">Video 1</h3>
-        <p>Posted by: John Doe</p>
-        <p>Date: 1st June 2023</p>
-      </div>
-      <div className="bg-white p-4 rounded shadow">
-        <h3 className="text-lg font-semibold mb-2">Video 2</h3>
-        <p>Posted by: Jane Smith</p>
-        <p>Date: 6th June 2023</p>
-      </div>
-      <div className="bg-white p-4 rounded shadow">
-        <h3 className="text-lg font-semibold mb-2">Video 3</h3>
-        <p>Posted by: Alex Johnson</p>
-        <p>Date: 11th June 2023</p>
+  <h2 className="text-center text-2xl font-bold mb-4">Featured Videos</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {/* Video cards */}
+    <div className="bg-white p-4 rounded shadow text-center">
+      <h3 className="text-lg font-semibold mb-2">Holiday Special</h3>
+      <p>Date: Dec 24, 2022</p>
+      <div className="video-wrapper">
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/2RhQQHn_xV8"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        ></iframe>
       </div>
     </div>
+    <div className="bg-white p-4 rounded hidden md:block lg:block text-center shadow">
+      <h3 className="text-lg font-semibold mb-2">
+        First Annual Pigeon Hat Collective Photoshoot w/ beats by Platonic Mixtape
+      </h3>
+      <p>Date: 13th June 2022</p>
+      <div className="video-wrapper">
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/Fj5bnx7TF_8"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        ></iframe>
+      </div>
+    </div>
+
+    </div>
+    <div className="text-center mt-3 mb-5">
+    <Link href="https://www.youtube.com/@thepigeonhatcollective5379" target="_blank">More...</Link>
+    </div>
   </section>
+
+<style jsx>{`
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio (height / width) */
+  overflow: hidden;
+}
+
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+`}</style>
+
 </div>
+</CSSTransition>
   )}
 
 export default HomePage;

@@ -8,7 +8,6 @@ export const metadata: object = {
 
 const MerchPage: React.FC = () => {
 
-  const tshirtImageUrl = process.env.PUBLIC_URL + '/images/tshirt.jpg';
   // Sample merchandise data (replace with your actual merchandise data)
   const merchandise = [
     {

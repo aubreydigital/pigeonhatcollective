@@ -67,9 +67,9 @@ export default function MerchItemPage({ params }: { params: { merchId: number } 
   return (
 <div className="flex flex-col justify-center items-center h-screen bg-gray-800 bg-opacity-50">
       <div className="max-w-3xl my-10 bg-white rounded-lg overflow-hidden overflow-y-auto shadow-lg">
-        <div className="flex">
+        <div className="flex pt-10">
           <div className="w-1/2">
-            <div className="relative flex justify-center items-center h-full">
+            <div className="relative pl-2 flex justify-center items-center">
               <Image src={image} alt={title} width={300} height={300} />
             </div>
           </div>
