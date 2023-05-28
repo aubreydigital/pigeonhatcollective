@@ -33,15 +33,15 @@ const AboutPage: React.FC<any> = ({ companyName, description }) => {
     <>
       <h1 className="text-4xl font-bold m-5 text-center">About</h1>
     <div className="flex mt-6 justify-center">
-      <Image className="rounded-bl-lg rounded-tl-lg" src='/images/bonfire.jpg' width={windowWidth > 600 ? 300 : 150} height={windowWidth > 600 ? 300 : 150} alt="bonfire pigeon hat collective"/>
-      <Image className="rounded-br-lg rounded-tr-lg" src='/images/concert.jpg' width={windowWidth > 600 ? 300 : 150} height={windowWidth > 600 ? 300 : 150} alt="house show pigeon hat collective" />
+      <Image className="rounded-bl-lg rounded-tl-lg" src='/assets/images/bonfire.jpg' width={windowWidth > 600 ? 300 : 150} height={windowWidth > 600 ? 300 : 150} alt="bonfire pigeon hat collective"/>
+      <Image className="rounded-br-lg rounded-tr-lg" src='/assets/images/concert.jpg' width={windowWidth > 600 ? 300 : 150} height={windowWidth > 600 ? 300 : 150} alt="house show pigeon hat collective" />
   </div>
     <div className="grid grid-cols-2">
     
     <div className="col-span-2 text-center py-8 leading-loose">
       <p className="text-lg mx-10 mb-7 text-gray-600">{phc.desc1}</p>
       <div className="flex justify-center">
-     <Image className="rounded" src='/images/recording2.jpg' width={500} height={300} alt="pigeon hat collective"/>
+     <Image className="rounded" src='/assets/images/recording2.jpg' width={500} height={300} alt="pigeon hat collective"/>
 </div>
 <p className="text-lg mx-10 my-7 text-gray-600">{phc.desc2}</p>
 

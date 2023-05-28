@@ -14,37 +14,37 @@ const MerchPage: React.FC = () => {
       id: 1,
       title: 'Shirt',
       price: '$19.99',
-      image: '/images/tshirt.jpg',
+      image: '/assets/images/tshirt.jpg',
     },
     {
       id: 2,
       title: 'Digital Download',
       price: '$9.99',
-      image: '/images/dd.jpg',
+      image: '/assets/images/dd.jpg',
     },
     {
       id: 3,
       title: 'Sticker Pack',
       price: '$5.99',
-      image: '/images/stickers.jpg',
+      image: '/assets/images/stickers.jpg',
     },
     {
       id: 4,
       title: 'Pin',
       price: '$7.99',
-      image: '/images/pin.jpg',
+      image: '/assets/images/pin.jpg',
     },
     {
       id: 5,
       title: 'Hoodie',
       price: '$29.99',
-      image: '/images/hoodie.jpg',
+      image: '/assets/images/hoodie.jpg',
     },
     {
       id: 6,
       title: 'Hat',
       price: '$14.99',
-      image: '/images/hat.jpg',
+      image: '/assets/images/hat.jpg',
     },
   ];
 

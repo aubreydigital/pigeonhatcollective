@@ -8,42 +8,42 @@ const merchandise = [
     id: 1,
     title: 'Shirt',
     price: '$19.99',
-    image: '/images/tshirt.jpg',
+    image: '/assets/images/tshirt.jpg',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, similique? Labore cupiditate repellat eius itaque unde, provident nam reiciendis dolorem, modi consectetur iure doloribus magni blanditiis eligendi! Itaque, quidem distinctio!'
   },
   {
     id: 2,
     title: 'Digital Download',
     price: '$9.99',
-    image: '/images/dd.jpg',
+    image: '/assets/images/dd.jpg',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, similique? Labore cupiditate repellat eius itaque unde, provident nam reiciendis dolorem, modi consectetur iure doloribus magni blanditiis eligendi! Itaque, quidem distinctio!'
   },
   {
     id: 3,
     title: 'Sticker Pack',
     price: '$5.99',
-    image: '/images/stickers.jpg',
+    image: '/assets/images/stickers.jpg',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, similique? Labore cupiditate repellat eius itaque unde, provident nam reiciendis dolorem, modi consectetur iure doloribus magni blanditiis eligendi! Itaque, quidem distinctio!'
   },
   {
     id: 4,
     title: 'Pin',
     price: '$7.99',
-    image: '/images/pin.jpg',
+    image: '/assets/images/pin.jpg',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, similique? Labore cupiditate repellat eius itaque unde, provident nam reiciendis dolorem, modi consectetur iure doloribus magni blanditiis eligendi! Itaque, quidem distinctio!'
   },
   {
     id: 5,
     title: 'Hoodie',
     price: '$29.99',
-    image: '/images/hoodie.jpg',
+    image: '/assets/images/hoodie.jpg',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, similique? Labore cupiditate repellat eius itaque unde, provident nam reiciendis dolorem, modi consectetur iure doloribus magni blanditiis eligendi! Itaque, quidem distinctio!'
   },
   {
     id: 6,
     title: 'Hat',
     price: '$14.99',
-    image: '/images/hat.jpg',
+    image: '/assets/images/hat.jpg',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, similique? Labore cupiditate repellat eius itaque unde, provident nam reiciendis dolorem, modi consectetur iure doloribus magni blanditiis eligendi! Itaque, quidem distinctio! ipsum dro espdf efghoss elfefp  sdflfdsdfl dfefo dflfefo dsafl'
   },
 ];
