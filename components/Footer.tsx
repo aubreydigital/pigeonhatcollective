@@ -3,6 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { FaInstagram, FaFacebook, FaTwitter, FaTiktok } from 'react-icons/fa';
 import EventCard from './EventCard';
+import Logo from './Logo';
 
 const Footer: React.FC = () => {
   // Example event data
@@ -28,7 +29,10 @@ const Footer: React.FC = () => {
     <footer className="footer">
       
       <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-center footer-content">
-      <h1 style={{ fontFamily: 'Press Start 2P' }} className="pt-7 text-white sm:text-base lg:xl text-white">pigeon hat collective</h1>
+      {/* <h1 style={{ fontFamily: 'Press Start 2P' }} className="pt-7 text-white sm:text-base lg:xl text-white">pigeon hat collective</h1> */}
+      <div className="pt-4 text-white">
+      <Logo />
+      </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8">
           {/* Latest Event */}
           {/* <div className="hidden lg:block">

@@ -1,10 +1,12 @@
 'use client';
-import { FaTwitter, FaInstagram, FaFacebook } from 'react-icons/fa';
-import { useState } from 'react';
+import { FaTwitter, FaInstagram, FaFacebook, FaTiktok } from 'react-icons/fa';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
+import Logo from './Logo'
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+const inLoggedIn = true
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -16,7 +18,8 @@ const Navigation = () => {
           <div className="flex items-center justify-center">
             <div className="flex-shrink-0 text-center">
               <Link href="/" className="text-white text-xs font-semibold">
-                <h1 className="text-white text-xs font-semibold pr-4">pigeon hat collective</h1>
+                {/* <h1 className="text-white text-xs font-semibold pr-4 inter.className">pigeon hat collective</h1> */}
+                <Logo />
               </Link>
             </div>
             <div className="hidden md:block">
@@ -147,7 +150,10 @@ const Navigation = () => {
 
       </div>
       {/* Social links */}
-      <div className="hidden md:flex items-center justify-center pr-4 pb-5">
+      <div className="hidden md:flex items-center justify-end pr-4 pb-5">
+      <Link href="https://tiktok.com/@pigeonhatcollective" target="_blank" className="text-white hover:text-gray-300 ml-4">
+          <FaTiktok className="w-5 h-5" />
+        </Link>
         <Link href="https://twitter.com/pigeonhatc" target="_blank" className="text-white hover:text-gray-300 ml-4">
           <FaTwitter className="w-6 h-6" />
         </Link>
