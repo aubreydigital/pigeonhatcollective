@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: object = {
-  'title': 'pigeon hat collective | merch',
+  'title': 'merch | pigeon hat collective',
   'description': 'pigeon hat collective '
 }
 
@@ -50,8 +50,8 @@ const MerchPage: React.FC = () => {
 
   return (
     <div className="container mx-auto py-8">
-      <h1 className="text-2xl font-bold mb-4">Merchandise</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <h1 className="text-2xl font-bold mb-4 text-center">Merchandise</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mx-4 lg:grid-cols-4 gap-4">
         {merchandise.map((item) => (
           <div key={item.id} className="bg-white p-4 rounded shadow">
             <Link href={'/merch/'+item.id}>
@@ -61,6 +61,8 @@ const MerchPage: React.FC = () => {
               height={48}
               width={48}
               className="w-full h-48 object-cover mb-4"
+              placeholder="blur"
+              blurDataURL={item.image}
             />
             <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
             <p className="text-gray-500">{item.price}</p></Link>

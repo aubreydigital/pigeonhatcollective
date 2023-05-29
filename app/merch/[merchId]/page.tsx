@@ -70,7 +70,8 @@ export default function MerchItemPage({ params }: { params: { merchId: number } 
         <div className="flex pt-10">
           <div className="w-1/2">
             <div className="relative pl-2 flex justify-center items-center">
-              <Image src={image} alt={title} width={300} height={300} />
+              <Image src={image} placeholder="blur"
+              blurDataURL={image} alt={title} width={300} height={300} />
             </div>
           </div>
           <div className="w-1/2 p-4">

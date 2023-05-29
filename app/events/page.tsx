@@ -1,5 +1,5 @@
 export const metadata: object = {
-  title: 'contact | pigeon hat collective',
+  title: 'events | pigeon hat collective',
   description: 'contact phone email social media music and arts collective based in las vegas nevada',
 }
 import Link from 'next/link';
@@ -13,7 +13,7 @@ const EventsPage: React.FC = () => {
       type: 'Concert',
       date: 'May 27, 2023',
       location: 'Las Vegas, Nevada',
-      flyer: 'assets/images/events/052723.jpg',
+      flyer: 'assets/images/events/052723.JPG',
     },
     // {
     //   id: 2,

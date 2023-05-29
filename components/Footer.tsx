@@ -26,11 +26,11 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="footer">
+    <footer className="footer mt-10">
       
       <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-center footer-content">
       {/* <h1 style={{ fontFamily: 'Press Start 2P' }} className="pt-7 text-white sm:text-base lg:xl text-white">pigeon hat collective</h1> */}
-      <div className="pt-4 text-white">
+      <div className="pt-10 text-white">
       <Logo />
       </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8">
@@ -42,7 +42,9 @@ const Footer: React.FC = () => {
               <a className="text-blue-600 hover:text-blue-800">Read more</a>
             </Link>
           </div> */}
-          <div className="hidden lg:block p-4 rounded">
+          <div className="hidden lg:block p-2 rounded">
+          <h2 className="hidden lg:block text-2xl italic mb-4" style={{ marginTop: '-10px' }}>{latestEvent.title}</h2>
+
         <h3 className="text-lg font-semibold mb-2">Their Home Too Festival II</h3>
         <p>Date: 27th May 2023</p>
         <p>Location: Starboard Tack - Las Vegas, NV</p>
@@ -50,7 +52,8 @@ const Footer: React.FC = () => {
           </div>
           {/* Latest Blog Post */}
           <div className="hidden lg:block">
-            <h2 className="text-2xl italic">{latestBlogPost.title}</h2>
+          <h2 className="hidden lg:block text-2xl italic mb-4">{latestBlogPost.title}</h2>
+            {/* <h2 className="text-2xl italic">{latestBlogPost.title}</h2> */}
             <p className="text-gray-400">{latestBlogPost.content.substring(0, 200)}...</p>
             <Link href="/blog" legacyBehavior>
               <a className="text-purple-600 hover:text-purple-800">Read more</a>
@@ -61,19 +64,18 @@ const Footer: React.FC = () => {
           <div className="text-center">
           <h2 className="hidden lg:block text-2xl italic mb-4">Contact</h2>
           <div className="mt-4 flex justify-center items-center mx-auto text-center">
-        <Link href="https://www.facebook.com/pigeonhatcollective" target="_blank" className="text-3xl text-black-600 hover:text-black-800 mx-2">
-          <FaFacebook />
-        </Link>
-        <Link href="https://www.instagram.com/pigeonhatcollective" target='_blank' className="text-black-600 text-3xl hover:text-black-800 mx-2">
-          <FaInstagram />
+          <Link href="https://www.tiktok.com/@pigeonhatcollective" target="_blank" className="text-black-600 text-2xl hover:text-black-800 mx-2">
+          <FaTiktok />
         </Link>
         <Link href="https://www.twitter.com/pigeonhatcollective" target="_blank" className="text-black-600 text-3xl hover:text-black-800 mx-2">
           <FaTwitter />
         </Link>
-        <Link href="https://www.tiktok.com/@pigeonhatcollective" target="_blank" className="text-black-600 text-3xl hover:text-black-800 mx-2">
-          <FaTiktok />
+        <Link href="https://www.instagram.com/pigeonhatcollective" target='_blank' className="text-black-600 text-3xl hover:text-black-800 mx-2">
+          <FaInstagram />
         </Link>
-
+        <Link href="https://www.facebook.com/pigeonhatcollective" target="_blank" className="text-3xl text-black-600 hover:text-black-800 mx-2">
+          <FaFacebook />
+        </Link>
             </div>
           </div>
         </div>

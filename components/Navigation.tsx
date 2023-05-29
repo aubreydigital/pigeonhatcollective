@@ -4,12 +4,27 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
 import Logo from './Logo'
+
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-const inLoggedIn = true
+  const [providers, setProviders] = useState<any>(null)
+  // const { data: session } = useSession();
+
+
+  const isLoggedIn = true
+
+  
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  useEffect(() => {
+    (async () => {
+      const res = await getProviders();
+      setProviders(res);
+    })();
+  }, []);
+
 
   return (
     <nav className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 w-full">
@@ -129,6 +144,12 @@ const inLoggedIn = true
             Merch
           </Link>
           <Link
+            href="/artists"
+            className="text-gray-300 hover:bg-transparent hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+          >
+            Artists
+          </Link>
+          <Link
             href="/about"
             className="text-gray-300 hover:bg-transparent hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
@@ -140,17 +161,11 @@ const inLoggedIn = true
           >
             Events
           </Link>
-          <Link
-            href="/contact"
-            className="text-gray-300 hover:bg-transparent hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
-            Contact
-          </Link>
         </div>
 
       </div>
       {/* Social links */}
-      <div className="hidden md:flex items-center justify-end pr-4 pb-5">
+      <div className="hidden md:flex items-center justify-end pr-6 pb-5">
       <Link href="https://tiktok.com/@pigeonhatcollective" target="_blank" className="text-white hover:text-gray-300 ml-4">
           <FaTiktok className="w-5 h-5" />
         </Link>

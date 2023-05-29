@@ -105,9 +105,9 @@ const HomePage: React.FC = () => {
     {/* Blog post cards */}
     <div className="relative bg-cover rounded bg-center bg-no-repeat" style={{ backgroundImage: "url('/assets/images/pigeon.jpg')" }}>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <h3 className="text-lg rounded font-semibold mb-2 bg-white bg-opacity-75 p-2">Blog Post 1</h3>
+        <h3 className="text-lg rounded font-semibold mb-2 bg-white bg-opacity-75 p-2">Success!</h3>
         <p className="bg-white rounded bg-opacity-75 p-2">Author: John Doe</p>
-        <p className="bg-white rounded my-2 bg-opacity-75 p-2">Date: 5th June 2023</p>
+        <p className="bg-white rounded my-2 bg-opacity-75 p-2">Date: 28th May 2023</p>
         <p className="bg-white rounded my-4 mx-10 bg-opacity-75 p-2 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore autem labore repellat deserunt maiores possimus veritatis aspernatur debitis, incidunt excepturi praesentium. Suscipit iure beatae incidunt ex omnis ea inventore nam?</p>
 
       </div>
@@ -128,17 +128,17 @@ const HomePage: React.FC = () => {
 
     <section className="mb-8 mx-auto text-center">
     <div className="flex text-center justify-center">
-        <Link href="https://twitter.com/pigeonhatc" className="text-black hover:text-gray-300 ml-4">
-          <FaTwitter className="w-10 h-10 lg:w-20 lg:h-20" />
+    <Link href="https://www.tiktok.com/@pigeonhatcollective" className="text-5xl text-black hover:text-gray-300 ml-4">
+          <FaTiktok />
         </Link>
-        <Link href="https://instagram.com/pigeonhatcollective" className="text-black hover:text-gray-300 ml-4">
-          <FaInstagram className="w-10 h-10 lg:w-20 lg:h-20" />
+        <Link href="https://twitter.com/pigeonhatc" className="text-black text-5xl hover:text-gray-300 ml-4">
+          <FaTwitter />
         </Link>
-        <Link href="https://facebook.com/pigeonhatcollective" className="text-black hover:text-gray-300 ml-4">
-          <FaFacebook className="w-10 h-10 lg:w-20 lg:h-20" />
+        <Link href="https://instagram.com/pigeonhatcollective" className="text-black text-5xl hover:text-gray-300 ml-4">
+          <FaInstagram />
         </Link>
-        <Link href="https://www.tiktok.com/@pigeonhatcollective" className="text-black hover:text-gray-300 ml-4">
-          <FaTiktok className="w-10 h-10 lg:w-20 lg:h-20" />
+        <Link href="https://facebook.com/pigeonhatcollective" className="text-black text-5xl hover:text-gray-300 ml-4">
+          <FaFacebook />
         </Link>
       </div>
 </section>
@@ -163,7 +163,7 @@ const HomePage: React.FC = () => {
     </div>
     <div className="bg-white p-4 rounded hidden md:block lg:block text-center shadow">
       <h3 className="text-lg font-semibold mb-2">
-        First Annual Pigeon Hat Collective Photoshoot w/ beats by Platonic Mixtape
+        First Annual Photoshoot
       </h3>
       <p>Date: 13th June 2022</p>
       <div className="video-wrapper">
@@ -178,9 +178,25 @@ const HomePage: React.FC = () => {
       </div>
     </div>
 
+    <div className="bg-white p-4 rounded hidden md:block lg:block text-center shadow">
+      <h3 className="text-lg font-semibold mb-2">
+        LIA Designs x Sunday Clothes
+      </h3>
+      <p>Date: 29th May 2018</p>
+      <div className="video-wrapper">
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/KOf5Re6_pHk"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        ></iframe>
+      </div>
     </div>
     <div className="text-center mt-3 mb-5">
     <Link href="https://www.youtube.com/@thepigeonhatcollective5379" target="_blank">More...</Link>
+    </div>
     </div>
   </section>
 
