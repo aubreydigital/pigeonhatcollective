@@ -2,18 +2,31 @@
 import { FaTwitter, FaInstagram, FaFacebook, FaTiktok } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
 import Logo from './Logo'
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [providers, setProviders] = useState<any>(null)
+  const [providers, setProviders] = useState<any>(null);
+  const [toggleDropdown, setToggleDropdown] = useState(true);
   // const { data: session } = useSession();
-
+const currentUser = {
+  id: 0,
+  name: 'aubrey'
+}
 
   const isLoggedIn = true
 
-  
+  const handleSignOut = async () => {
+    try {
+      await signOut(); // Call the signOut function from next-auth
+      // Additional logic after successful sign out
+    } catch (error) {
+      // Handle sign out error
+    }
+  };
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -129,6 +142,41 @@ const Navigation = () => {
               </svg>
             </button>
           </div>
+          {isLoggedIn ? (
+  <div className='flex hidden lg:block'>
+<div className="flex">
+  <Link href={`/users/${currentUser.id}`}>
+    <Image
+      src={'/assets/images/default.jpg'}
+      width={25}
+      height={25}
+      className='rounded-full'
+      alt='profile'
+    />
+  </Link>
+  <button className="pl-5" type='button' onClick={handleSignOut}>
+    Sign Out
+  </button>
+  </div>
+</div>
+) : (
+<>
+  {providers &&
+    Object.values(providers).map((provider) => (
+      console.log(provider)
+      // <button
+      //   type='button'
+      //   key={provider.name}
+      //   onClick={() => {
+      //     signIn(provider.id);
+      //   }}
+      //   className='black_btn'
+      // >
+      //   Sign in
+      // </button>
+    ))}
+</>
+)}
         </div>
       </div>
       {/* Mobile menu, show/hide based on menu state. */}
@@ -136,6 +184,55 @@ const Navigation = () => {
         className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}
         id="mobile-menu"
       >
+        {isLoggedIn ? (
+          <div className='block text-center justify-center md:hidden lg:hidden flex'>
+            <Link
+                  href={`/users/${currentUser.id}`}
+                  className='dropdown_link'
+                  onClick={() => console.log('lick em real good')}
+                >
+            <Image
+              src={'/assets/images/default.jpg'}
+              width={37}
+              height={37}
+              className='rounded-full'
+              alt='profile'
+              onClick={() => console.log('lick my nuts')}
+            /></Link>
+            {toggleDropdown && (
+              <div className="flex items-center h-10 ml-3">
+                <button
+                  type='button'
+                  onClick={() => {
+                    setToggleDropdown(false);
+                    signOut();
+                  }}
+                  className='m=0'
+                >
+                  Sign Out
+                </button>
+              </div>
+            )}
+          </div>
+        ) : (
+          <>
+            {providers &&
+              Object.values(providers).map((provider) => (
+                console.log('go fuck yourself')
+                // <button
+                //   type='button'
+                //   key={provider.name}
+                //   onClick={() => {
+                //     signIn(provider.id);
+                //   }}
+                //   className='black_btn'
+                // >
+                //   Sign in
+                // </button>
+              ))}
+          </>
+        )}
+
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <Link
             href="/merch"
@@ -162,8 +259,8 @@ const Navigation = () => {
             Events
           </Link>
         </div>
+</div>
 
-      </div>
       {/* Social links */}
       <div className="hidden md:flex items-center justify-end pr-6 pb-5">
       <Link href="https://tiktok.com/@pigeonhatcollective" target="_blank" className="text-white hover:text-gray-300 ml-4">

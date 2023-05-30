@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import Head from 'next/head';
+import head from 'next/head';
 interface AboutPageProps {
   companyName: string;
   description: string;
@@ -34,11 +34,11 @@ const AboutPage: React.FC<any> = ({ companyName, description }) => {
 
   return (
     <>
- <Head>
+ <head>
 <title>about | pigeon hat collective</title>
 <meta name="description" content={descr} />
 
-</Head>
+</head>
       <h1 className="text-4xl font-bold m-5 text-center">About</h1>
     <div className="flex mt-6 justify-center">
       <Image className="rounded-bl-lg rounded-tl-lg" placeholder="blur"
