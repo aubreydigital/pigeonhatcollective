@@ -10,8 +10,11 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { CarouselProps } from 'react-responsive-carousel';
 import EventCard from '../components/EventCard';
 import { FaTwitter, FaInstagram, FaFacebook, FaTiktok } from 'react-icons/fa';
-import { Kumar_One_Outline } from 'next/font/google';
-
+import { Kumar_One_Outline, Montserrat } from 'next/font/google';
+const monser = Montserrat({
+  subsets: ['latin'],
+  weight: ['100']
+})
 const kumar = Kumar_One_Outline({
   weight: ['400'],
   subsets: ['latin']
@@ -55,7 +58,7 @@ const HomePage: React.FC = () => {
       <div className="text-center">
         <div>
         
-        <section className="mb-5 my-4">
+        <section className="mb-7 my-4">
       {/* <h2 className="text-2xl font-bold mb-4 text-center">Upcoming Events</h2> */}
       {/* <div className="grid grid-cols-1 gap-4"> */}
       <div className="flex justify-center">
@@ -106,7 +109,9 @@ const HomePage: React.FC = () => {
     </div>
     </div>
     <section className="mb-8">
-  <h2 className={`text-2xl block text-center text-white font-bold mb-4 ${kumar.className}`}>News Feed</h2>
+  {/* <h2 className={`text-2xl block text-center text-white font-bold mb-5 py-2 ${monser.className}`} style={{background: 'rgba(255,140,255,0.5)'}}>News Feed</h2> */}
+  <h2 className={`text-2xl block text-center text-white font-bold mb-7 py-2 ${monser.className}`} style={{background: 'linear-gradient(to right, rgba(255, 140, 255, 0.5), rgba(255, 140, 255, 0))'}}>News Feed</h2>
+
   <div className="grid grid-cols-1 mx-auto max-w-2xl rounded gap-4" style={{ height: '400px' }}>
     {/* Blog post cards */}
     <div className="relative bg-cover rounded bg-center bg-no-repeat" style={{ backgroundImage: "url('/assets/images/pigeon.jpg')" }}>
@@ -134,23 +139,24 @@ const HomePage: React.FC = () => {
 
     <section className="mb-8 mx-auto text-center">
     <div className="flex text-center justify-center">
-    <Link href="https://www.tiktok.com/@pigeonhatcollective" className="text-5xl text-black hover:text-gray-300 ml-4">
+    <Link href="https://www.tiktok.com/@pigeonhatcollective" className="text-5xl text-white hover:text-gray-300 ml-4">
           <FaTiktok />
         </Link>
-        <Link href="https://twitter.com/pigeonhatc" className="text-black text-5xl hover:text-gray-300 ml-4">
+        <Link href="https://twitter.com/pigeonhatc" className="text-white text-5xl hover:text-gray-300 ml-4">
           <FaTwitter />
         </Link>
-        <Link href="https://instagram.com/pigeonhatcollective" className="text-black text-5xl hover:text-gray-300 ml-4">
+        <Link href="https://instagram.com/pigeonhatcollective" className="text-white text-5xl hover:text-gray-300 ml-4">
           <FaInstagram />
         </Link>
-        <Link href="https://facebook.com/pigeonhatcollective" className="text-black text-5xl hover:text-gray-300 ml-4">
+        <Link href="https://facebook.com/pigeonhatcollective" className="text-white text-5xl hover:text-gray-300 ml-4">
           <FaFacebook />
         </Link>
       </div>
 </section>
 
 <section>
-  <h2 className="text-center text-2xl font-bold mb-4">Featured Videos</h2>
+  {/* <h2 className="text-center text-2xl font-bold mb-4">Featured Videos</h2> */}
+  <h2 className={`text-2xl block text-center text-white font-bold mb-8 mt-1 py-2 ${monser.className}`} style={{background: 'linear-gradient(to right, rgba(255, 140, 255, 0.5), rgba(255, 140, 255, 0))'}}>Featured Videos</h2>
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     {/* Video cards */}
     <div className="bg-white p-4 rounded shadow text-center">

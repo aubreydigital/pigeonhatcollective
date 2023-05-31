@@ -5,6 +5,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
 import Logo from './Logo'
+import { Montserrat } from 'next/font/google';
+
+const monser = Montserrat({
+  subsets: ['latin'],
+  weight: ['700']
+})
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,7 +21,6 @@ const currentUser = {
   id: 0,
   name: 'aubrey'
 }
-
   const isLoggedIn = true
 
   const handleSignOut = async () => {
@@ -154,7 +159,7 @@ const currentUser = {
       alt='profile'
     />
   </Link>
-  <button className="pl-5" type='button' onClick={handleSignOut}>
+  <button className={`ml-2 text-xs font-sans text-white font-semibold`} type='button' onClick={handleSignOut}>
     Sign Out
   </button>
   </div>
@@ -218,7 +223,7 @@ const currentUser = {
           <>
             {providers &&
               Object.values(providers).map((provider) => (
-                console.log('go fuck yourself')
+                console.log('idk')
                 // <button
                 //   type='button'
                 //   key={provider.name}

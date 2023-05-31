@@ -39,7 +39,7 @@ const AboutPage: React.FC<any> = ({ companyName, description }) => {
 <meta name="description" content={descr} />
 
 </head>
-      <h1 className="text-4xl font-bold m-5 text-center">About</h1>
+      <h1 className="text-4xl font-bold m-5 text-white text-center">About</h1>
     <div className="flex mt-6 justify-center">
       <Image className="rounded-bl-lg rounded-tl-lg" placeholder="blur"
               blurDataURL='/assets/images/bonfire.jpg' src='/assets/images/bonfire.jpg' width={windowWidth > 600 ? 300 : 150} height={windowWidth > 600 ? 300 : 150} alt="bonfire pigeon hat collective"/>
@@ -49,12 +49,12 @@ const AboutPage: React.FC<any> = ({ companyName, description }) => {
     <div className="grid grid-cols-2">
     
     <div className="col-span-2 text-center py-8 leading-loose">
-      <p className="text-lg mx-10 mb-7 text-gray-600">{phc.desc1}</p>
+      <p className="text-lg mx-10 mb-7 text-gray-100">{phc.desc1}</p>
       <div className="flex justify-center">
      <Image className="rounded" placeholder="blur"
               blurDataURL='/assets/images/recording2.jpg' src='/assets/images/recording2.jpg' width={500} height={300} alt="pigeon hat collective"/>
 </div>
-<p className="text-lg mx-10 my-7 text-gray-600">{phc.desc2}</p>
+<p className="text-lg mx-10 my-7 text-gray-100">{phc.desc2}</p>
 
     </div></div></>
   );

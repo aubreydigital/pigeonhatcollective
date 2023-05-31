@@ -30,9 +30,12 @@ const Footer: React.FC = () => {
       
       <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-center footer-content">
       {/* <h1 style={{ fontFamily: 'Press Start 2P' }} className="pt-7 text-white sm:text-base lg:xl text-white">pigeon hat collective</h1> */}
-      <div className="pt-10 text-white">
-      <Logo />
-      </div>
+      <div className="flex-shrink-0 pt-10 text-center">
+              <Link href="/" className="text-white text-sm font-semibold">
+                {/* <h1 className="text-white text-xs font-semibold pr-4 inter.className">pigeon hat collective</h1> */}
+                <Logo />
+              </Link>
+            </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8">
           {/* Latest Event */}
           {/* <div className="hidden lg:block">
@@ -45,9 +48,12 @@ const Footer: React.FC = () => {
           <div className="hidden lg:block p-2 rounded">
           <h2 className="hidden lg:block text-2xl italic mb-4" style={{ marginTop: '-10px' }}>{latestEvent.title}</h2>
 
-        <h3 className="text-lg font-semibold mb-2">Their Home Too Festival II</h3>
-        <p>Date: 27th May 2023</p>
-        <p>Location: Starboard Tack - Las Vegas, NV</p>
+        <h3 className="text-lg font-semibold mb-2">Pigeon Hat Collective x Black Sheep Booking Presents...</h3>
+        <h4 className="text-md mb-2">The Patterns | Yard Art | Sticker</h4>
+        <p>24th June 2023</p>
+        <p>7-9:30pm</p>
+        <h5>The Griffin</h5>
+        <p>511 E. Fremont</p>
         {/* <button className="p-2 bg-white mt-5 rounded shadow" type="button">Buy Tickets</button> */}
           </div>
           {/* Latest Blog Post */}

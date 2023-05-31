@@ -74,16 +74,16 @@ export default function MerchItemPage({ params }: { params: { merchId: number } 
               blurDataURL={image} alt={title} width={300} height={300} />
             </div>
           </div>
-          <div className="w-1/2 p-4">
+          <div className="w-1/2 p-4 pb-14">
             <h2 className="text-xl font-bold mb-2">{title}</h2>
             <p className="text-gray-600 mb-2">Price: {price}</p>
             <p className="text-gray-800 py-5 lg:px-10 text-xs lg:text-base leading-loose">{description}</p>
-            <button
+            {/* <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
               onClick={handleAddToCart}
             >
               Add to Cart
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@ import { CardElement, Elements, useStripe, useElements } from '@stripe/react-str
 import { loadStripe } from '@stripe/stripe-js'
 import { useState } from 'react';
 const stripePromise = loadStripe(process.env.PUBLIC_KEY as string);
-
+console.log(stripePromise)
 const PaymentForm: React.FC = () => {
   const stripe = useStripe();
   const elements = useElements();

@@ -48,7 +48,7 @@ const ArtistPage: React.FC = () => {
 
   return (
     <div className="container mx-auto py-8">
-      <h1 className="text-2xl text-center font-bold mb-4">Artists</h1>
+      <h1 className="text-2xl text-center text-white font-bold mb-4">Artists</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {artists.map((item) => (
           <div key={item.id} className="bg-white p-4 rounded shadow">
