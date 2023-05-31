@@ -189,15 +189,15 @@ const currentUser = {
             <Link
                   href={`/users/${currentUser.id}`}
                   className='dropdown_link'
-                  onClick={() => console.log('lick em real good')}
+                  onClick={() => console.log('loggin the console')}
                 >
             <Image
               src={'/assets/images/default.jpg'}
-              width={37}
-              height={37}
-              className='rounded-full'
+              width={30}
+              height={30}
+              className='rounded-full mt-1'
               alt='profile'
-              onClick={() => console.log('lick my nuts')}
+              onClick={() => console.log('once again')}
             /></Link>
             {toggleDropdown && (
               <div className="flex items-center h-10 ml-3">
@@ -207,7 +207,7 @@ const currentUser = {
                     setToggleDropdown(false);
                     signOut();
                   }}
-                  className='m=0'
+                  className='m-0 text-xs font-sans text-white font-semibold'
                 >
                   Sign Out
                 </button>

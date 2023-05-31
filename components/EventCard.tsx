@@ -8,7 +8,7 @@ const EventCard = (windowWidth: any, key: number) => {
   return (
     <div className={`${styles['event-card']}`} key={key} style={{height: '60vh'}}>
       <Image
-        src="/assets/images/events/052723.JPG"
+        src="/assets/images/events/062423.JPG"
         alt="Event Image"
         width='1024'
         height='1408'

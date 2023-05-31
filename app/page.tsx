@@ -10,8 +10,12 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { CarouselProps } from 'react-responsive-carousel';
 import EventCard from '../components/EventCard';
 import { FaTwitter, FaInstagram, FaFacebook, FaTiktok } from 'react-icons/fa';
-import YouTube from 'react-youtube';
+import { Kumar_One_Outline } from 'next/font/google';
 
+const kumar = Kumar_One_Outline({
+  weight: ['400'],
+  subsets: ['latin']
+}) 
 const HomePage: React.FC = () => {
   const [showContent, setShowContent] = useState(false);
   const [windowWidth, setWindowWidth] = useState<number>(0);
@@ -48,15 +52,17 @@ const HomePage: React.FC = () => {
         alt="Splash"
         className={styles['splash-image']}
       /> */}
-      <div className="text-center py-8">
+      <div className="text-center">
         <div>
         
-        <section className="mb-8 my-4">
-      <h2 className="text-2xl font-bold mb-4 text-center">Upcoming Events</h2>
-      <div className="grid grid-cols-1 gap-4">
+        <section className="mb-5 my-4">
+      {/* <h2 className="text-2xl font-bold mb-4 text-center">Upcoming Events</h2> */}
+      {/* <div className="grid grid-cols-1 gap-4"> */}
+      <div className="flex justify-center">
+        <Image src="/assets/images/events/062423.JPG" alt="patterns yard art sticker black sheep booking pigeon hat collective the griffin las vegas fremont rock and rock concert" width={650} height={850} />
         {/* Event carousel */}
-        <Carousel
-  showArrows={true}
+        {/* <Carousel */}
+  {/* showArrows={true}
   showThumbs={false}
   showStatus={false}
   infiniteLoop={true}
@@ -64,7 +70,7 @@ const HomePage: React.FC = () => {
   centerSlidePercentage={centerSlidePercentage}
   autoPlay={true} // Enable auto-play
   interval={2500} // Set interval duration (in milliseconds)
->
+> */}
   {/* Event cards */}
   {[
     // <div className={styles['event-card']} key={1}>
@@ -80,19 +86,19 @@ const HomePage: React.FC = () => {
     //   </div>
 
     // // </div>
-    <EventCard key='1' windowWidth={windowWidth} />,
-    <EventCard key='2' windowWidth={windowWidth} />,
-    <EventCard key='3' windowWidth={windowWidth} />,
-    <EventCard key='4' windowWidth={windowWidth} />,
-    <EventCard key='5' windowWidth={windowWidth} />,
-    <EventCard key='6' windowWidth={windowWidth} />,
-    <EventCard key='7' windowWidth={windowWidth} />,
-    <EventCard key='8' windowWidth={windowWidth} />,
-    <EventCard key='9' windowWidth={windowWidth} />,
+    // <EventCard key='1' windowWidth={windowWidth} />,
+    // <EventCard key='2' windowWidth={windowWidth} />,
+    // <EventCard key='3' windowWidth={windowWidth} />,
+    // <EventCard key='4' windowWidth={windowWidth} />,
+    // <EventCard key='5' windowWidth={windowWidth} />,
+    // <EventCard key='6' windowWidth={windowWidth} />,
+    // <EventCard key='7' windowWidth={windowWidth} />,
+    // <EventCard key='8' windowWidth={windowWidth} />,
+    // <EventCard key='9' windowWidth={windowWidth} />,
 
     // Add more event cards here
   ]}
-</Carousel>
+{/* </Carousel> */}
       </div>
     </section>
 
@@ -100,14 +106,14 @@ const HomePage: React.FC = () => {
     </div>
     </div>
     <section className="mb-8">
-  <h2 className="text-2xl text-center font-bold mb-4">News Feed</h2>
+  <h2 className={`text-2xl block text-center text-white font-bold mb-4 ${kumar.className}`}>News Feed</h2>
   <div className="grid grid-cols-1 mx-auto max-w-2xl rounded gap-4" style={{ height: '400px' }}>
     {/* Blog post cards */}
     <div className="relative bg-cover rounded bg-center bg-no-repeat" style={{ backgroundImage: "url('/assets/images/pigeon.jpg')" }}>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <h3 className="text-lg rounded font-semibold mb-2 bg-white bg-opacity-75 p-2">Success!</h3>
-        <p className="bg-white rounded bg-opacity-75 p-2">Author: John Doe</p>
-        <p className="bg-white rounded my-2 bg-opacity-75 p-2">Date: 28th May 2023</p>
+        <p className="bg-white rounded bg-opacity-75 p-2">Author: aubrey</p>
+        <p className="bg-white rounded my-2 bg-opacity-75 p-2">Date: 30th May 2023</p>
         <p className="bg-white rounded my-4 mx-10 bg-opacity-75 p-2 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore autem labore repellat deserunt maiores possimus veritatis aspernatur debitis, incidunt excepturi praesentium. Suscipit iure beatae incidunt ex omnis ea inventore nam?</p>
 
       </div>
@@ -161,7 +167,7 @@ const HomePage: React.FC = () => {
         ></iframe>
       </div>
     </div>
-    <div className="bg-white p-4 rounded hidden md:block lg:block text-center shadow">
+    <div className="bg-white p-4 rounded text-center shadow">
       <h3 className="text-lg font-semibold mb-2">
         First Annual Photoshoot
       </h3>
@@ -178,7 +184,7 @@ const HomePage: React.FC = () => {
       </div>
     </div>
 
-    <div className="bg-white p-4 rounded hidden md:block lg:block text-center shadow">
+    <div className="bg-white p-4 rounded text-center shadow">
       <h3 className="text-lg font-semibold mb-2">
         LIA Designs x Sunday Clothes
       </h3>

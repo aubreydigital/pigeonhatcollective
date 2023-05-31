@@ -9,11 +9,12 @@ const EventsPage: React.FC = () => {
   const events = [
     {
       id: 1,
-      title: 'Their Home Too Festival',
+      heading: 'Pigeon Hat Collective x Black Sheep Booking Present',
+      bands: ['The Patterns', 'Yard Art', 'Sticker'],
       type: 'Concert',
       date: 'May 27, 2023',
       location: 'Las Vegas, Nevada',
-      flyer: 'assets/images/events/052723.JPG',
+      flyer: 'assets/images/events/062423.JPG',
     },
     // {
     //   id: 2,
@@ -37,7 +38,13 @@ const EventsPage: React.FC = () => {
                 style={{ backgroundImage: `url(${event.flyer})` }}
               >
                 <div className="rounded flex" style={{width:'7rem', height: '11rem'}} />
-                <h3 className="text-lg bg-black p-3 inline-block rounded text-shadow font-semibold mb-2">{event.title}</h3><br />
+                <h3 className="text-lg bg-black p-3 inline-block rounded text-shadow font-semibold mb-2">{event.heading}</h3><br />
+                <h4 className="text-lg bg-black p-3 inline-block rounded text-shadow font-semibold mb-2">
+                {event.bands.map((band) => {
+                  return (
+    <span className="mx-3" key={band}>{band} </span>
+  )})}
+                  </h4><br />
                 {/* <p className="text-shadow bg-black p-3 inline-block rounded">Type: {event.type}</p><br/> */}
                 <p className="text-shadow bg-black p-3 inline-block rounded">Date: {event.date}</p><br />
                 <p className="text-shadow bg-black p-3 inline-block rounded">Location: {event.location}</p>
