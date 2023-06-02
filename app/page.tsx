@@ -58,7 +58,7 @@ const HomePage: React.FC = () => {
       dayof: 15,
       image: '/assets/images/events/061423.jpeg',
       title: 'Starry Nights',
-      date: '2023-06-02',
+      date: '2023-06-14',
       tickets: 'https://phc.ticketbud.com/starrynights'
     },
     {
