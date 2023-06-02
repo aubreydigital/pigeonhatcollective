@@ -3,12 +3,12 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import styles from '../styles/HomePage.module.css';
 
-const EventCard = (windowWidth: any, key: number) => {
+const EventCard = (windowWidth: any, key: number, image: string) => {
 
   return (
-    <div className={`${styles['event-card']}`} key={key} style={{height: '60vh'}}>
+    <div className={`${styles['event-card']}`} key={key} >
       <Image
-        src="/assets/images/events/062423.JPG"
+        src={image}
         alt="Event Image"
         width='1024'
         height='1408'

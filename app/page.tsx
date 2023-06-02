@@ -9,8 +9,9 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { CarouselProps } from 'react-responsive-carousel';
 import EventCard from '../components/EventCard';
-import { FaTwitter, FaInstagram, FaFacebook, FaTiktok } from 'react-icons/fa';
+import { FaTwitter, FaInstagram, FaFacebook, FaTiktok, FaEnvelope } from 'react-icons/fa';
 import { Kumar_One_Outline, Montserrat } from 'next/font/google';
+import EventCarousel from '@/components/EventCarousel';
 const monser = Montserrat({
   subsets: ['latin'],
   weight: ['100']
@@ -19,26 +20,68 @@ const kumar = Kumar_One_Outline({
   weight: ['400'],
   subsets: ['latin']
 }) 
+
 const HomePage: React.FC = () => {
   const [showContent, setShowContent] = useState(false);
   const [windowWidth, setWindowWidth] = useState<number>(0);
+  const [events, setEvents] = useState<any[]>([]);
 
-  useEffect(() => {
-    
+  const filterPastEvents = () => {
+    const currentDate = new Date();
+    const filteredEvents = events.filter((event) => {
+      // Parse the event date and compare with the current date
+      const eventDate = new Date(event.date);
+      return eventDate >= currentDate;
+    });
+    setEvents(filteredEvents);
+  };
+
+  const upcomingEvents = [
+    {
+      id: 0,
+      artists: ['HRZN','Switterbeet', 'White Noise', 'worseforwear'],
+      venue: 'Backstage Bar and Billiards',
+      address: '801 E. Fremont St.',
+      cost: 12,
+      dayof: 12,
+      image: '/assets/images/events/060223.PNG',
+      date: '2023-06-02',
+      title: 'HRZN with Special Guests',
+      tickets: 'https://dice.fm/partner/backstage-sports-bar--billiards/event/6nbl2-hrzn-with-special-guests-2nd-jun-backstage-bar-billiards-las-vegas-tickets?dice_id=1007421&dice_channel=web&dice_tags=organic&dice_campaign=Backstage+Sports+Bar+%26+Billiards&dice_feature=marketing&_branch_match_id=992086540279278872&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXz8nMy9ZLyUxO1UvL1Y9MTDEySUtOM080SQYACyOemSEAAAA%3D'
+    },
+    {
+      id: 1,
+      artists: ['Sunbeam Colleen', 'Sonia Barcelona', 'Switterbeet', 'Pudgel'],
+      venue: 'Horse Trailer Hideout',
+      address: '1506 S. Main St.',
+      cost: 10,
+      dayof: 15,
+      image: '/assets/images/events/061423.jpeg',
+      title: 'Starry Nights',
+      date: '2023-06-02',
+      tickets: 'https://phc.ticketbud.com/starrynights'
+    },
+    {
+      id: 2,
+      artists: ['The Patterns', 'Yard Art', 'Sticker'],
+      venue: 'The Griffin',
+      address: '511 East Fremont',
+      cost: 0,
+      dayof: 0,
+      date: '2023-06-24',
+      image: '/assets/images/events/062423.JPG',
+      title: 'Black Sheep x PHC',
+      tickets: null
+    },
+  ]
+
+  useEffect(() => {  
     setShowContent(true);
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
 
-    handleResize(); // Get initial window width
-    window.addEventListener('resize', handleResize); // Update window width on resize
-
-    return () => {
-      window.removeEventListener('resize', handleResize); // Clean up listener on component unmount
-    };
+    setEvents(upcomingEvents);
+      filterPastEvents();
   }, []);
 
-  const centerSlidePercentage = windowWidth >= 700 ? 33.33 : 100;
 
   
   return (
@@ -62,46 +105,9 @@ const HomePage: React.FC = () => {
       {/* <h2 className="text-2xl font-bold mb-4 text-center">Upcoming Events</h2> */}
       {/* <div className="grid grid-cols-1 gap-4"> */}
       <div className="flex justify-center">
-        <Image src="/assets/images/events/062423.JPG" alt="patterns yard art sticker black sheep booking pigeon hat collective the griffin las vegas fremont rock and rock concert" width={650} height={850} />
-        {/* Event carousel */}
-        {/* <Carousel */}
-  {/* showArrows={true}
-  showThumbs={false}
-  showStatus={false}
-  infiniteLoop={true}
-  centerMode={true}
-  centerSlidePercentage={centerSlidePercentage}
-  autoPlay={true} // Enable auto-play
-  interval={2500} // Set interval duration (in milliseconds)
-> */}
-  {/* Event cards */}
-  {[
-    // <div className={styles['event-card']} key={1}>
-    //   <img
-    //     src="/images/events/060123.jpg"
-    //     alt="Event Image"
-    //     className={`absolute inset-0 w-full h-full ${styles['event-image']}`}
-    //   />
-    //   <div className="bg-white p-4 rounded shadow h-full">
-    //     <h3 className="text-lg font-semibold mb-2">Event 1</h3>
-    //     <p>Date: 20th June 2023</p>
-    //     <p>Location: City, Country</p>
-    //   </div>
-
-    // // </div>
-    // <EventCard key='1' windowWidth={windowWidth} />,
-    // <EventCard key='2' windowWidth={windowWidth} />,
-    // <EventCard key='3' windowWidth={windowWidth} />,
-    // <EventCard key='4' windowWidth={windowWidth} />,
-    // <EventCard key='5' windowWidth={windowWidth} />,
-    // <EventCard key='6' windowWidth={windowWidth} />,
-    // <EventCard key='7' windowWidth={windowWidth} />,
-    // <EventCard key='8' windowWidth={windowWidth} />,
-    // <EventCard key='9' windowWidth={windowWidth} />,
-
-    // Add more event cards here
-  ]}
-{/* </Carousel> */}
+        {/* <Image src="/assets/images/events/062423.JPG" alt="patterns yard art sticker black sheep booking pigeon hat collective the griffin las vegas fremont rock and rock concert" width={650} height={850} /> */}
+      
+      <EventCarousel events={upcomingEvents} />
       </div>
     </section>
 
@@ -116,10 +122,17 @@ const HomePage: React.FC = () => {
     {/* Blog post cards */}
     <div className="relative bg-cover rounded bg-center bg-no-repeat" style={{ backgroundImage: "url('/assets/images/pigeon.jpg')" }}>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <h3 className="text-lg rounded font-semibold mb-2 bg-white bg-opacity-75 p-2">Success!</h3>
-        <p className="bg-white rounded bg-opacity-75 p-2">Author: aubrey</p>
-        <p className="bg-white rounded my-2 bg-opacity-75 p-2">Date: 30th May 2023</p>
-        <p className="bg-white rounded my-4 mx-10 bg-opacity-75 p-2 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore autem labore repellat deserunt maiores possimus veritatis aspernatur debitis, incidunt excepturi praesentium. Suscipit iure beatae incidunt ex omnis ea inventore nam?</p>
+        <h3 className="text-mg rounded font-semibold mb-2 bg-white bg-opacity-75 p-2">coo coo kuh choo</h3>
+        <p className="bg-white text-sm rounded bg-opacity-75 p-2">Author: chatgpt</p>
+        <p className="bg-white rounded text-sm my-2 bg-opacity-75 p-2">Date: 30th May 2023</p>
+        <p className="bg-white rounded my-4 mx-10 bg-opacity-75 p-2 text-center text-xs">📢 Welcome to the Pigeon Hat Collective! Happy Pride Month 🎉
+Explore art, creativity, and imagination. Join our vibrant community, connect with fellow enthusiasts, and let the collective spirit of the Pigeon Hat guide you!  🐦🎩✨ Welcome to the Pigeon Hat Collective! 
+<Link className="pl-1 text-base font-bold no-underline transition-colors duration-300 text-purple-800 hover:text-purple-700 hover:shadow-md" href="/about">Learn more</Link>...</p>
+
+
+
+
+
 
       </div>
     </div>
@@ -139,6 +152,9 @@ const HomePage: React.FC = () => {
 
     <section className="mb-8 mx-auto text-center">
     <div className="flex text-center justify-center">
+    <Link href="mailto:thepigeonhatcollective@gmail.com" className="text-5xl text-white hover:text-gray-300 ml-4">
+          <FaEnvelope />
+        </Link>
     <Link href="https://www.tiktok.com/@pigeonhatcollective" className="text-5xl text-white hover:text-gray-300 ml-4">
           <FaTiktok />
         </Link>

@@ -1,14 +1,14 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
-import { FaInstagram, FaFacebook, FaTwitter, FaTiktok } from 'react-icons/fa';
+import { FaInstagram, FaFacebook, FaTwitter, FaTiktok, FaEnvelope } from 'react-icons/fa';
 import EventCard from './EventCard';
 import Logo from './Logo';
 
 const Footer: React.FC = () => {
   // Example event data
   const latestEvent = {
-    title: 'Latest Event',
+    title: 'Next Event',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae condimentum velit.',
     link: '/events/latest',
   };
@@ -24,11 +24,53 @@ const Footer: React.FC = () => {
     phone: '+1 123-456-7890',
     email: 'info@example.com',
   };
-
+  const upcomingEvents = [
+    {
+      id: 0,
+      artists: ['HRZN','Switterbeet', 'White Noise', 'worseforwear'],
+      venue: 'Backstage Bar and Billiards',
+      address: '801 E. Fremont St.',
+      cost: 12,
+      dayof: 12,
+      image: '/assets/images/events/060223.PNG',
+      date: '2023-06-02',
+      title: 'HRZN with Special Guests',
+      tickets: 'https://dice.fm/partner/backstage-sports-bar--billiards/event/6nbl2-hrzn-with-special-guests-2nd-jun-backstage-bar-billiards-las-vegas-tickets?dice_id=1007421&dice_channel=web&dice_tags=organic&dice_campaign=Backstage+Sports+Bar+%26+Billiards&dice_feature=marketing&_branch_match_id=992086540279278872&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXz8nMy9ZLyUxO1UvL1Y9MTDEySUtOM080SQYACyOemSEAAAA%3D'
+    },
+    {
+      id: 1,
+      artists: ['Sunbeam Colleen', 'Sonia Barcelona', 'Switterbeet', 'Pudgel'],
+      venue: 'Horse Trailer Hideout',
+      address: '1506 S. Main St.',
+      cost: 10,
+      dayof: 15,
+      image: '/assets/images/events/061423.jpeg',
+      title: 'Starry Nights',
+      date: '2023-06-02',
+      tickets: 'https://phc.ticketbud.com/starrynights'
+    },
+    {
+      id: 2,
+      artists: ['The Patterns', 'Yard Art', 'Sticker'],
+      venue: 'The Griffin',
+      address: '511 East Fremont',
+      cost: 0,
+      dayof: 0,
+      date: '2023-06-24',
+      image: '/assets/images/events/062423.JPG',
+      title: 'Black Sheep x PHC',
+      tickets: null
+    },
+  ]
+  const {title, artists, venue, address, cost, dayof, image, date, tickets} = upcomingEvents[0]
+  const dateString = new Date(date);
+  const formattedDate = dateString.toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric' });
+  
+  
   return (
     <footer className="footer mt-10">
       
-      <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-center footer-content">
+      <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mt-10 text-center footer-content">
       {/* <h1 style={{ fontFamily: 'Press Start 2P' }} className="pt-7 text-white sm:text-base lg:xl text-white">pigeon hat collective</h1> */}
       <div className="flex-shrink-0 pt-10 text-center">
               <Link href="/" className="text-white text-sm font-semibold">
@@ -48,28 +90,29 @@ const Footer: React.FC = () => {
           <div className="hidden lg:block p-2 rounded">
           <h2 className="hidden lg:block text-2xl italic mb-4" style={{ marginTop: '-10px' }}>{latestEvent.title}</h2>
 
-        <h3 className="text-lg font-semibold mb-2">Pigeon Hat Collective x Black Sheep Booking Presents...</h3>
-        <h4 className="text-md mb-2">The Patterns | Yard Art | Sticker</h4>
-        <p>24th June 2023</p>
-        <p>7-9:30pm</p>
-        <h5>The Griffin</h5>
-        <p>511 E. Fremont</p>
+        <h3 className="text-lg font-semibold mb-2">{title}</h3>
+        <h4 className="text-md mb-2">{artists.join(' | ')}</h4>
+        <p>{formattedDate}</p>
+        <h5>{venue}</h5>
+        <p>{address}</p>
         {/* <button className="p-2 bg-white mt-5 rounded shadow" type="button">Buy Tickets</button> */}
           </div>
           {/* Latest Blog Post */}
           <div className="hidden lg:block">
           <h2 className="hidden lg:block text-2xl italic mb-4">{latestBlogPost.title}</h2>
             {/* <h2 className="text-2xl italic">{latestBlogPost.title}</h2> */}
-            <p className="text-gray-400">{latestBlogPost.content.substring(0, 200)}...</p>
-            <Link href="/blog" legacyBehavior>
-              <a className="text-purple-600 hover:text-purple-800">Read more</a>
-            </Link>
+           <p> 📢 Welcome to the Pigeon Hat Collective! Happy Pride Month 🎉
+Explore art, creativity, and imagination. Join our vibrant community, connect with fellow enthusiasts, and let the collective spirit of the Pigeon Hat guide you!  🐦🎩✨ Welcome to the Pigeon Hat Collective! 
+<Link className="pl-1 text-base font-bold no-underline transition-colors duration-300 text-purple-800 hover:text-purple-700 hover:shadow-md" href="/about">Learn more</Link>...</p>
           </div>
 
           {/* Contact Info and Social Links */}
           <div className="text-center">
           <h2 className="hidden lg:block text-2xl italic mb-4">Contact</h2>
           <div className="mt-4 flex justify-center items-center mx-auto text-center">
+          <Link href="mailto:thepigeonhatcollective@gmail.com" target="_blank" className="text-black-600 text-2xl hover:text-black-800 mx-2">
+          <FaEnvelope />
+        </Link>
           <Link href="https://www.tiktok.com/@pigeonhatcollective" target="_blank" className="text-black-600 text-2xl hover:text-black-800 mx-2">
           <FaTiktok />
         </Link>

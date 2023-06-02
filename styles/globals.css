@@ -55,6 +55,29 @@ body {
   animation: spin 2s infinite ease-in-out;
 }
 
+.event-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-carousel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px; /* Adjust the height to match your image height */
+}
+
+.carousel .slider-wrapper .slider .control-dots {
+  display: none;
+}
+
 @keyframes rotate {
   100% {
     transform: rotate(360deg);

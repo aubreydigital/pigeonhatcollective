@@ -18,11 +18,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Provider>
         <div className="text-center justify-center flex">
         <Navigation />
         </div>
         {children}
-        <Footer /></body>
+        <Footer />
+        </Provider>
+        </body>
     </html>
   )
 }

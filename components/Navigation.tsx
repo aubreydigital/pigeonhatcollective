@@ -1,5 +1,5 @@
 'use client';
-import { FaTwitter, FaInstagram, FaFacebook, FaTiktok } from 'react-icons/fa';
+import { FaTwitter, FaInstagram, FaFacebook, FaTiktok, FaEnvelope } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -21,7 +21,7 @@ const currentUser = {
   id: 0,
   name: 'aubrey'
 }
-  const isLoggedIn = true
+  const isLoggedIn = false
 
   const handleSignOut = async () => {
     try {
@@ -46,7 +46,8 @@ const currentUser = {
 
   return (
     <nav className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 w-full">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> experience removing 7xl */}
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center justify-center">
             <div className="flex-shrink-0 text-center">
@@ -268,6 +269,9 @@ const currentUser = {
 
       {/* Social links */}
       <div className="hidden md:flex items-center justify-end pr-6 pb-5">
+      <Link href="mailto:thepigeonhatcollective@gmail.com" target="_blank" className="text-white hover:text-gray-300 ml-4">
+          <FaEnvelope className="w-5 h-5" />
+        </Link>
       <Link href="https://tiktok.com/@pigeonhatcollective" target="_blank" className="text-white hover:text-gray-300 ml-4">
           <FaTiktok className="w-5 h-5" />
         </Link>
