@@ -27,18 +27,6 @@ const Footer: React.FC = () => {
   const upcomingEvents = [
     {
       id: 0,
-      artists: ['HRZN','Switterbeet', 'White Noise', 'worseforwear'],
-      venue: 'Backstage Bar and Billiards',
-      address: '801 E. Fremont St.',
-      cost: 12,
-      dayof: 12,
-      image: '/assets/images/events/060223.PNG',
-      date: '2023-06-02',
-      title: 'HRZN with Special Guests',
-      tickets: 'https://dice.fm/partner/backstage-sports-bar--billiards/event/6nbl2-hrzn-with-special-guests-2nd-jun-backstage-bar-billiards-las-vegas-tickets?dice_id=1007421&dice_channel=web&dice_tags=organic&dice_campaign=Backstage+Sports+Bar+%26+Billiards&dice_feature=marketing&_branch_match_id=992086540279278872&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXz8nMy9ZLyUxO1UvL1Y9MTDEySUtOM080SQYACyOemSEAAAA%3D'
-    },
-    {
-      id: 1,
       artists: ['Sunbeam Colleen', 'Sonia Barcelona', 'Switterbeet', 'Pudgel'],
       venue: 'Horse Trailer Hideout',
       address: '1506 S. Main St.',
@@ -46,7 +34,7 @@ const Footer: React.FC = () => {
       dayof: 15,
       image: '/assets/images/events/061423.jpeg',
       title: 'Starry Nights',
-      date: '2023-06-02',
+      date: '2023-06-14',
       tickets: 'https://phc.ticketbud.com/starrynights'
     },
     {
@@ -64,7 +52,7 @@ const Footer: React.FC = () => {
   ]
   const {title, artists, venue, address, cost, dayof, image, date, tickets} = upcomingEvents[0]
   const dateString = new Date(date);
-  const formattedDate = dateString.toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric' });
+  const formattedDate = dateString.toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric', timeZone: 'UTC' });
   
   
   return (

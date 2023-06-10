@@ -52,8 +52,9 @@ const EventCarousel = ({ events }: EventCarouselProps) => {
       autoPlay={true}
       interval={2500}
       className="event-carousel"
+
     >
-      {events.map((event) => {
+      {events && events.map((event) => {
         return (
           <div key={event.id} className="event-carousel-item">
             <div className="image-container">
