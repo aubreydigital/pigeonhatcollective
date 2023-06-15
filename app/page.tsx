@@ -38,18 +38,6 @@ const HomePage: React.FC = () => {
 
   const upcomingEvents = [
     {
-      id: 1,
-      artists: ['Sunbeam Colleen', 'Sonia Barcelona', 'Switterbeet', 'Pudgel'],
-      venue: 'Horse Trailer Hideout',
-      address: '1506 S. Main St.',
-      cost: 10,
-      dayof: 15,
-      image: '/assets/images/events/061423.jpeg',
-      title: 'Starry Nights',
-      date: '2023-06-14',
-      tickets: 'https://phc.ticketbud.com/starrynights'
-    },
-    {
       id: 2,
       artists: ['The Patterns', 'Yard Art', 'Sticker'],
       venue: 'The Griffin',
@@ -60,18 +48,6 @@ const HomePage: React.FC = () => {
       image: '/assets/images/events/062423.JPG',
       title: 'Black Sheep x PHC',
       tickets: null
-    },
-    {
-      id: 3,
-      artists: ['Sunbeam Colleen', 'Sonia Barcelona', 'Switterbeet', 'Pudgel'],
-      venue: 'Horse Trailer Hideout',
-      address: '1506 S. Main St.',
-      cost: 10,
-      dayof: 15,
-      image: '/assets/images/events/061423.jpeg',
-      title: 'Starry Nights',
-      date: '2023-06-14',
-      tickets: 'https://phc.ticketbud.com/starrynights'
     },
     {
       id: 4,
@@ -85,6 +61,30 @@ const HomePage: React.FC = () => {
       title: 'Black Sheep x PHC',
       tickets: null
     },
+    {
+      id: 1,
+      artists: ['The Patterns', 'Yard Art', 'Sticker'],
+      venue: 'The Griffin',
+      address: '511 East Fremont',
+      cost: 0,
+      dayof: 0,
+      date: '2023-06-24',
+      image: '/assets/images/events/062423.JPG',
+      title: 'Black Sheep x PHC',
+      tickets: null
+    },
+    {
+      id: 1,
+      artists: ['The Patterns', 'Yard Art', 'Sticker'],
+      venue: 'The Griffin',
+      address: '511 East Fremont',
+      cost: 0,
+      dayof: 0,
+      date: '2023-06-24',
+      image: '/assets/images/events/062423.JPG',
+      title: 'Black Sheep x PHC',
+      tickets: null
+    }
   ]
   useEffect(() => {  
     setShowContent(true);

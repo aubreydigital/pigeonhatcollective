@@ -58,7 +58,7 @@ const currentUser = {
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-              <Link
+              {/* <Link
                   href="/merch"
                   className="text-gray-300 hover:bg-transparent hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
@@ -69,7 +69,7 @@ const currentUser = {
                   className="text-gray-300 hover:bg-transparent hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Artists
-                </Link>
+                </Link> */}
                 <Link
                   href="/about"
                   className="text-gray-300 hover:bg-transparent hover:text-white px-3 py-2 rounded-md text-sm font-medium"
@@ -240,7 +240,7 @@ const currentUser = {
         )}
 
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <Link
+          {/* <Link
             href="/merch"
             className="text-gray-300 hover:bg-transparent hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
@@ -251,7 +251,7 @@ const currentUser = {
             className="text-gray-300 hover:bg-transparent hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Artists
-          </Link>
+          </Link> */}
           <Link
             href="/about"
             className="text-gray-300 hover:bg-transparent hover:text-white block px-3 py-2 rounded-md text-base font-medium"

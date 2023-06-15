@@ -8,18 +8,6 @@ const EventsPage: React.FC = () => {
   // Sample event data (replace with your actual event data)
   const upcomingEvents = [
     {
-      id: 1,
-      artists: ['Sunbeam Colleen', 'Sonia Barcelona', 'Switterbeet', 'Pudgel'],
-      venue: 'Horse Trailer Hideout',
-      address: '1506 S. Main St.',
-      cost: 10,
-      dayof: 15,
-      image: '/assets/images/events/061423.jpeg',
-      title: 'Starry Nights',
-      date: '2023-06-14',
-      tickets: 'https://phc.ticketbud.com/starrynights'
-    },
-    {
       id: 2,
       artists: ['The Patterns', 'Yard Art', 'Sticker'],
       venue: 'The Griffin',
