@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useEffect, useMemo, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import 'animate.css';
 import styles from '../styles/HomePage.module.css';
@@ -36,7 +36,7 @@ const HomePage: React.FC = () => {
     setEvents(filteredEvents);
   };
 
-  const upcomingEvents = [
+  const upcomingEvents = useMemo(()=> [
     {
       id: 0,
       artists: ['Eloteros', 'Psycho', 'Part II & the Electric Boogaloo', 'Muertos Heist', 'Bad Juju', 'Kurian', 'Fooski'],
@@ -73,7 +73,8 @@ const HomePage: React.FC = () => {
       title: 'Digital Circus x Pigeon Hat Collective x Fluorescent Records Present: Summer of Love',
       tickets: null
     }
-  ]
+  ], []);
+  
   useEffect(() => {  
     setShowContent(true);
 
