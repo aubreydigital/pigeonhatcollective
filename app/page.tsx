@@ -72,14 +72,26 @@ const HomePage: React.FC = () => {
       image: '/assets/images/aj_jerms_acoustic.JPG',
       title: 'Digital Circus x Pigeon Hat Collective x Fluorescent Records Present: Summer of Love',
       tickets: null
-    }
+    },
+    {
+      id: 3,
+      artists: ['Eloteros', 'Psycho', 'Part II & the Electric Boogaloo', 'Muertos Heist', 'Bad Juju', 'Kurian', 'Fooski'],
+      venue: 'House Show',
+      address: '5245 S Eastern',
+      cost: 10,
+      dayof: 10,
+      date: '2023-07-03',
+      image: '/assets/images/events/070323.JPG',
+      title: 'Digital Circus x Pigeon Hat Collective x Fluorescent Records Present: Summer of Love',
+      tickets: null
+    },
   ]
-  // useEffect(() => {  
-  //   setShowContent(true);
+  useEffect(() => {  
+    setShowContent(true);
 
-  //   setEvents(upcomingEvents);
-  //     filterPastEvents();
-  // }, [filterPastEvents, upcomingEvents]);
+    setEvents(upcomingEvents);
+      filterPastEvents();
+  }, []);
 
 
   

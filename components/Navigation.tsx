@@ -155,11 +155,11 @@ const Navigation = () => {
       src={session?.user.image || ''}
       width={50}
       height={30}
-      className='rounded-full'
+      className='rounded-full ring-2 overflow-hidden ring-white mt-4 h-6 w-6 object-cover mt-1'
       alt='profile'
     />
   </Link>
-  <button className={`ml-2 text-xs font-sans text-white font-semibold`} type='button' onClick={handleSignOut}>
+  <button className={`ml-2 mt-4 text-xs font-sans text-white`} type='button' onClick={handleSignOut}>
     Sign Out
   </button>
   </div>

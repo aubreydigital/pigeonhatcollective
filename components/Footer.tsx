@@ -26,15 +26,15 @@ const Footer: React.FC = () => {
   };
   const upcomingEvents = [
     {
-      id: 2,
-      artists: ['The Patterns', 'Yard Art', 'Sticker'],
-      venue: 'The Griffin',
-      address: '511 East Fremont',
-      cost: 0,
-      dayof: 0,
-      date: '2023-06-24',
-      image: '/assets/images/events/062423.JPG',
-      title: 'Black Sheep x PHC',
+      id: 0,
+      artists: ['Eloteros', 'Psycho', 'Part II & the Electric Boogaloo', 'Muertos Heist', 'Bad Juju', 'Kurian', 'Fooski'],
+      venue: 'House Show',
+      address: '5245 S Eastern',
+      cost: 10,
+      dayof: 10,
+      date: '2023-06-30',
+      image: '/assets/images/events/063023ig.JPG',
+      title: 'Digital Circus x Pigeon Hat Collective x Fluorescent Records Present: Summer of Love',
       tickets: null
     },
   ]
@@ -77,8 +77,7 @@ const Footer: React.FC = () => {
           <div className="hidden lg:block">
           <h2 className="hidden lg:block text-2xl italic mb-4">{latestBlogPost.title}</h2>
             {/* <h2 className="text-2xl italic">{latestBlogPost.title}</h2> */}
-           <p> 📢 Welcome to the Pigeon Hat Collective! Happy Pride Month 🎉
-Explore art, creativity, and imagination. Join our vibrant community, connect with fellow enthusiasts, and let the collective spirit of the Pigeon Hat guide you!  🐦🎩✨ Welcome to the Pigeon Hat Collective! 
+           <p> Join the Pigeon Hat Collective for an extraordinary night called the Summer of Love! Tomorrow night, immerse yourself in the spirit of unity, poetry, and music at our enchanting event. But that's not all! Save the date for "Doomed Poetry" presented by Avantpop Bookstore at Red Dwarf on July 7th. Get ready for a remarkable fusion of words and melodies, with the soul-stirring music of Mariposa. Let's make this summer a season of love, art, and boundless human spirit. Don't miss out! Visit our website for tickets and details.
 <Link className="pl-1 text-base font-bold no-underline transition-colors duration-300 text-purple-800 hover:text-purple-700 hover:shadow-md" href="/about">Learn more</Link>...</p>
           </div>
 
