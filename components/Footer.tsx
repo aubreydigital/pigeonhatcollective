@@ -77,7 +77,8 @@ const Footer: React.FC = () => {
           <div className="hidden lg:block">
           <h2 className="hidden lg:block text-2xl italic mb-4">{latestBlogPost.title}</h2>
             {/* <h2 className="text-2xl italic">{latestBlogPost.title}</h2> */}
-           <p> Join the Pigeon Hat Collective for an extraordinary night called the Summer of Love! Tomorrow night&apos; immerse yourself in the spirit of unity&apos; poetry&apos; and music at our enchanting event But that's not all Save the date for &quot;Doomed Poetry&quot; presented by Avantpop Bookstore at Red Dwarf on July 7th Get ready for a remarkable fusion of words and melodies&apos; with the soul-stirring music of Mariposa Let&apos;s make this summer a season of love&apos; art&apos; and boundless human spirit Don't miss out
+            <p className="bg-white rounded my-4 mx-10 bg-opacity-75 p-5 text-center text-xs">
+  Join the Pigeon Hat Collective for an extraordinary night called the Summer of Love Tomorrow night&apos; immerse yourself in the spirit of unity&apos; poetry&apos; and music at our enchanting event. But that&apos;s not all! Save the date for &quot;Doomed Poetry&quot; presented by Avantpop Bookstore at Red Dwarf on July 7th. Get ready for a remarkable fusion of words and melodies&apos; with the soul-stirring music of Mariposa. Let&apos;s make this summer a season of love&apos; art&apos; and boundless human spirit. Don&apos;t miss out!
 <Link className="pl-1 text-base font-bold no-underline transition-colors duration-300 text-purple-800 hover:text-purple-700 hover:shadow-md" href="/about">Learn more</Link>...</p>
           </div>
 

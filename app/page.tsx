@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useEffect, useMemo, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import 'animate.css';
 import styles from '../styles/HomePage.module.css';
@@ -16,14 +16,9 @@ const monser = Montserrat({
   subsets: ['latin'],
   weight: ['100']
 })
-const kumar = Kumar_One_Outline({
-  weight: ['400'],
-  subsets: ['latin']
-}) 
 
-const HomePage: React.FC = () => {
+const HomePage: FC = () => {
   const [showContent, setShowContent] = useState(false);
-  const [windowWidth, setWindowWidth] = useState<number>(0);
   const [events, setEvents] = useState<any[]>([]);
 
   // const filterPastEvents = () => {
@@ -36,7 +31,7 @@ const HomePage: React.FC = () => {
   //   setEvents(filteredEvents);
   // };
 
-  const upcomingEvents = [
+  const upcomingEvents = useMemo(() => [
     {
       id: 0,
       artists: ['Eloteros', 'Psycho', 'Part II & the Electric Boogaloo', 'Muertos Heist', 'Bad Juju', 'Kurian', 'Fooski'],
@@ -85,13 +80,14 @@ const HomePage: React.FC = () => {
       title: 'Digital Circus x Pigeon Hat Collective x Fluorescent Records Present: Summer of Love',
       tickets: null
     },
-  ]
+  ], []);
+
   useEffect(() => {  
     setShowContent(true);
 
     setEvents(upcomingEvents);
       // filterPastEvents();
-  }, [upcomingEvents]);
+  }, []);
 
 
   
@@ -136,7 +132,9 @@ const HomePage: React.FC = () => {
         <h3 className="text-mg rounded font-semibold mb-2 bg-white bg-opacity-75 p-2">Summer of Love!</h3>
         <p className="bg-white text-xs rounded bg-opacity-75 p-2 text-gray-700">Author: aubrey digital</p>
         <p className="bg-white rounded text-xs my-2 bg-opacity-75 p-2 text-gray-700">Date: 29th June 2023</p>
-        <p className="bg-white rounded my-4 mx-10 bg-opacity-75 p-5 text-center text-xs">Join the Pigeon Hat Collective for an extraordinary night called the Summer of Love Tomorrow night&apos; immerse yourself in the spirit of unity&apos; poetry&apos; and music at our enchanting event But that&apos;s not all Save the date for &quot;Doomed Poetry&quot; presented by Avantpop Bookstore at Red Dwarf on July 7th Get ready for a remarkable fusion of words and melodies&apos; with the soul-stirring music of Mariposa Let&apos;s make this summer a season of love&apos; art&apos; and boundless human spirit Don't miss out
+        <p className="bg-white rounded my-4 mx-10 bg-opacity-75 p-5 text-center text-xs">
+  Join the Pigeon Hat Collective for an extraordinary night called the Summer of Love Tomorrow night&apos; immerse yourself in the spirit of unity&apos; poetry&apos; and music at our enchanting event. But that&apos;s not all! Save the date for &quot;Doomed Poetry&quot; presented by Avantpop Bookstore at Red Dwarf on July 7th. Get ready for a remarkable fusion of words and melodies&apos; with the soul-stirring music of Mariposa. Let&apos;s make this summer a season of love&apos; art&apos; and boundless human spirit. Don&apos;t miss out!
+
 <Link className="pl-1 text-sm font-bold no-underline transition-colors duration-300 text-purple-500 hover:text-purple-900" href="/events">Learn more...</Link></p>
 
 
