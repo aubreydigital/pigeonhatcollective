@@ -79,7 +79,7 @@ const HomePage: React.FC = () => {
 
     setEvents(upcomingEvents);
       filterPastEvents();
-  }, []);
+  }, [filterPastEvents, upcomingEvents]);
 
 
   
