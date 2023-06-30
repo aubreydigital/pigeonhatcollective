@@ -38,51 +38,39 @@ const HomePage: React.FC = () => {
 
   const upcomingEvents = [
     {
+      id: 0,
+      artists: ['Eloteros', 'Psycho', 'Part II & the Electric Boogaloo', 'Muertos Heist', 'Bad Juju', 'Kurian', 'Fooski'],
+      venue: 'House Show',
+      address: '5245 S Eastern',
+      cost: 10,
+      dayof: 10,
+      date: '2023-06-30',
+      image: '/assets/images/events/063023ig.JPG',
+      title: 'Digital Circus x Pigeon Hat Collective x Fluorescent Records Present: Summer of Love',
+      tickets: null
+    },
+    {
+      id: 1,
+      artists: ['Eloteros', 'Psycho', 'Part II & the Electric Boogaloo', 'Muertos Heist', 'Bad Juju', 'Kurian', 'Fooski'],
+      venue: 'House Show',
+      address: '5245 S Eastern',
+      cost: 10,
+      dayof: 10,
+      date: '2023-07-03',
+      image: '/assets/images/events/070323.JPG',
+      title: 'Digital Circus x Pigeon Hat Collective x Fluorescent Records Present: Summer of Love',
+      tickets: null
+    },
+    {
       id: 2,
-      artists: ['The Patterns', 'Yard Art', 'Sticker'],
-      venue: 'The Griffin',
-      address: '511 East Fremont',
-      cost: 0,
-      dayof: 0,
-      date: '2023-06-24',
-      image: '/assets/images/events/062423.JPG',
-      title: 'Black Sheep x PHC',
-      tickets: null
-    },
-    {
-      id: 4,
-      artists: ['The Patterns', 'Yard Art', 'Sticker'],
-      venue: 'The Griffin',
-      address: '511 East Fremont',
-      cost: 0,
-      dayof: 0,
-      date: '2023-06-24',
-      image: '/assets/images/events/062423.JPG',
-      title: 'Black Sheep x PHC',
-      tickets: null
-    },
-    {
-      id: 1,
-      artists: ['The Patterns', 'Yard Art', 'Sticker'],
-      venue: 'The Griffin',
-      address: '511 East Fremont',
-      cost: 0,
-      dayof: 0,
-      date: '2023-06-24',
-      image: '/assets/images/events/062423.JPG',
-      title: 'Black Sheep x PHC',
-      tickets: null
-    },
-    {
-      id: 1,
-      artists: ['The Patterns', 'Yard Art', 'Sticker'],
-      venue: 'The Griffin',
-      address: '511 East Fremont',
-      cost: 0,
-      dayof: 0,
-      date: '2023-06-24',
-      image: '/assets/images/events/062423.JPG',
-      title: 'Black Sheep x PHC',
+      artists: ['Eloteros', 'Psycho', 'Part II & the Electric Boogaloo', 'Muertos Heist', 'Bad Juju', 'Kurian', 'Fooski'],
+      venue: 'House Show',
+      address: '5245 S Eastern',
+      cost: 10,
+      dayof: 10,
+      date: '2023-06-30',
+      image: '/assets/images/aj_jerms_acoustic.JPG',
+      title: 'Digital Circus x Pigeon Hat Collective x Fluorescent Records Present: Summer of Love',
       tickets: null
     }
   ]
@@ -133,12 +121,11 @@ const HomePage: React.FC = () => {
     {/* Blog post cards */}
     <div className="relative bg-cover rounded bg-center bg-no-repeat" style={{ backgroundImage: "url('/assets/images/pigeon.jpg')" }}>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <h3 className="text-mg rounded font-semibold mb-2 bg-white bg-opacity-75 p-2">coo coo kuh choo</h3>
-        <p className="bg-white text-sm rounded bg-opacity-75 p-2">Author: chatgpt</p>
-        <p className="bg-white rounded text-sm my-2 bg-opacity-75 p-2">Date: 30th May 2023</p>
-        <p className="bg-white rounded my-4 mx-10 bg-opacity-75 p-2 text-center text-xs">📢 Welcome to the Pigeon Hat Collective! Happy Pride Month 🎉
-Explore art, creativity, and imagination. Join our vibrant community, connect with fellow enthusiasts, and let the collective spirit of the Pigeon Hat guide you!  🐦🎩✨ Welcome to the Pigeon Hat Collective! 
-<Link className="pl-1 text-base font-bold no-underline transition-colors duration-300 text-purple-800 hover:text-purple-700 hover:shadow-md" href="/about">Learn more</Link>...</p>
+        <h3 className="text-mg rounded font-semibold mb-2 bg-white bg-opacity-75 p-2">Summer of Love!</h3>
+        <p className="bg-white text-xs rounded bg-opacity-75 p-2 text-gray-700">Author: aubrey digital</p>
+        <p className="bg-white rounded text-xs my-2 bg-opacity-75 p-2 text-gray-700">Date: 29th June 2023</p>
+        <p className="bg-white rounded my-4 mx-10 bg-opacity-75 p-5 text-center text-xs">Join the Pigeon Hat Collective for an extraordinary night called the Summer of Love! Tomorrow night, immerse yourself in the spirit of unity, poetry, and music at our enchanting event. But that's not all! Save the date for "Doomed Poetry" presented by Avantpop Bookstore at Red Dwarf on July 7th. Get ready for a remarkable fusion of words and melodies, with the soul-stirring music of Mariposa. Let's make this summer a season of love, art, and boundless human spirit. Don't miss out! Visit our website for tickets and details.
+<Link className="pl-1 text-sm font-bold no-underline transition-colors duration-300 text-purple-500 hover:text-purple-900" href="/events">Learn more...</Link></p>
 
 
 

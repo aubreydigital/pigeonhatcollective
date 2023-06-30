@@ -16,12 +16,8 @@ const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [providers, setProviders] = useState<any>(null);
   const [toggleDropdown, setToggleDropdown] = useState(true);
-  // const { data: session } = useSession();
-const currentUser = {
-  id: 0,
-  name: 'aubrey'
-}
-  const isLoggedIn = false
+  const { data: session } = useSession();
+  // const isLoggedIn = true
 
   const handleSignOut = async () => {
     try {
@@ -37,10 +33,13 @@ const currentUser = {
   };
 
   useEffect(() => {
-    (async () => {
+    const setUpProviders = async () => {
       const res = await getProviders();
+
       setProviders(res);
-    })();
+    }
+
+    setUpProviders();
   }, []);
 
 
@@ -63,13 +62,13 @@ const currentUser = {
                   className="text-gray-300 hover:bg-transparent hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Merch
-                </Link>
+                </Link> */}
                 <Link
                   href="/artists"
                   className="text-gray-300 hover:bg-transparent hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Artists
-                </Link> */}
+                </Link>
                 <Link
                   href="/about"
                   className="text-gray-300 hover:bg-transparent hover:text-white px-3 py-2 rounded-md text-sm font-medium"
@@ -148,14 +147,14 @@ const currentUser = {
               </svg>
             </button>
           </div>
-          {isLoggedIn ? (
+          {session?.user ? (
   <div className='flex hidden lg:block'>
 <div className="flex">
-  <Link href={`/users/${currentUser.id}`}>
+  <Link href='/profile'>
     <Image
-      src={'/assets/images/default.jpg'}
-      width={25}
-      height={25}
+      src={session?.user.image || ''}
+      width={50}
+      height={30}
       className='rounded-full'
       alt='profile'
     />
@@ -169,17 +168,16 @@ const currentUser = {
 <>
   {providers &&
     Object.values(providers).map((provider) => (
-      console.log(provider)
-      // <button
-      //   type='button'
-      //   key={provider.name}
-      //   onClick={() => {
-      //     signIn(provider.id);
-      //   }}
-      //   className='black_btn'
-      // >
-      //   Sign in
-      // </button>
+      <button
+        type='button'
+        key={(provider as any).name}
+        onClick={() => {
+          signIn((provider as any).id);
+        }}
+        className='black_btn hidden lg:block'
+      >
+        Sign In
+      </button>
     ))}
 </>
 )}
@@ -190,30 +188,35 @@ const currentUser = {
         className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}
         id="mobile-menu"
       >
-        {isLoggedIn ? (
+        {session?.user ? (
           <div className='block text-center justify-center md:hidden lg:hidden flex'>
-            <Link
-                  href={`/users/${currentUser.id}`}
-                  className='dropdown_link'
-                  onClick={() => console.log('loggin the console')}
-                >
             <Image
-              src={'/assets/images/default.jpg'}
+              src={session?.user.image || ''}
               width={30}
               height={30}
-              className='rounded-full mt-1'
+              className='rounded-full ring-2 overflow-hidden ring-white mt-4 h-10 w-10 object-cover mt-1'
               alt='profile'
-              onClick={() => console.log('once again')}
-            /></Link>
+              onClick={() => setToggleDropdown((prev)=> !prev)}
+            />
             {toggleDropdown && (
-              <div className="flex items-center h-10 ml-3">
-                <button
+              <div className="flex flex-col items-center h-15 ml-3">
+              {/* <Link
+                  href='/profile'
+                  className='dropdown_link pb-2 text-xs'
+                  onClick={() => setToggleDropdown(false)}
+                >My Profile</Link>  
+                <Link
+                  href='/create-event'
+                  className='dropdown_link pb-2 text-xs'
+                  onClick={() => setToggleDropdown(false)}
+                >Add Event</Link>   */}
+              <button
                   type='button'
                   onClick={() => {
                     setToggleDropdown(false);
                     signOut();
                   }}
-                  className='m-0 text-xs font-sans text-white font-semibold'
+                  className='m-0 mt-7 text-xs font-sans text-white'
                 >
                   Sign Out
                 </button>
@@ -224,17 +227,16 @@ const currentUser = {
           <>
             {providers &&
               Object.values(providers).map((provider) => (
-                console.log('idk')
-                // <button
-                //   type='button'
-                //   key={provider.name}
-                //   onClick={() => {
-                //     signIn(provider.id);
-                //   }}
-                //   className='black_btn'
-                // >
-                //   Sign in
-                // </button>
+                <button
+                  type='button'
+                  key={(provider as any).name}
+                  onClick={() => {
+                    signIn((provider as any).id);
+                  }}
+                  className='text-white outline text-xs p-1 border-radius-50 hover:bg-white hover:bg-gradient-to-br hover:from-yellow-100 hover:text-gray-600 hover:to-white hover:bg-sparkle rounded-full black_btn'
+                >
+                  Sign In
+                </button>
               ))}
           </>
         )}
@@ -245,13 +247,13 @@ const currentUser = {
             className="text-gray-300 hover:bg-transparent hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Merch
-          </Link>
+          </Link> */}
           <Link
             href="/artists"
             className="text-gray-300 hover:bg-transparent hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Artists
-          </Link> */}
+          </Link>
           <Link
             href="/about"
             className="text-gray-300 hover:bg-transparent hover:text-white block px-3 py-2 rounded-md text-base font-medium"
