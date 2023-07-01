@@ -8,18 +8,6 @@ const EventsPage: React.FC = () => {
   // Sample event data (replace with your actual event data)
   const upcomingEvents = [
     {
-      id: 0,
-      artists: ['Eloteros', 'Psycho', 'Part II & the Electric Boogaloo', 'Muertos Heist', 'Bad Juju', 'Kurian', 'Fooski'],
-      venue: 'House Show',
-      address: '5245 S Eastern, Las Vegas, NV',
-      cost: 10,
-      dayof: 10,
-      date: '2023-06-30',
-      image: '/assets/images/events/063023ig.JPG',
-      title: 'Digital Circus x Pigeon Hat Collective x Fluorescent Records Present: Summer of Love',
-      tickets: null
-    },
-    {
       id: 1,
       artists: ['Mariposa', 'Andrew Romanelli', 'Garrett James Dillon', 'Gracie Garrett', 'Jennifer Battisti', 'Mike Falconer'],
       venue: 'Red Dwarf',

@@ -33,18 +33,6 @@ const HomePage: FC = () => {
 
   const upcomingEvents = useMemo(() => [
     {
-      id: 0,
-      artists: ['Eloteros', 'Psycho', 'Part II & the Electric Boogaloo', 'Muertos Heist', 'Bad Juju', 'Kurian', 'Fooski'],
-      venue: 'House Show',
-      address: '5245 S Eastern',
-      cost: 10,
-      dayof: 10,
-      date: '2023-06-30',
-      image: '/assets/images/events/063023ig.JPG',
-      title: 'Digital Circus x Pigeon Hat Collective x Fluorescent Records Present: Summer of Love',
-      tickets: null
-    },
-    {
       id: 1,
       artists: ['Eloteros', 'Psycho', 'Part II & the Electric Boogaloo', 'Muertos Heist', 'Bad Juju', 'Kurian', 'Fooski'],
       venue: 'House Show',
@@ -77,6 +65,18 @@ const HomePage: FC = () => {
       dayof: 10,
       date: '2023-07-03',
       image: '/assets/images/events/070323.JPG',
+      title: 'Digital Circus x Pigeon Hat Collective x Fluorescent Records Present: Summer of Love',
+      tickets: null
+    },
+    {
+      id: 2,
+      artists: ['Eloteros', 'Psycho', 'Part II & the Electric Boogaloo', 'Muertos Heist', 'Bad Juju', 'Kurian', 'Fooski'],
+      venue: 'House Show',
+      address: '5245 S Eastern',
+      cost: 10,
+      dayof: 10,
+      date: '2023-06-30',
+      image: '/assets/images/aj_jerms_acoustic.JPG',
       title: 'Digital Circus x Pigeon Hat Collective x Fluorescent Records Present: Summer of Love',
       tickets: null
     },
@@ -131,9 +131,9 @@ const HomePage: FC = () => {
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <h3 className="text-mg rounded font-semibold mb-2 bg-white bg-opacity-75 p-2">Summer of Love!</h3>
         <p className="bg-white text-xs rounded bg-opacity-75 p-2 text-gray-700">Author: aubrey digital</p>
-        <p className="bg-white rounded text-xs my-2 bg-opacity-75 p-2 text-gray-700">Date: 29th June 2023</p>
+        <p className="bg-white rounded text-xs my-2 bg-opacity-75 p-2 text-gray-700">Date: 1st July 2023</p>
         <p className="bg-white rounded my-4 mx-10 bg-opacity-75 p-5 text-center text-xs">
-  Join the Pigeon Hat Collective for an extraordinary night called the Summer of Love Tomorrow night&apos; immerse yourself in the spirit of unity&apos; poetry&apos; and music at our enchanting event. But that&apos;s not all! Save the date for &quot;Doomed Poetry&quot; presented by Avantpop Bookstore at Red Dwarf on July 7th. Get ready for a remarkable fusion of words and melodies&apos; with the soul-stirring music of Mariposa. Let&apos;s make this summer a season of love&apos; art&apos; and boundless human spirit. Don&apos;t miss out!
+        Summer of Love was a smashing success! Thanks so much to all who helped organize and put this event together and of course thanks to everybody for coming out despite the inhospitable heat!! You're all amazing! 
 
 <Link className="pl-1 text-sm font-bold no-underline transition-colors duration-300 text-purple-500 hover:text-purple-900" href="/events">Learn more...</Link></p>
 

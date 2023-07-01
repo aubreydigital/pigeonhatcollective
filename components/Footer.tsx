@@ -26,17 +26,17 @@ const Footer: React.FC = () => {
   };
   const upcomingEvents = [
     {
-      id: 0,
-      artists: ['Eloteros', 'Psycho', 'Part II & the Electric Boogaloo', 'Muertos Heist', 'Bad Juju', 'Kurian', 'Fooski'],
-      venue: 'House Show',
-      address: '5245 S Eastern',
-      cost: 10,
-      dayof: 10,
-      date: '2023-06-30',
-      image: '/assets/images/events/063023ig.JPG',
-      title: 'Digital Circus x Pigeon Hat Collective x Fluorescent Records Present: Summer of Love',
+      id: 1,
+      artists: ['Mariposa', 'Andrew Romanelli', 'Garrett James Dillon', 'Gracie Garrett', 'Jennifer Battisti', 'Mike Falconer'],
+      venue: 'Red Dwarf',
+      address: '1305 Vegas Valley Dr., Las Vegas, NV',
+      cost: 0,
+      dayof: 0,
+      date: '2023-07-03',
+      image: '/assets/images/events/070323.JPG',
+      title: 'Avantpop Bookstore Presents: Doomed Poetry',
       tickets: null
-    },
+    }
   ]
   const {title, artists, venue, address, cost, dayof, image, date, tickets} = upcomingEvents[0]
   const dateString = new Date(date);
@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
           <h2 className="hidden lg:block text-2xl italic mb-4">{latestBlogPost.title}</h2>
             {/* <h2 className="text-2xl italic">{latestBlogPost.title}</h2> */}
             <p className="bg-white rounded my-4 mx-10 bg-opacity-75 p-5 text-center text-xs">
-  Join the Pigeon Hat Collective for an extraordinary night called the Summer of Love Tomorrow night&apos; immerse yourself in the spirit of unity&apos; poetry&apos; and music at our enchanting event. But that&apos;s not all! Save the date for &quot;Doomed Poetry&quot; presented by Avantpop Bookstore at Red Dwarf on July 7th. Get ready for a remarkable fusion of words and melodies&apos; with the soul-stirring music of Mariposa. Let&apos;s make this summer a season of love&apos; art&apos; and boundless human spirit. Don&apos;t miss out!
+  Summer of Love was a smashing success! Thanks so much to all who helped organize and put this event together and of course thanks to everybody for coming out despite the inhospitable heat!! You're all amazing! 
 <Link className="pl-1 text-base font-bold no-underline transition-colors duration-300 text-purple-800 hover:text-purple-700 hover:shadow-md" href="/about">Learn more</Link>...</p>
           </div>
 
