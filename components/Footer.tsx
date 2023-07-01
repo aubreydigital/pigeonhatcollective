@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
           <h2 className="hidden lg:block text-2xl italic mb-4">{latestBlogPost.title}</h2>
             {/* <h2 className="text-2xl italic">{latestBlogPost.title}</h2> */}
             <p className="bg-white rounded my-4 mx-10 bg-opacity-75 p-5 text-center text-xs">
-  Summer of Love was a smashing success! Thanks so much to all who helped organize and put this event together and of course thanks to everybody for coming out despite the inhospitable heat!! You're all amazing! 
+  Summer of Love was a smashing success! Thanks so much to all who helped organize and put this event together and of course thanks to everybody for coming out despite the inhospitable heat!! You&apos;re all amazing! 
 <Link className="pl-1 text-base font-bold no-underline transition-colors duration-300 text-purple-800 hover:text-purple-700 hover:shadow-md" href="/about">Learn more</Link>...</p>
           </div>
 

@@ -133,7 +133,7 @@ const HomePage: FC = () => {
         <p className="bg-white text-xs rounded bg-opacity-75 p-2 text-gray-700">Author: aubrey digital</p>
         <p className="bg-white rounded text-xs my-2 bg-opacity-75 p-2 text-gray-700">Date: 1st July 2023</p>
         <p className="bg-white rounded my-4 mx-10 bg-opacity-75 p-5 text-center text-xs">
-        Summer of Love was a smashing success! Thanks so much to all who helped organize and put this event together and of course thanks to everybody for coming out despite the inhospitable heat!! You're all amazing! 
+        Summer of Love was a smashing success! Thanks so much to all who helped organize and put this event together and of course thanks to everybody for coming out despite the inhospitable heat!! You&apos;re all amazing! 
 
 <Link className="pl-1 text-sm font-bold no-underline transition-colors duration-300 text-purple-500 hover:text-purple-900" href="/events">Learn more...</Link></p>
 
