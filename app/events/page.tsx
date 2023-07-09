@@ -14,6 +14,7 @@ const EventsPage: React.FC = () => {
       address: '1305 Vegas Valley Dr., Las Vegas, NV',
       cost: 0,
       dayof: 0,
+      over21: false,
       date: '2023-07-03',
       image: '/assets/images/events/070323.JPG',
       title: 'Avantpop Bookstore Presents: Doomed Poetry',

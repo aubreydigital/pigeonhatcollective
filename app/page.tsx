@@ -40,7 +40,7 @@ const HomePage: FC = () => {
       cost: 10,
       dayof: 10,
       date: '2023-07-03',
-      image: '/assets/images/events/070323.JPG',
+      image: '/assets/images/events/071223.jpg',
       title: 'Digital Circus x Pigeon Hat Collective x Fluorescent Records Present: Summer of Love',
       tickets: null
     },
@@ -64,7 +64,7 @@ const HomePage: FC = () => {
       cost: 10,
       dayof: 10,
       date: '2023-07-03',
-      image: '/assets/images/events/070323.JPG',
+      image: '/assets/images/events/072623.jpg',
       title: 'Digital Circus x Pigeon Hat Collective x Fluorescent Records Present: Summer of Love',
       tickets: null
     },

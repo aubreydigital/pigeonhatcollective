@@ -26,8 +26,7 @@ const ArtistPage: React.FC = () => {
     {
       id: 3,
       title: 'Dennis Fija',
-      query: 'the_string_rifleband',
-      price: 'shoegaze/ grunge',
+      query: 'dennis_fija',
       image: '/assets/images/artists/dennisFija.jpeg',
     },
     {
@@ -40,12 +39,12 @@ const ArtistPage: React.FC = () => {
     {
       id: 5,
       title: 'Sonia Barcelona',
-      query: 'switterbeet',
+      query: 'sonia_barcelona',
       image: '/assets/images/artists/soniaBarcelona.jpeg',
     },
     {
       id: 6,
-      title: 'Aubrey Digital',
+      title: 'aubrey digital',
       price: 'folk hop',
       query: 'aubrey_digital',
       image: '/assets/images/artists/aubreyDigital2.jpg',
@@ -71,8 +70,8 @@ const ArtistPage: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {artists && artists.map((item) => (
           <div key={item.id} className="bg-white p-4 rounded shadow mx-3">
-            {/* <Link href={'/artists/'+item.query}> */}
-            <Link href={'/'}>
+            <Link href={'/artists/'+item.query}>
+            {/* <Link href={'/'}> */}
             <Image
               src={item.image || ''}
               alt={item.title}

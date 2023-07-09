@@ -3,7 +3,7 @@ import { Schema, Document, model, models, Model } from 'mongoose';
 export interface IUser extends Document {
   email: string;
   username: string;
-  image?: string;
+  image?: string; 
 }
 
 const UserSchema = new Schema<IUser>({

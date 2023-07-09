@@ -159,6 +159,16 @@ const Navigation = () => {
       alt='profile'
     />
   </Link>
+  <Link
+                  href='/profile'
+                  className='dropdown_link pb-2 text-xs'
+                  onClick={() => setToggleDropdown(false)}
+                >My Profile</Link>  
+                <Link
+                  href='/create-event'
+                  className='dropdown_link pb-2 text-xs'
+                  onClick={() => setToggleDropdown(false)}
+                >Add Event</Link>  
   <button className={`ml-2 mt-4 text-xs font-sans text-white`} type='button' onClick={handleSignOut}>
     Sign Out
   </button>
@@ -200,8 +210,8 @@ const Navigation = () => {
             />
             {toggleDropdown && (
               <div className="flex flex-col items-center h-15 ml-3">
-              {/* <Link
-                  href='/profile'
+              <Link
+                  href={`/profile`}
                   className='dropdown_link pb-2 text-xs'
                   onClick={() => setToggleDropdown(false)}
                 >My Profile</Link>  
@@ -209,7 +219,7 @@ const Navigation = () => {
                   href='/create-event'
                   className='dropdown_link pb-2 text-xs'
                   onClick={() => setToggleDropdown(false)}
-                >Add Event</Link>   */}
+                >Add Event</Link>  
               <button
                   type='button'
                   onClick={() => {
