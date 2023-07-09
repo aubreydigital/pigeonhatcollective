@@ -18,7 +18,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         <span className='font-semibold'>{type} Event</span>
       </h1>
       <p className='desc text-center mx-20 mt-5'>
-        {type} your event page and don't forget to share with the world 😉
+        {type} your event page and don\'t forget to share with the world 😉
       </p>
       <UploadImage onImageUpload={handleImageUpload} />
 
