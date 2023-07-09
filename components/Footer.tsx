@@ -27,14 +27,16 @@ const Footer: React.FC = () => {
   const upcomingEvents = [
     {
       id: 1,
-      artists: ['Mariposa', 'Andrew Romanelli', 'Garrett James Dillon', 'Gracie Garrett', 'Jennifer Battisti', 'Mike Falconer'],
-      venue: 'Red Dwarf',
-      address: '1305 Vegas Valley Dr., Las Vegas, NV',
+      visual: ['Tagzi', 'Molasses Lush', 'Monica Sanchez', 'We Become Monsters', 'GC Records Pop Up', 'Seth Singer'],
+      artists: ['Moonbandits', 'The Rifleman', 'The Quitters', 'Smirl Haggard', 'Wyatt and the Ashes', 'The Groundskeeper'],
+      vendors: ['Murderfacee', 'JH Ghost Market', '999 Press', 'Miss Moon', 'Oddities Illustrations'],
+      venue: null,
+      address: '3065 East Patrick Lane, Las Vegas, NV',
       cost: 0,
       dayof: 0,
-      date: '2023-07-03',
-      image: '/assets/images/events/070323.JPG',
-      title: 'Avantpop Bookstore Presents: Doomed Poetry',
+      date: '2023-07-12',
+      image: '/assets/images/events/071223.jpg',
+      title: 'Nevada Climbing Center and GC Records Presents: Desert Daze',
       tickets: null
     }
   ]
@@ -78,7 +80,7 @@ const Footer: React.FC = () => {
           <h2 className="hidden lg:block text-2xl italic mb-4">{latestBlogPost.title}</h2>
             {/* <h2 className="text-2xl italic">{latestBlogPost.title}</h2> */}
             <p className="bg-white rounded my-4 mx-10 bg-opacity-75 p-5 text-center text-xs">
-  Summer of Love was a smashing success! Thanks so much to all who helped organize and put this event together and of course thanks to everybody for coming out despite the inhospitable heat!! You&apos;re all amazing! 
+            Get ready, feathered friends, because we've got some exciting events coming up! First off, mark your calendars for July 12th, as Desert Daze is back with a bang. Prepare for a sonic adventure amidst the sandy landscapes, featuring mind-blowing performances and psychedelic vibes.<br /><br />And that's not all! On July 26th, we're flocking to Vegas Is For Songwriters. Songbird maestros from near and far will gather to showcase their lyrical prowess. It's a celebration of melodies, collaborations, and unforgettable harmonies.<br/><br/>So, grab your stylish pigeon hats, spread your wings, and let's soar into these remarkable events. Stay tuned for more updates from our collective blog!
 <Link className="pl-1 text-base font-bold no-underline transition-colors duration-300 text-purple-800 hover:text-purple-700 hover:shadow-md" href="/about">Learn more</Link>...</p>
           </div>
 

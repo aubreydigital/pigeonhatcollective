@@ -129,11 +129,11 @@ const HomePage: FC = () => {
     {/* Blog post cards */}
     <div className="relative bg-cover rounded bg-center bg-no-repeat" style={{ backgroundImage: "url('/assets/images/pigeon.jpg')" }}>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <h3 className="text-mg rounded font-semibold mb-2 bg-white bg-opacity-75 p-2">Summer of Love!</h3>
-        <p className="bg-white text-xs rounded bg-opacity-75 p-2 text-gray-700">Author: aubrey digital</p>
-        <p className="bg-white rounded text-xs my-2 bg-opacity-75 p-2 text-gray-700">Date: 1st July 2023</p>
+        <h3 className="text-mg rounded font-semibold mb-2 bg-white bg-opacity-75 p-2">Summer is for Music</h3>
+        <p className="bg-white text-xs rounded bg-opacity-75 p-2 text-gray-700">Author: pigeonhatcollective</p>
+        <p className="bg-white rounded text-xs my-2 bg-opacity-75 p-2 text-gray-700">Date: 8th July 2023</p>
         <p className="bg-white rounded my-4 mx-10 bg-opacity-75 p-5 text-center text-xs">
-        Summer of Love was a smashing success! Thanks so much to all who helped organize and put this event together and of course thanks to everybody for coming out despite the inhospitable heat!! You&apos;re all amazing! 
+        Get ready, feathered friends, because we've got some exciting events happening soon! First off, mark your calendars for July 12th, as Desert Daze is back with a bang. Prepare for a sonic adventure amidst the sandy landscapes, featuring mind-blowing performances and psychedelic vibes.<br /><br />But wait there's more! On July 26th, we're flocking to Vegas Is For Songwriters. Songbird maestros from near and far will gather to showcase their lyrical prowess. It's a celebration of melodies, collaborations, and unforgettable harmonies.<br/><br/>So, grab your stylish pigeon hats, spread your wings, and let's soar into these remarkable events. Stay tuned for more updates from our collective blog!
 
 <Link className="pl-1 text-sm font-bold no-underline transition-colors duration-300 text-purple-500 hover:text-purple-900" href="/events">Learn more...</Link></p>
 
@@ -183,6 +183,22 @@ const HomePage: FC = () => {
   <h2 className={`text-2xl block text-center text-white font-bold mb-8 mt-1 py-2 ${monser.className}`} style={{background: 'linear-gradient(to right, rgba(255, 140, 255, 0.5), rgba(255, 140, 255, 0))'}}>Featured Videos</h2>
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     {/* Video cards */}
+    <div className="bg-white p-4 rounded text-center shadow">
+      <h3 className="text-lg font-semibold mb-2">
+        Switterbeet Live At Horse Trailer Hideout
+      </h3>
+      <p>Date: June 14, 2023</p>
+      <div className="video-wrapper">
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/MNmstm2Hzpk"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        ></iframe>
+      </div>
+    </div>
     <div className="bg-white p-4 rounded shadow text-center">
       <h3 className="text-lg font-semibold mb-2">Holiday Special</h3>
       <p>Date: Dec 24, 2022</p>
@@ -207,23 +223,6 @@ const HomePage: FC = () => {
           width="100%"
           height="100%"
           src="https://www.youtube.com/embed/Fj5bnx7TF_8"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        ></iframe>
-      </div>
-    </div>
-
-    <div className="bg-white p-4 rounded text-center shadow">
-      <h3 className="text-lg font-semibold mb-2">
-        LIA Designs x Sunday Clothes
-      </h3>
-      <p>Date: 29th May 2018</p>
-      <div className="video-wrapper">
-        <iframe
-          width="100%"
-          height="100%"
-          src="https://www.youtube.com/embed/KOf5Re6_pHk"
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
