@@ -209,7 +209,7 @@ const Navigation = () => {
               onClick={() => setToggleDropdown((prev)=> !prev)}
             />
             {toggleDropdown && (
-              <div className="flex flex-col items-center h-15 ml-3">
+              <div className="flex flex-col mt-4 items-center h-10 ml-3">
               {/* <Link
                   href={`/profile`}
                   className='dropdown_link pb-2 text-xs'
@@ -217,7 +217,7 @@ const Navigation = () => {
                 >My Profile</Link>   */}
                 <Link
                   href='/create-event'
-                  className='dropdown_link pb-2 text-xs'
+                  className='dropdown_link text-xs'
                   onClick={() => setToggleDropdown(false)}
                 >Add Event</Link>  
               <button
@@ -226,7 +226,7 @@ const Navigation = () => {
                     setToggleDropdown(false);
                     signOut();
                   }}
-                  className='m-0 mt-7 text-xs font-sans text-white'
+                  className='mt-1 text-xs font-sans text-white'
                 >
                   Sign Out
                 </button>

@@ -33,7 +33,7 @@ console.log(fileName)
     Flyer Image:{" "}
   </span>
       <UploadImage onImageUpload={handleImageUpload} setImageFile={setImageFile}/>
-<p className="mt-2 text-xs text-center text-semibold text-pink-300">*Don't forget to upload your image.</p>
+<p className="mt-2 text-xs text-center text-semibold text-pink-300">*Don&apos;t forget to upload your image.</p>
 <p className="text-center text-xs text-blue-400">You will see an alert once your upload is complete.</p>
 
       <form

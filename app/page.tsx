@@ -19,76 +19,56 @@ const monser = Montserrat({
 
 const HomePage: FC = () => {
   const [showContent, setShowContent] = useState(false);
-  const [events, setEvents] = useState<any[]>([]);
+  const [events, setEvents] = useState<Event[]>([]);
+  interface Event {
+    id: number;
+    artists: string[];
+    visual: string[];
+    vendors: string[] | null;
+    venue: string | null;
+    address: string;
+    cost: number;
+    dayof: number;
+    date: string;
+    image: string;
+    title: string;
+    tickets: string | null;
+  }
 
-  // const filterPastEvents = () => {
-  //   const currentDate = new Date();
-  //   const filteredEvents = events.filter((event) => {
-  //     // Parse the event date and compare with the current date
-  //     const eventDate = new Date(event.date);
-  //     return eventDate >= currentDate;
-  //   });
-  //   setEvents(filteredEvents);
-  // };
-
-  const upcomingEvents = useMemo(() => [
-    {
-      id: 1,
-      artists: ['Eloteros', 'Psycho', 'Part II & the Electric Boogaloo', 'Muertos Heist', 'Bad Juju', 'Kurian', 'Fooski'],
-      venue: 'House Show',
-      address: '5245 S Eastern',
-      cost: 10,
-      dayof: 10,
-      date: '2023-07-03',
-      image: '/assets/images/events/071223.jpg',
-      title: 'Digital Circus x Pigeon Hat Collective x Fluorescent Records Present: Summer of Love',
-      tickets: null
-    },
-    {
-      id: 2,
-      artists: ['Eloteros', 'Psycho', 'Part II & the Electric Boogaloo', 'Muertos Heist', 'Bad Juju', 'Kurian', 'Fooski'],
-      venue: 'House Show',
-      address: '5245 S Eastern',
-      cost: 10,
-      dayof: 10,
-      date: '2023-06-30',
-      image: '/assets/images/aj_jerms_acoustic.JPG',
-      title: 'Digital Circus x Pigeon Hat Collective x Fluorescent Records Present: Summer of Love',
-      tickets: null
-    },
-    {
-      id: 3,
-      artists: ['Eloteros', 'Psycho', 'Part II & the Electric Boogaloo', 'Muertos Heist', 'Bad Juju', 'Kurian', 'Fooski'],
-      venue: 'House Show',
-      address: '5245 S Eastern',
-      cost: 10,
-      dayof: 10,
-      date: '2023-07-03',
-      image: '/assets/images/events/072623.jpg',
-      title: 'Digital Circus x Pigeon Hat Collective x Fluorescent Records Present: Summer of Love',
-      tickets: null
-    },
-    {
-      id: 2,
-      artists: ['Eloteros', 'Psycho', 'Part II & the Electric Boogaloo', 'Muertos Heist', 'Bad Juju', 'Kurian', 'Fooski'],
-      venue: 'House Show',
-      address: '5245 S Eastern',
-      cost: 10,
-      dayof: 10,
-      date: '2023-06-30',
-      image: '/assets/images/aj_jerms_acoustic.JPG',
-      title: 'Digital Circus x Pigeon Hat Collective x Fluorescent Records Present: Summer of Love',
-      tickets: null
-    },
-  ], []);
-
-  useEffect(() => {  
+  useEffect(() => {
     setShowContent(true);
 
-    setEvents(upcomingEvents);
-      // filterPastEvents();
-  }, []);
+    const fetchEvents = async () => {
+      const res = await fetch('api/events');
+      const data = await res.json();
+      setEvents(data)
+      console.log(data)
+    }
 
+    fetchEvents();
+  }, [])
+
+const dateFormat = (date: string) => {
+  const dateString = new Date(`${date}T00:00:00Z`);
+  const formattedDate = dateString.toLocaleDateString('en-US', {
+    timeZone: 'UTC',
+    month: 'long',
+    day: '2-digit',
+    year: 'numeric',
+  });
+  return formattedDate;
+};
+
+const currentDate = new Date();
+
+  const upcomingEvents = events.filter((event) => {
+    const eventDate = new Date(event.date);
+    return eventDate > currentDate;
+  }).sort((a, b) => {
+    const dateA: Date = new Date(a.date);
+    const dateB: Date = new Date(b.date);
+    return dateA.getTime() - dateB.getTime();
+  })
 
   
   return (

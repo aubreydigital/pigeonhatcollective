@@ -1,23 +1,21 @@
-'use client';
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 import { Carousel } from 'react-responsive-carousel';
-import { CarouselProps } from 'react-responsive-carousel';
-
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Image from 'next/image';
 import Link from 'next/link';
 
 interface Event {
   id: number;
   artists: string[];
-  venue: string;
+  visual: string[];
+  vendors: string[] | null;
+  venue: string | null;
   address: string;
   cost: number;
   dayof: number;
+  date: string;
   image: string;
   title: string;
   tickets: string | null;
-  date: string;
 }
 
 interface EventCarouselProps {
@@ -27,6 +25,7 @@ interface EventCarouselProps {
 const EventCarousel = ({ events }: EventCarouselProps) => {
   const [windowWidth, setWindowWidth] = useState<number>(0);
   const centerSlidePercentage = windowWidth >= 700 ? 33.33 : 100;
+  const fallbackImage = '/assets/images/aj_jerms_acoustic.JPG';
 
   useEffect(() => {
     const handleResize = () => {
@@ -41,8 +40,38 @@ const EventCarousel = ({ events }: EventCarouselProps) => {
     };
   }, []);
 
+  const renderCarouselItems = () => {
+    const numEvents = events.length;
+    const numPlaceholders = Math.max(3 - numEvents, 0);
+
+    const eventItems = events.map((event) => (
+      <div key={event.id} className="event-carousel-item">
+        <div className="image-container">
+          <Image width={300} height={500} src={`https://aubrey.digital/vms_server/server/uploads/images/${event.image}`} alt={event.title} />
+          <div className="flex row">
+            {event.cost !== 0 && event.tickets !== null && (
+              <Link href={event.tickets} target="_blank">
+                <h1 className="legend">Buy Tickets</h1>
+              </Link>
+            )}
+          </div>
+        </div>
+      </div>
+    ));
+
+    const placeholderItems = Array.from({ length: numPlaceholders }).map((_, index) => (
+      <div key={`placeholder-${index}`} className="event-carousel-item">
+        <div className="image-container">
+          <Image width={300} height={500} src={fallbackImage} alt="Fallback Image" />
+        </div>
+      </div>
+    ));
+
+    return [...eventItems, ...placeholderItems];
+  };
+
   return (
-    <Carousel 
+    <Carousel
       showArrows={true}
       showThumbs={false}
       showStatus={false}
@@ -52,21 +81,8 @@ const EventCarousel = ({ events }: EventCarouselProps) => {
       autoPlay={true}
       interval={2500}
       className="event-carousel"
-
     >
-      {events && events.map((event) => {
-        return (
-          <div key={event.id} className="event-carousel-item">
-            <div className="image-container">
-              <Image width={300} height={500} src={event.image} alt={event.title} />
-            <div className="flex row">
-            {event.cost != 0 && event.tickets != null && <Link href={event.tickets} target="_blank"><h1 className="legend">Buy Tickets</h1></Link>}
-            </div>
-            </div>
-
-          </div>
-        );
-      })}
+      {renderCarouselItems()}
     </Carousel>
   );
 };
