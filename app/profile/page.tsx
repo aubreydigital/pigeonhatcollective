@@ -4,25 +4,18 @@ import { FaTwitter, FaInstagram, FaFacebook, FaTiktok, FaEnvelope } from 'react-
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { connectToDB } from '@utils/database';
+import Image from 'next/image';
 
 const Profile = () => {
   const [user, setUser] = useState([])
   const router = useRouter();
   const { data: session } = useSession();
-
-  useEffect(() => {
-    const fetchUser = async () => {
-      const res = await fetch(`/api/events`);
-      const data = await res.json();
-      setUser(data)
-      console.log(data)
-    }
-
-    fetchUser();
-  }, [])
+console.log(session)
   return (
-    <div className="pt-10">
-      <h1 className="text-white text-center">{session?.user?.name}</h1></div>
+    <div className="pt-10 flex flex-col text-center items-center mx-auto w-full justify-center">
+      <h1 className="text-white text-center mb-4">{session?.user?.name}</h1>
+      {session && <Image width={250} height={250} src={`${session?.user?.image}`} alt={`${session?.user?.name}`}/>}
+    </div>
   )
 }
 

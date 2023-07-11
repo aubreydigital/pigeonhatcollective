@@ -9,9 +9,17 @@ const EventSchema = new Schema({
     type: Array,
     required: [true, 'Artist(s) is/are required']
   },
+  visual: {
+    type: Array,
+    required: false,
+  },
+  vendors: {
+    type: Array,
+    required: false,
+  },
   venue: {
     type: String,
-    required: [true, 'Venue required.']
+    required: false,
   },
   address: {
     type: String,
@@ -23,6 +31,7 @@ const EventSchema = new Schema({
   },
   dayof: {
     type: Number,
+    required: false,
   },
   over21: {
     type: Boolean,

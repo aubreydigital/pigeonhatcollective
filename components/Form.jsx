@@ -8,8 +8,17 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
 
   
   const handleImageUpload = (imageUrl) => {
+    let currentDate = new Date();
+let year = currentDate.getFullYear();
+let month = String(currentDate.getMonth() + 1).padStart(2, '0');
+let day = String(currentDate.getDate()).padStart(2, '0');
+
+let newDate = year + month + day;
+console.log(newDate);  // Output: 20230709
+let fileName =  newDate + imageFile.name
+console.log(fileName)
     // Handle the uploaded image URL (e.g., store it in state)
-    console.log("Image URL:", imageUrl);
+  setPost({...post, image: fileName})
   };
 
   return (
@@ -20,8 +29,12 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
       <p className='desc text-center mx-20 mt-5'>
         {type} your event page and don&apos;t forget to share with the world 😉
       </p>
-      <UploadImage onImageUpload={handleImageUpload} />
-
+      <span className='font-satoshi font-semibold text-base text-gray-300'>
+    Flyer Image:{" "}
+  </span>
+      <UploadImage onImageUpload={handleImageUpload} setImageFile={setImageFile}/>
+<p className="mt-2 text-xs text-center text-semibold text-pink-300">*Don't forget to upload your image.</p>
+<p className="text-center text-xs text-blue-400">You will see an alert once your upload is complete.</p>
 
       <form
         onSubmit={handleSubmit}
@@ -67,10 +80,33 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           <textarea
             value={post.artists}
             onChange={(e) => {
-              // const inputArtists = e.target.value.trim().split(',');
               setPost({ ...post, artists: e.target.value })}}
             placeholder='Seperate by comma (ex. Kurian, Mariposa)'
             required
+            className='px-5 py-2 text-xs text-black'
+          />
+        </label>
+        <label>
+          <span className='font-satoshi font-semibold text-base text-gray-300'>
+            Visual Artists:{" "}
+          </span>
+          <textarea
+            value={post.visual}
+            onChange={(e) => {
+              setPost({ ...post, visual: e.target.value })}}
+            placeholder='Seperate by comma (ex. Picasso, Van Gogh)'
+            className='px-5 py-2 text-xs text-black'
+          />
+        </label>
+        <label>
+          <span className='font-satoshi font-semibold text-base text-gray-300'>
+            Vendors:{" "}
+          </span>
+          <textarea
+            value={post.vendors}
+            onChange={(e) => {
+              setPost({ ...post, vendors: e.target.value })}}
+            placeholder='Seperate by comma (ex. Spacegoat Productions, Happy Earth Market)'
             className='px-5 py-2 text-xs text-black'
           />
         </label>
@@ -119,9 +155,10 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           </span>
           <input
             value={post.date}
-            type="text"
+            type="date"
             onChange={(e) => {
-              setPost({ ...post, date: e.target.value })}}
+              setPost({ ...post, date: e.target.value })
+            }}
             placeholder='Event Date'
             required
             className='px-5 py-2 text-xs text-black'
@@ -173,7 +210,8 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
             value={post.tags}
             onChange={(e) => {
               // const inputTags = e.target.value.trim().split(',');
-              setPost({ ...post, tags: e.target.value })}}
+              setPost({ ...post, tags: e.target.value })
+              }}
             placeholder='Seperate by comma (ex. indie,garage rock)'
             required
             className='px-5 py-2 text-xs text-black'

@@ -1,11 +1,13 @@
 'use client'
 import { useState } from "react";
 
-const UploadImage = ({ onImageUpload }) => {
+const UploadImage = ({ onImageUpload, setImageFile }) => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const handleImageChange = (event) => {
     setSelectedImage(event.target.files[0]);
+    console.log(event.target.files[0])
+    setImageFile(event.target.files[0]);
   };
 
   const handleImageUpload = async () => {
@@ -55,7 +57,7 @@ const UploadImage = ({ onImageUpload }) => {
         onChange={handleImageChange}
       />
       <br />
-      <button onClick={handleImageUpload}>Upload Image</button>
+      <button className="outline rounded-full p-3" style={{ backgroundColor: 'rgba(100, 100, 100, 0.6'}} onClick={handleImageUpload}>Upload Image</button>
     </div>
   );
 };

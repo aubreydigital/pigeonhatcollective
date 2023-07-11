@@ -13,6 +13,8 @@ const CreateEvent = () => {
   const [submitting, setIsSubmitting] = useState(false);
   const [post, setPost] = useState({
     artists: [],
+    visual: [],
+    vendors: [],
     venue: '',
     address: '',
     cost: 0,
@@ -28,12 +30,17 @@ const CreateEvent = () => {
   const createEvent = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     try {
+      const artistsArray = post.artists.split(/,\s*/).map(artist => artist.trim());
+      const visualArray = post.visual.length > 0 ? post.visual.split(/,\s*/).map(vis => vis.trim()) : [];
+      const vendorsArray = post.vendors.length > 0 ? post.vendors.split(/,\s*/).map(ven => ven.trim()) : [];
+      const tagsArray = post.tags.split(/,\s*/).map(tag => tag.trim());
       const response = await fetch("/api/events/new", {
         method: "POST",
         body: JSON.stringify({
-          artists: post.artists,
+          artists: artistsArray,
+          visual: visualArray,
+          vendors: vendorsArray,
           venue: post.venue,
           address: post.address,
           cost: post.cost,
@@ -44,7 +51,7 @@ const CreateEvent = () => {
           tickets: post.tickets,
           over21: post.over21,
           userId: session?.user?.id,
-          tags: post.tags
+          tags: tagsArray
         }),
       });
 

@@ -155,21 +155,21 @@ const Navigation = () => {
       src={session?.user.image || ''}
       width={50}
       height={30}
-      className='rounded-full ring-2 overflow-hidden ring-white mt-4 h-6 w-6 object-cover mt-1'
+      className='rounded-full ring-2 overflow-hidden ring-white mt-5 mr-3 h-6 w-6 object-cover'
       alt='profile'
     />
   </Link>
-  <Link
+  {/* <Link
                   href='/profile'
-                  className='dropdown_link pb-2 text-xs'
+                  className='dropdown_link mt-6 pb-2 text-xs mr-3'
                   onClick={() => setToggleDropdown(false)}
-                >My Profile</Link>  
+                >My Profile</Link> {' '}  */}
                 <Link
                   href='/create-event'
-                  className='dropdown_link pb-2 text-xs'
+                  className='dropdown_link pb-2 mt-6 text-xs'
                   onClick={() => setToggleDropdown(false)}
                 >Add Event</Link>  
-  <button className={`ml-2 mt-4 text-xs font-sans text-white`} type='button' onClick={handleSignOut}>
+  <button className={`ml-3 mt-4 text-xs font-sans text-white`} type='button' onClick={handleSignOut}>
     Sign Out
   </button>
   </div>
@@ -210,11 +210,11 @@ const Navigation = () => {
             />
             {toggleDropdown && (
               <div className="flex flex-col items-center h-15 ml-3">
-              <Link
+              {/* <Link
                   href={`/profile`}
                   className='dropdown_link pb-2 text-xs'
                   onClick={() => setToggleDropdown(false)}
-                >My Profile</Link>  
+                >My Profile</Link>   */}
                 <Link
                   href='/create-event'
                   className='dropdown_link pb-2 text-xs'

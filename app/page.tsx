@@ -130,10 +130,10 @@ const HomePage: FC = () => {
     <div className="relative bg-cover rounded bg-center bg-no-repeat" style={{ backgroundImage: "url('/assets/images/pigeon.jpg')" }}>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <h3 className="text-mg rounded font-semibold mb-2 bg-white bg-opacity-75 p-2">Summer is for Music</h3>
-        <p className="bg-white text-xs rounded bg-opacity-75 p-2 text-gray-700">Author: pigeonhatcollective</p>
-        <p className="bg-white rounded text-xs my-2 bg-opacity-75 p-2 text-gray-700">Date: 8th July 2023</p>
+        <p className="hidden lg:block bg-white text-xs rounded bg-opacity-75 p-2 text-gray-700">Author: pigeonhatcollective</p>
+        <p className="hidden lg:block bg-white rounded text-xs my-2 bg-opacity-75 p-2 text-gray-700">Date: 8th July 2023</p>
         <p className="bg-white rounded my-4 mx-10 bg-opacity-75 p-5 text-center text-xs">
-        Get ready, feathered friends, because we&apos;ve got some exciting events happening soon! First off, mark your calendars for July 12th, as Desert Daze is back with a bang. Prepare for a sonic adventure amidst the sandy landscapes, featuring mind-blowing performances and psychedelic vibes.<br /><br />But wait there&apos;s more! On July 26th, we&apos;re flocking to Vegas Is For Songwriters. Songbird maestros from near and far will gather to showcase their lyrical prowess. It&apos;s a celebration of melodies, collaborations, and unforgettable harmonies.<br/><br/>So, grab your stylish pigeon hats, spread your wings, and let&apos;s soar into these remarkable events. Stay tuned for more updates from our collective blog!
+        Get ready, feathered friends, because we&apos;ve got some exciting events happening soon! First off, mark your calendars for July 12th, as Desert Daze is back with a bang. Prepare for a sonic adventure amidst the sandy landscapes, featuring mind-blowing performances and psychedelic vibes.<br /><br />But wait there&apos;s more! On July 26th, we&apos;re flocking to Vegas Is For Songwriters. Songbird maestros from near and far will gather to showcase their lyrical prowess. It&apos;s a celebration of melodies, collaborations, and unforgettable harmonies.
 
 <Link className="pl-1 text-sm font-bold no-underline transition-colors duration-300 text-purple-500 hover:text-purple-900" href="/events">Learn more...</Link></p>
 
