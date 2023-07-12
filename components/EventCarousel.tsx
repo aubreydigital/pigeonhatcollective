@@ -42,7 +42,7 @@ const EventCarousel = ({ events }: EventCarouselProps) => {
 
   const renderCarouselItems = () => {
     const numEvents = events.length;
-    const numPlaceholders = Math.max(3 - numEvents, 0);
+    const numPlaceholders = Math.max(4 - numEvents, 0);
 
     const eventItems = events.map((event) => (
       <div key={event.id} className="event-carousel-item">
