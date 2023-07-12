@@ -21,13 +21,13 @@ const ArtistPage: React.FC = () => {
       title: 'Kurian',
       query: 'kurian',
       price: 'hip hop',
-      image: '/assets/images/artists/kurian_artist.jpeg',
+      image: '/assets/images/artists/kurianprofile2.JPG',
     },
     {
       id: 3,
       title: 'Dennis Fija',
       query: 'dennis_fija',
-      image: '/assets/images/artists/dennisFija.jpeg',
+      image: '/assets/images/artists/dennisfijaprofile.jpeg',
     },
     {
       id: 4,

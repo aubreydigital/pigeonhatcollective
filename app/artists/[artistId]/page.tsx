@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from 'next/image';
 import React from 'react'
-import { FaEnvelope, FaFacebook, FaInstagram, FaTiktok, FaTwitter } from "react-icons/fa";
+import { FaEnvelope, FaFacebook, FaInstagram, FaTiktok, FaTwitter, FaSpotify } from "react-icons/fa";
 
 const artists = [
   {
@@ -9,23 +9,25 @@ const artists = [
     title: 'Tierney',
     query: 'tierney',
     email: 'hiswitterbeet@gmail.com',
+    threads: '@tierannical',
     facebook: 'hiswitterbeet',
-    twitter: 'hiswitterbeet',
-    tiktok: '@hiswitterbeet',
+    twitter: 'tierannical',
+    tiktok: '@switterbeet',
     instagram: 'hiswitterbeet',
-    image: '/assets/images/artists/switterbeet2.jpg',
+    image: '/assets/images/artists/tierneyprofile.jpg',
+    image2: '/assets/images/artists/tierneyprofile2.jpeg',
+    image3: '/assets/images/artists/tierneyprofile3.jpeg',
     description: 'You may have already seen this bird hanging with the flock, but it’s finally time to meet her! Tierney is a Vegas-born musician, lyricist who also dabbles in booking & promoting, mostly by making crafts with Mari. She named her solo-project-turned-band Switterbeet due to her propensity to write sad lyrics with catchy beats. Outside of making music, Tierney likes to buy & slowly kill houseplants, hang with her horrible cat, & loiter at karaoke nights.'
   },
   {
     id: 1,
     title: 'Kurian',
     query: 'kurian',
-    email: 'kurian@gmail.com',
-    facebook: 'kurian',
-    twitter: 'kurian',
-    tiktok: '@kurian',
-    instagram: 'kurian',
-    image: '/assets/images/artists/kurian_artist.jpeg',
+    spotify: 'https://open.spotify.com/artist/6JwymLqWTtpomYsRdRkXNQ',
+    instagram: 'kurian.1111',
+    image: '/assets/images/artists/kurianprofile1.jpeg',
+    image2: '/assets/images/artists/kurianprofile2.JPG',
+    image3: '/assets/images/artists/kurianprofile3.jpeg',
     description: 'The energy of a thousand suns emanates from the mind, body, and soul of Kurian. Based in Las Vegas, Kurian is a spirited rapper whose art serves as a medium for their political outcries. With their affinity for hard-hitting 808s and lush sampling, they craft a soundscape that becomes the perfect vessel for the message they bring across. Originally from the south Indian state of Kerala, Kurian taps into their Marxist roots to deliver a blend of conscious bars with grooving instrumentals. Channeling artists such as JPEGMAFIA and Freddie Gibbs, Kurian takes their alternative edge and tempers it with the heat of the Mojave. The result is a fine blend of floaty beats and cutting lyrics intended to leave an impact on any listener.',
     desc2: 'Check out their music on all streaming platforms now, including their latest EP, a collab with Spaceboy',
     desc3: 'Spirit animal: gibbon 🐵'
@@ -34,12 +36,9 @@ const artists = [
     id: 2,
     title: 'Dennis Fija',
     query: 'dennis_fija',
-    email: 'dennis_fija@gmail.com',
-    facebook: 'dennis_fija',
-    twitter: 'dennis_fija',
-    tiktok: '@dennis_fija',
-    instagram: 'dennis_fija',
-    image: '/assets/images/artists/dennisFija.jpeg',
+    instagram: 'sticker_lv',
+    image: '/assets/images/artists/dennisfijaprofile.jpeg',
+    image2: '/assets/images/artists/dennisfijaprofile2.jpeg',
     description: 'Music project: Sticker (vocals, guitar) @sticker_lv\n\nInfluences: Nujabes, hip hop, r&b, The Beatles, Queen, Pixies, Nirvana, Asian Kung-Fu Generation, punk, grunge, jazz music forever, J-rock, random shit in the deep pits of SoundCloud\n\nI was born in Illinois but moved around from Vegas, Arizona, and California due to momma and poppa split.\nVegas is my hometown though forever!\n\nI got started in music just by being born lmao and uhhh idk my mom had a ton of CDs inside of this chest and I would listen to all of them while she was at work.\nMy ex-uncle always played guitar with his friends and I learned "Here I go" by Syd Barrett and fell in love pretty much lol.\n\nOther hobbies: VIDEO GAMESSSS, eating\n\nLegend of Zelda is my soul game..\n\nOh did I say eating? Lmao I love eating and trying new food... my favorite food of all time is Ramen!\n\nMain hobbies: writing, video making, drawing, painting, reading\n\nUltimate hobby: cuddling with my cat and playing a game after eating something and having a productive day.\n\nSoul Animal: Tiger\n\nMy duty is to help others through art and to slay selfish butthole demon jerks and to save animals.\n\nMy dream is to fly through space to other galaxies.\n\nI am an alien 👽'
   },
   {
@@ -113,23 +112,36 @@ if (!artist) {
   return <div>Artist not found</div>;
 }
 
-const { title, image, description, desc2, desc3, email, facebook, tiktok, soundcloud, instagram, twitter } = artist
+const { title, image, image2, image3, description, desc2, desc3, email, spotify, threads, facebook, tiktok, soundcloud, instagram, twitter } = artist
 
   return (
     <div className="flex flex-col justify-center items-center h-screen bg-gray-800 bg-opacity-50">
       <div className="max-w-3xl my-10 bg-white rounded-lg overflow-hidden overflow-y-auto shadow-lg">
         <div className="flex pt-10">
           <div className="w-1/2">
-            <div className="relative pl-2 flex justify-center items-center">
+            <div className="relative pl-2 flex flex-col justify-center items-center mb-4">
               <Image src={image} placeholder="blur"
               blurDataURL={image} alt={title} width={300} height={300} />
+              {image2 && <Image src={image2} placeholder="blur"
+              blurDataURL={image2} alt={title} width={300} height={300} />}
+              <div className="lg:hidden">
+              {image3 && <Image src={image3} placeholder="blur"
+              blurDataURL={image3} alt={title} width={300} height={300} />}
+            </div>
             </div>
           </div>
           <div className="w-1/2 p-4">
           <div className="flex items-center pb-4">
-      {email ? <Link href={`mailto:${email}`} target="_blank" className="hover:text-gray-300 ml-4">
-          <FaEnvelope className="md:w-5 md:h-5" />
+          {spotify ? <Link href={`${spotify}`} target="_blank" className="hover:text-gray-300 ml-4">
+          <FaSpotify className="md:w-5 md:h-5" />
         </Link> : null}
+      {threads ? <Link href={`https://threads.net/${threads}`} target="_blank" className="hover:text-gray-300 ml-4">
+          <span className="inline-flex items-center justify-center w-6 h-6 pb-1 text-xl rounded bg-black text-white">
+  @
+</span>
+        </Link> : null}
+        
+
      {tiktok ? <Link href={`https://tiktok.com/${tiktok}`} target="_blank" className="hover:text-gray-300 ml-4">
           <FaTiktok className="md:w-5 md:h-5" />
         </Link> : null}
@@ -144,7 +156,7 @@ const { title, image, description, desc2, desc3, email, facebook, tiktok, soundc
         </Link> : null}
       </div>
             <h2 className="text-xl font-bold mb-2">{title}</h2>
-            <p className="text-gray-800 py-5 lg:px-10 text-xs lg:text-base leading-loose">
+            <p className="text-gray-800 place-y-4 py-5 lg:px-10 text-xs lg:text-base leading-loose">
             {description.split('\n').map((line, index) => (
               <React.Fragment key={index}>
                 {line}
