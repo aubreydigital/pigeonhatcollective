@@ -47,10 +47,13 @@ const dateFormat = (date: string) => {
 };
 
 const currentDate = new Date();
-
+const currentDateTimezoneOffset = currentDate.getTimezoneOffset();
+const currentDateTimezoneOffsetMilliseconds = currentDateTimezoneOffset * 60 * 1000;
+const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimezoneOffsetMilliseconds);
   const upcomingEvents = events.filter((event) => {
     const eventDate = new Date(event.date);
-    return eventDate > currentDate;
+    const eventDatePlusOneDay = new Date(eventDate.getTime() + 24 * 60 * 60 * 1000);
+    return eventDatePlusOneDay > currentDateTimePacific;
   }).sort((a, b) => {
     const dateA: Date = new Date(a.date);
     const dateB: Date = new Date(b.date);
