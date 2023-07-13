@@ -1,7 +1,9 @@
 import Link from "next/link";
 import Image from 'next/image';
 import React from 'react'
-import { FaEnvelope, FaFacebook, FaInstagram, FaTiktok, FaTwitter, FaSpotify } from "react-icons/fa";
+import { FaEnvelope, FaFacebook, FaInstagram, FaTiktok, FaTwitter, FaSpotify, FaSoundcloud } from "react-icons/fa";
+import { TbBrandLinktree } from 'react-icons/tb';
+import { GiWorld } from 'react-icons/gi'
 
 const artists = [
   {
@@ -45,57 +47,69 @@ const artists = [
     id: 3,
     title: 'Limn',
     query: 'limn',
-    email: 'limn@gmail.com',
-    image: '/assets/images/artists/limn.jpg',
-    facebook: 'limn',
-    twitter: 'limn',
-    tiktok: '@limn',
-    instagram: 'limn',
+    image: '/assets/images/artists/limnprofile.jpeg',
+    instagram: 'regis.philbin.still.alive',
     soundcloud: 'shroudtime',
-    description: 'LIMN [LIMN [LIMN [LIMN]]], aka LIMN, is an internet-based human organism of arcane gender currently stationed in Las Vegas. A lifelong lover of all volitional human activities, it is particularly passionate about producing meaning from noises, images, words and phrases. When not submitting to creative gestures, LIMN likes to spend its time in communication with other animals, especially humans, pets and worms. You can track its individual activities on Instagram @regis.philbin.still.alive or on Soundcloud here: https://soundcloud.com/shroudtime'
+    description: 'LIMN [LIMN [LIMN [LIMN]]], aka LIMN, is an internet-based human organism of arcane gender currently stationed in Las Vegas. A lifelong lover of all volitional human activities, it is particularly passionate about producing meaning from noises, images, words and phrases. When not submitting to creative gestures, LIMN likes to spend its time in communication with other animals, especially humans, pets and worms. You can track its individual activities on Instagram or on Soundcloud.'
   },
   {
     id: 4,
     title: 'Sonia Barcelona',
     query: 'sonia_barcelona',
-    facebook: 'sonic_barcelona',
-    twitter: 'sonic_barcelona',
-    tiktok: '@sonic_barcelona',
-    instagram: 'sonic_barcelona',
-    image: '/assets/images/artists/soniaBarcelona.jpeg',
+    facebook: 'artofsonia',
+    linktree: 'artofsonia',
+    soundcloud: 'soniabarcelona',
+    official: 'artofsonia.com',
+    twitter: 'artofsonia',
+    spotify: 'https://open.spotify.com/artist/5BnpEcWQGaEu2leiUSsvjb',
+    tiktok: '@artofsonia_',
+    instagram: 'artofsonia',
+    image: '/assets/images/artists/soniaprofile3.jpeg',
+    image2: '/assets/images/artists/soniaprofile2.jpeg',
+    image3: '/assets/images/artists/soniaprofile.jpeg',
     description: 'Sonia Barcelona is a Vegas musician and photographer. Filipino 🇵🇭 & Indian 🇮🇳 girl who loves rock n’ roll and smooth voices. Lover of great food and friendly people. Check out her latest album Bitter Melon on streaming services, book a shoot with her at the next Photos4thePeople session and catch her live ❤️\n\nchosen trash animal: squirrel 🐿'
   },
   {
     id: 5,
     title: 'Aubrey Digital',
     query: 'aubrey_digital',
+    official: 'aubrey.digital',
+    threads: 'aubreydigitallv',
     facebook: 'aubreydigital',
     twitter: 'aubreydigital',
-    tiktok: '@aubreydigital',
-    instagram: 'aubreydigital',
-    image: '/assets/images/artists/aubreyDigital.jpg',
-    description: 'Born in a small midwestern town & raised by her very tough and loving mother.\n\nAubrey always knew she was different but learned quickly that existing in society when you aren\'t like everybody else can be trying, at times, to say the least. Thankfully there was never a shortage of things of do. Whether it was listening to and/or playing music, skateboarding, or designing graphics and coding web sites on her computer. Things hit a rough patch in her senior year of high school. After a near-death car accident her perspective shifted quite a bit.\n\nBy age 22 she was off to the city for good! She spent time living in Nebraska, Colorado, and Indiana, then finally made the 30 hour trek to move with all her belongings in her car to Las Vegas! Nearly five years later she still loves her surroundings and friends but as each day goes by she realizes more everyday that: this is it! It\'s now or never. Life is short. Believe in yourself before its too late.'
+    tiktok: '@aubreydigitallv',
+    instagram: 'aubreydigitallv',
+    image: '/assets/images/artists/aubreyprofile.jpeg',
+    image2: '/assets/images/artists/aubreyprofile2.JPG',
+    image3: '/assets/images/artists/aubreyprofile3.JPG',
+    image4: '/assets/images/artists/aubreyprofile4.jpeg',
+    description: 'Aubrey always knew she was different but learned quickly that existing in society when you aren\'t like everybody else can be trying, at times, to say the least. Thankfully there was never a shortage of things of do. Whether it was listening to and/or playing music, skateboarding, or designing graphics and coding web sites on her computer. Things hit a rough patch in her senior year of high school. After a near-death car accident her perspective shifted quite a bit.\n\nBy age 22 she was off to the city for good! She spent time living in Nebraska, Colorado, and Indiana, then finally made the 30 hour trek to move with all her belongings in her car to Las Vegas! Nearly five years later she still loves her surroundings and friends but as each day goes by she realizes more everyday that: this is it! It\'s now or never. Life is short. Believe in yourself before its too late.'
   },
   {
     id: 6,
     title: 'Matthew Boiles/ Chamberpunk',
     query: 'chamberpunk',
-    facebook: 'chamberpunk',
-    twitter: 'chamberpunk',
-    tiktok: '@chamberpunk',
     instagram: 'chamberpunk',
-    image: '/assets/images/artists/chamberpunk.jpeg',
+    threads: '@chamberpunk',
+    image: '/assets/images/artists/chamberpunkprofile.jpeg',
+    image2: '/assets/images/artists/chamberpunkprofile2.jpeg',
+    image3: '/assets/images/artists/chamberpunkprofile3.jpeg',
     description: 'Chosen Trash Animal: Melancholy Mutt 🐶\n\n@chamberpunk is a multi-instrumentalist and composer that specializes in Polyphonic tapping patterns and Tertian harmo'
   },
   {
     id: 7,
     title: 'Ronnie Wylder',
     query: 'ronnie_wylder',
-    facebook: 'ronnie_wylder',
-    twitter: 'ronnie_wylder',
-    tiktok: '@ronnie_wylder',
-    instagram: 'ronnie_wylder',
-    image: '/assets/images/artists/ronnieWylder.JPG',
+    official: 'ronniewylder.com',
+    facebook: 'ronniewylder01',
+    tiktok: '@ronniewylder01',
+    instagram: 'ronniewylder01',
+    soundcloud: 'ronniewylder01',
+    spotify: 'https://open.spotify.com/artist/3bjge59wU2RxdkNeL9kWWY?fbclid=IwAR1r1Ds8KPQY1QeKYjBI_jfKVqjWlWPRkQ2yVW0xEl9ce3KOPqygqg9q8kg_aem_Ac-P0RZJmzclnpPV9E2wZrp6Wee-aZZtt2MOECIzlJ5U9sCYFlsdRX-2_8f-Wu5KnYE',
+    threads: '@ronniewylder01',
+    image: '/assets/images/artists/wylderprofile.jpeg',
+    image2: '/assets/images/artists/wylderprofile2.jpeg',
+    image3: '/assets/images/artists/wylderprofile3.jpeg',
     description: 'Ronnie Wylder is a singer, songwriter, and performer, local in Las Vegas. Ronnie\’s style of music can be defined through her self-made genre “spunk pop,” combining funky beats, with a punk/rock attitude.\n\nRonnie started singing after her first out of four spinal surgeries. She has developed her musical style through her experiences, taking inspiration from everywhere, from weird sounds she has heard or the things people have said to her.\n\n“My sound has taken me a couple of years to develop and understand, it is constantly evolving. When coming up with my beat ideas, I focus on making something I would want to hear and sing along with.”\n\nOutside of her unique sounds, Ronnie takes pride in the craftiness and controversy of her lyrics. Taking shots at today\’s society and its standards, Ronnie is not afraid to make call outs, speaking blunt and honesty at all times.\n\n“People want to feel something more than what they are being given. At some point, mediocrity isn\’t going to be enough. We need something authentic and raw. I am sick of all the celebs, media, conspiracies, and DRAMA.”\n\n“I want to give people something drama free, that\’s grooving and fun.”\n\n“I am here to make people smile, dance, laugh, and hopefully, even if it\’s only for a three-minute song, to make their day a little brighter.”\n\nBest,\n\nRonnie Wylder'
   },
 ];
@@ -112,8 +126,8 @@ if (!artist) {
   return <div>Artist not found</div>;
 }
 
-const { title, image, image2, image3, description, desc2, desc3, email, spotify, threads, facebook, tiktok, soundcloud, instagram, twitter } = artist
-
+const { title, image, image2, image3, image4, description, desc2, desc3, email, official, linktree, spotify, threads, facebook, tiktok, soundcloud, instagram, twitter } = artist
+console.log(description.length)
   return (
     <div className="flex flex-col justify-center items-center h-screen bg-gray-800 bg-opacity-50">
       <div className="max-w-3xl my-10 bg-white rounded-lg overflow-hidden overflow-y-auto shadow-lg">
@@ -124,34 +138,41 @@ const { title, image, image2, image3, description, desc2, desc3, email, spotify,
               blurDataURL={image} alt={title} width={300} height={300} />
               {image2 && <Image src={image2} placeholder="blur"
               blurDataURL={image2} alt={title} width={300} height={300} />}
-              <div className="lg:hidden">
-              {image3 && <Image src={image3} placeholder="blur"
+              {image3 && description.length > 400 && <Image src={image3} placeholder="blur"
               blurDataURL={image3} alt={title} width={300} height={300} />}
-            </div>
+              {image4 && description.length > 600 &&<Image src={image4} placeholder="blur"
+              blurDataURL={image4} alt={title} width={300} height={300} />}
             </div>
           </div>
-          <div className="w-1/2 p-4">
+          <div className="w-1/2 p-2 lg:4">
           <div className="flex items-center pb-4">
+          {official ? <Link href={`https://${official}`} target="_blank" className="hover:text-gray-300 ml-3 lg:ml-4">
+          <GiWorld className="md:w-6 md:h-6" />
+        </Link> : null}
           {spotify ? <Link href={`${spotify}`} target="_blank" className="hover:text-gray-300 ml-4">
           <FaSpotify className="md:w-5 md:h-5" />
         </Link> : null}
-      {threads ? <Link href={`https://threads.net/${threads}`} target="_blank" className="hover:text-gray-300 ml-4">
-          <span className="inline-flex items-center justify-center w-6 h-6 pb-1 text-xl rounded bg-black text-white">
+      {threads ? <Link href={`https://threads.net/${threads}`} target="_blank" className="hover:text-gray-300 ml-3 lg:ml-4">
+          <span className="inline-flex items-center justify-center w-4 h-4 lg:w-5 lg:h-5 pb-1 text-xl rounded bg-black hover:bg-white text-white hover:text-black">
   @
 </span>
         </Link> : null}
-        
-
-     {tiktok ? <Link href={`https://tiktok.com/${tiktok}`} target="_blank" className="hover:text-gray-300 ml-4">
+     {tiktok ? <Link href={`https://tiktok.com/${tiktok}`} target="_blank" className="hover:text-gray-300 ml-3 lg:ml-4">
           <FaTiktok className="md:w-5 md:h-5" />
         </Link> : null}
-        {twitter ? <Link href={`https://twitter.com/${twitter}`} target="_blank" className="hover:text-gray-300 ml-4">
-          <FaTwitter className="md:w-6 md:h-6" />
+        {linktree ? <Link href={`https://linktr.ee/${linktree}`} target="_blank" className="hover:text-gray-300 ml-3 lg:ml-4">
+         <TbBrandLinktree className="md:w-6 md:h-6" />
         </Link> : null}
-        {instagram ? <Link href={`https://www.instagram.com/${instagram}`} target="_blank" className="hover:text-gray-300 ml-4">
+        {instagram ? <Link href={`https://www.instagram.com/${instagram}`} target="_blank" className="hover:text-gray-300 ml-3 lg:ml-4">
           <FaInstagram className="md:w-6 md:h-6" />
         </Link> : null}
-        {facebook ? <Link href={`https://www.facebook.com/${facebook}`} target="_blank" className="hover:text-gray-300 ml-4">
+        {twitter ? <Link href={`https://twitter.com/${twitter}`} target="_blank" className="hover:text-gray-300 ml-3 lg:ml-4">
+          <FaTwitter className="md:w-6 md:h-6" />
+        </Link> : null}
+        {soundcloud ? <Link href={`https://soundcloud.com/${soundcloud}`} target="_blank" className="hover:text-gray-300 ml-3 lg:ml-4">
+          <FaSoundcloud className="md:w-6 md:h-6" />
+        </Link> : null}
+        {facebook ? <Link href={`https://www.facebook.com/${facebook}`} target="_blank" className="hover:text-gray-300 ml-3 lg:ml-4">
           <FaFacebook className="md:w-6 md:h-6" />
         </Link> : null}
       </div>
@@ -168,7 +189,7 @@ const { title, image, image2, image3, description, desc2, desc3, email, spotify,
           </div>
         </div>
       </div>
-      <Link className="text-white mb-10" href="/artists">Back</Link>
+      <Link className="text-gray-400 hover:text-white mb-10" href="/artists">Back</Link>
 
     </div>
 )

@@ -33,7 +33,7 @@ const ArtistPage: React.FC = () => {
       id: 4,
       title: 'Limn',
       query: 'limn',
-      image: '/assets/images/artists/limn.jpg',
+      image: '/assets/images/artists/limnprofile.jpeg',
 
     },
     {
@@ -47,13 +47,13 @@ const ArtistPage: React.FC = () => {
       title: 'aubrey digital',
       price: 'folk hop',
       query: 'aubrey_digital',
-      image: '/assets/images/artists/aubreyDigital2.jpg',
+      image: '/assets/images/artists/aubreyprofile.jpeg',
     },
     {
       id: 7,
       title: 'Chamberpunk/ Matthew Boyles',
       query: 'chamberpunk',
-      image: '/assets/images/artists/chamberpunk.jpeg',
+      image: '/assets/images/artists/chamberpunkprofile.jpeg',
 
     },
     {
