@@ -147,7 +147,7 @@ console.log(description.length)
           <div className="w-1/2 p-2 lg:4">
           <div className="flex items-center pb-4">
           {official ? <Link href={`https://${official}`} target="_blank" className="hover:text-gray-300 ml-3 lg:ml-4">
-          <GiWorld className="md:w-6 md:h-6" />
+          <GiWorld className="md:w-5 md:h-5" />
         </Link> : null}
           {spotify ? <Link href={`${spotify}`} target="_blank" className="hover:text-gray-300 ml-4">
           <FaSpotify className="md:w-5 md:h-5" />

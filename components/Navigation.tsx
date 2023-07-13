@@ -5,11 +5,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
 import Logo from './Logo'
-import { Montserrat } from 'next/font/google';
+import { Montserrat, Press_Start_2P } from 'next/font/google';
 
 const monser = Montserrat({
   subsets: ['latin'],
   weight: ['700']
+})
+
+const start = Press_Start_2P({
+  subsets: ['latin'],
+  weight: ['400']
 })
 
 const Navigation = () => {
@@ -166,10 +171,10 @@ const Navigation = () => {
                 >My Profile</Link> {' '}  */}
                 <Link
                   href='/create-event'
-                  className='dropdown_link pb-2 mt-6 text-xs'
+                  className={`ml-3 mt-6 ${start.className} lowercase hover:bg-gradient-to-br hover:from-yellow-100 hover:text-purple-500 hover:to-white rounded mt-4 text-xs font-sans text-white`}
                   onClick={() => setToggleDropdown(false)}
-                >Add Event</Link>  
-  <button className={`ml-3 mt-4 text-xs font-sans text-white`} type='button' onClick={handleSignOut}>
+                >Add Event</Link>&nbsp;&nbsp;  
+  <button className={`ml-3 ${start.className} lowercase hover:bg-gradient-to-br hover:from-yellow-100 hover:text-purple-500 hover:to-white rounded mt-4 text-xs font-sans text-white`} type='button' onClick={handleSignOut}>
     Sign Out
   </button>
   </div>
@@ -184,7 +189,7 @@ const Navigation = () => {
         onClick={() => {
           signIn((provider as any).id);
         }}
-        className='black_btn hidden lg:block'
+        className={`black_btn rounded hover:py-1 hover:bg-white hover:bg-gradient-to-br hover:from-yellow-100 hover:text-purple-500 hover:to-white ${start.className} hidden text-xs lowercase text-white hover:text-purple-400 lg:block`}
       >
         Sign In
       </button>
@@ -243,7 +248,7 @@ const Navigation = () => {
                   onClick={() => {
                     signIn((provider as any).id);
                   }}
-                  className='text-white outline text-xs p-1 border-radius-50 hover:bg-white hover:bg-gradient-to-br hover:from-yellow-100 hover:text-gray-600 hover:to-white hover:bg-sparkle rounded-full black_btn'
+                  className={`text-white ${start.className} lowercase text-xs p-1 border-radius-50 hover:bg-white hover:bg-gradient-to-br hover:from-yellow-100 hover:text-purple-500 hover:to-white hover:bg-sparkle rounded-full black_btn`}
                 >
                   Sign In
                 </button>
