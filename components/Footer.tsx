@@ -1,62 +1,11 @@
 'use client';
-import {useState, useEffect} from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { FaInstagram, FaFacebook, FaTwitter, FaTiktok, FaEnvelope } from 'react-icons/fa';
 import EventCard from './EventCard';
 import Logo from './Logo';
 
 const Footer: React.FC = () => {
-  const [events, setEvents] = useState<Event[]>([]);
-  interface Event {
-    id: number;
-    artists: string[];
-    visual: string[];
-    vendors: string[] | null;
-    venue: string | null;
-    address: string;
-    cost: number;
-    dayof: number;
-    date: string;
-    image: string;
-    title: string;
-    tickets: string | null;
-  }
-
-  useEffect(() => {
-    const fetchEvents = async () => {
-      const res = await fetch('api/events');
-      const data = await res.json();
-      const currentDate = new Date();
-      const currentDateTimezoneOffset = currentDate.getTimezoneOffset();
-      const currentDateTimezoneOffsetMilliseconds = currentDateTimezoneOffset * 60 * 1000;
-      const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimezoneOffsetMilliseconds);
-        const upcomingEvents = events.filter((event) => {
-          const eventDate = new Date(event.date);
-          const eventDatePlusOneDay = new Date(eventDate.getTime() + 24 * 60 * 60 * 1000);
-          return eventDatePlusOneDay > currentDateTimePacific;
-        }).sort((a, b) => {
-          const dateA: Date = new Date(a.date);
-          const dateB: Date = new Date(b.date);
-          return dateA.getTime() - dateB.getTime();
-        })
-        setEvents(upcomingEvents)
-    }
-
-    fetchEvents();
-  }, [])
-
-  const dateFormat = (date: string) => {
-    const dateString = new Date(`${date}T00:00:00Z`);
-    const formattedDate = dateString.toLocaleDateString('en-US', {
-      timeZone: 'UTC',
-      month: 'long',
-      day: '2-digit',
-      year: 'numeric',
-    });
-    return formattedDate;
-  };
-  
-
   // Example event data
   const latestEvent = {
     title: 'Next Event',
@@ -71,11 +20,30 @@ const Footer: React.FC = () => {
     link: '/blog/latest',
   };
 
-  let formattedDate = ''
-  if (events.length > 0 && events[0].date) {
-  const dateString = new Date(events[0].date);
+  const contactInfo = {
+    phone: '+1 123-456-7890',
+    email: 'info@example.com',
+  };
+  const upcomingEvents = [
+    {
+      id: 1,
+      visual: ['Tagzi', 'Molasses Lush', 'Monica Sanchez', 'We Become Monsters', 'GC Records Pop Up', 'Seth Singer'],
+      artists: ['Moonbandits', 'The Rifleman', 'The Quitters', 'Smirl Haggard', 'Wyatt and the Ashes', 'The Groundskeeper'],
+      vendors: ['Murderfacee', 'JH Ghost Market', '999 Press', 'Miss Moon', 'Oddities Illustrations'],
+      venue: null,
+      address: '3065 East Patrick Lane, Las Vegas, NV',
+      cost: 0,
+      dayof: 0,
+      date: '2023-07-12',
+      image: '/assets/images/events/071223.jpg',
+      title: 'Nevada Climbing Center and GC Records Presents: Desert Daze',
+      tickets: null
+    }
+  ]
+  const {title, artists, venue, address, cost, dayof, image, date, tickets} = upcomingEvents[0]
+  const dateString = new Date(date);
   const formattedDate = dateString.toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric', timeZone: 'UTC' });
-  }
+  
   
   return (
     <footer className="footer mt-10">
@@ -101,11 +69,11 @@ const Footer: React.FC = () => {
           <div className="hidden lg:block p-2 rounded">
           <h2 className="hidden lg:block text-2xl italic mb-4" style={{ marginTop: '-10px' }}>{latestEvent.title}</h2>
 
-        {events[0].title ? <h3 className="text-lg font-semibold mb-2">{events[0].title}</h3> : 'No upcoming shows'}
-        {events[0].artists && <h4 className="text-md mb-2">{events[0].artists.join(' | ')}</h4>}
-        {formattedDate != '' && <p>{formattedDate}</p>}
-        {events[0].venue && <h5>{events[0].venue}</h5>}
-        {events[0].address && <p>{events[0].address}</p>}
+        <h3 className="text-lg font-semibold mb-2">{title}</h3>
+        <h4 className="text-md mb-2">{artists.join(' | ')}</h4>
+        <p>{formattedDate}</p>
+        <h5>{venue}</h5>
+        <p>{address}</p>
         {/* <button className="p-2 bg-white mt-5 rounded shadow" type="button">Buy Tickets</button> */}
           </div>
           {/* Latest Blog Post */}
@@ -113,8 +81,8 @@ const Footer: React.FC = () => {
           <h2 className="hidden lg:block text-2xl italic mb-4">{latestBlogPost.title}</h2>
             {/* <h2 className="text-2xl italic">{latestBlogPost.title}</h2> */}
             <p className="bg-white rounded my-4 mx-10 bg-opacity-75 p-5 text-center text-xs">
-            We are thrilled to share some exciting updates from the Pigeon Hat Collective, a creative powerhouse that continues to push boundaries in the music industry. Our artists have been hard at work, delivering captivating performances and crafting mesmerizing melodies that touch the soul.
-<Link className="pl-1 text-base font-bold no-underline transition-colors duration-300 text-blue-400 hover:text-blue-700 hover:shadow-md" href="/about">Learn more</Link>...</p>
+            Get ready, feathered friends, because we&apos;ve got some exciting events coming up! First off, mark your calendars for July 12th, as Desert Daze is back with a bang. Prepare for a sonic adventure amidst the sandy landscapes, featuring mind-blowing performances and psychedelic vibes.<br /><br />And that&apos;s not all! On July 26th, we&apos;re flocking to Vegas Is For Songwriters. Songbird maestros from near and far will gather to showcase their lyrical prowess. It&apos;s a celebration of melodies, collaborations, and unforgettable harmonies.<br/><br/>So, grab your stylish pigeon hats, spread your wings, and let&apos;s soar into these remarkable events. Stay tuned for more updates from our collective blog!
+<Link className="pl-1 text-base font-bold no-underline transition-colors duration-300 text-purple-800 hover:text-purple-700 hover:shadow-md" href="/about">Learn more</Link>...</p>
           </div>
 
           {/* Contact Info and Social Links */}
