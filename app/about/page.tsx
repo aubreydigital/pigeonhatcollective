@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import pigeongroup from '../../public/assets/images/pigeongroup.jpeg'
 import head from 'next/head';
 interface AboutPageProps {
   companyName: string;
@@ -42,17 +43,17 @@ const AboutPage: React.FC<any> = ({ companyName, description }) => {
       <h1 className="text-4xl font-bold m-5 text-white text-center">About</h1>
     <div className="flex mt-6 justify-center">
       <Image className="rounded-bl-lg rounded-tl-lg" placeholder="blur"
-              blurDataURL='/assets/images/bonfire.jpg' src='/assets/images/bonfire.jpg' width={windowWidth > 600 ? 300 : 150} height={windowWidth > 600 ? 300 : 150} alt="bonfire pigeon hat collective"/>
+              blurDataURL='/assets/images/pigeongroup2.JPG' src='/assets/images/pigeongroup2.JPG' width={windowWidth > 600 ? 300 : 150} height={windowWidth > 600 ? 300 : 150} alt="bonfire pigeon hat collective"/>
       <Image className="rounded-br-lg rounded-tr-lg" placeholder="blur"
-              blurDataURL='/assets/images/concert.jpg' src='/assets/images/concert.jpg' width={windowWidth > 600 ? 300 : 150} height={windowWidth > 600 ? 300 : 150} alt="house show pigeon hat collective" />
+              blurDataURL='/assets/images/pigeongroup3.JPG' src='/assets/images/pigeongroup3.JPG' width={windowWidth > 600 ? 300 : 150} height={windowWidth > 600 ? 300 : 150} alt="house show pigeon hat collective" />
   </div>
     <div className="grid grid-cols-2">
     
     <div className="col-span-2 text-center py-8 leading-loose">
       <p className="text-lg mx-10 mb-7 place-y-4 text-gray-100">{phc.desc1}</p>
       <div className="flex justify-center">
-     <Image className="rounded" placeholder="blur"
-              blurDataURL='/assets/images/recording2.jpg' src='/assets/images/recording2.jpg' width={500} height={300} alt="pigeon hat collective"/>
+     <Image className="rounded mx-6" placeholder="blur"
+              blurDataURL='/assets/images/recording2.jpg' src={pigeongroup} alt="pigeon hat collective"/>
 </div>
 <p className="text-lg mx-10 my-7 text-gray-100 place-y-4">{phc.desc2}</p>
 

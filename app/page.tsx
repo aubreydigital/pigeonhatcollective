@@ -108,11 +108,11 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
     </div>
     <section className="mb-8">
   {/* <h2 className={`text-2xl block text-center text-white font-bold mb-5 py-2 ${monser.className}`} style={{background: 'rgba(255,140,255,0.5)'}}>News Feed</h2> */}
-  <h2 className={`text-2xl block text-center text-white font-bold mb-7 py-2 ${monser.className}`} style={{background: 'linear-gradient(to right, rgba(255, 140, 255, 0.5), rgba(255, 140, 255, 0))'}}>News Feed</h2>
+  <h2 className={`text-2xl block text-center text-white font-bold mb-7 py-2 ${monser.className}`} style={{background: 'linear-gradient(to right, rgba(65, 105, 225, 0.7), rgba(255, 140, 255, 0))'}}>News Feed</h2>
 
   <div className="grid grid-cols-1 mx-auto max-w-2xl rounded gap-4" style={{ height: '400px' }}>
     {/* Blog post cards */}
-    <div className="relative bg-cover rounded bg-center bg-no-repeat" style={{ backgroundImage: "url('/assets/images/pigeon.jpg')" }}>
+    <div className="relative bg-cover rounded bg-center bg-no-repeat mx-5 lg:mx-0" style={{ backgroundImage: "url('/assets/images/pigeonsplash.jpg')" }}>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <h3 className="text-mg rounded font-semibold mb-2 bg-white bg-opacity-75 p-2">Summer is for Music</h3>
         <p className="hidden lg:block bg-white text-xs rounded bg-opacity-75 p-2 text-gray-700">Author: pigeonhatcollective</p>

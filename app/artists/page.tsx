@@ -62,6 +62,60 @@ const ArtistPage: React.FC = () => {
       title: 'Ronnie Wylder',
       image: '/assets/images/artists/ronnieWylder.jpg'
     },
+    {
+      id: 9,
+      query: 'michaella',
+      title: 'Michaella',
+      image: '/assets/images/artists/michaellaprofile.JPG'
+    },
+    {
+      id: 10,
+      query: 'germs',
+      title: 'Jeremy Luker aka Germs aka Opossum',
+      image: '/assets/images/artists/germsprofile.JPG'
+    },
+    {
+      id: 11,
+      query: 'ryan_pasion',
+      title: 'Ryan Pasion',
+      image: '/assets/images/artists/pasionprofile.jpeg'
+    },
+    {
+      id: 12,
+      query: 'mariposa',
+      title: 'MariposA',
+      image: '/assets/images/artists/mariprofile.jpeg'
+    },
+    // {
+    //   id: 13,
+    //   query: 'Javad',
+    //   title: 'Javad',
+    //   image: '/assets/images/artists/javadprofile.JPG'
+    // },
+    {
+      id: 14,
+      query: 'ivan',
+      title: 'Ivan Gonzolez',
+      image: '/assets/images/artists/ivanprofile.JPG'
+    },
+    {
+      id: 15,
+      query: 'nicho',
+      title: 'Dennis/Nicho Escobar',
+      image: '/assets/images/artists/nichoprofile.jpeg'
+    },
+    {
+      id: 16,
+      query: 'wyatt',
+      title: 'AJ (Wyatt and the Ashes)',
+      image: '/assets/images/artists/ajprofile.JPG'
+    },
+    {
+      id: 17,
+      query: 'mendoza',
+      title: 'Chris Mendoza',
+      image: '/assets/images/artists/mendozaprofile.JPG'
+    },
   ];
 
   return (
