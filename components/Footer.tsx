@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
   };
 
   let formattedDate = ''
-  if (events[0].date) {
+  if (events.length > 0 && events[0].date) {
   const dateString = new Date(events[0].date);
   const formattedDate = dateString.toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric', timeZone: 'UTC' });
   }
