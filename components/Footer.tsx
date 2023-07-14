@@ -71,8 +71,8 @@ const Footer: React.FC = () => {
     link: '/blog/latest',
   };
 
-  const {title, artists, venue, address, cost, dayof, image, date, tickets} = events[0]
-  const dateString = new Date(date);
+  // const {title, artists, venue, address, cost, dayof, image, date, tickets} = events[0]
+  const dateString = new Date(events && events[0].date);
   const formattedDate = dateString.toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric', timeZone: 'UTC' });
   
   
@@ -100,11 +100,11 @@ const Footer: React.FC = () => {
           <div className="hidden lg:block p-2 rounded">
           <h2 className="hidden lg:block text-2xl italic mb-4" style={{ marginTop: '-10px' }}>{latestEvent.title}</h2>
 
-        <h3 className="text-lg font-semibold mb-2">{title}</h3>
-        <h4 className="text-md mb-2">{artists.join(' | ')}</h4>
+        {events && <h3 className="text-lg font-semibold mb-2">{events[0].title}</h3>}
+        {events && <h4 className="text-md mb-2">{events[0].artists.join(' | ')}</h4>}
         <p>{formattedDate}</p>
-        <h5>{venue}</h5>
-        <p>{address}</p>
+        {events && <h5>{events[0].venue}</h5>}
+        {events && <p>{events[0].address}</p>}
         {/* <button className="p-2 bg-white mt-5 rounded shadow" type="button">Buy Tickets</button> */}
           </div>
           {/* Latest Blog Post */}
