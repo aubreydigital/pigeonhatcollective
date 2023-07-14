@@ -84,7 +84,7 @@ const ArtistPage: React.FC = () => {
       id: 12,
       query: 'mariposa',
       title: 'MariposA',
-      image: '/assets/images/artists/mariprofile.jpeg'
+      image: '/assets/images/artists/mariprofile.JPG'
     },
     // {
     //   id: 13,
@@ -95,7 +95,7 @@ const ArtistPage: React.FC = () => {
     {
       id: 14,
       query: 'ivan',
-      title: 'Ivan Gonzolez',
+      title: 'Ivan Gonzalez',
       image: '/assets/images/artists/ivanprofile.JPG'
     },
     {

@@ -169,12 +169,13 @@ const artists = [
     // soundcloud: 'ronniewylder01',
     // spotify: 'https://open.spotify.com/artist/3bjge59wU2RxdkNeL9kWWY?fbclid=IwAR1r1Ds8KPQY1QeKYjBI_jfKVqjWlWPRkQ2yVW0xEl9ce3KOPqygqg9q8kg_aem_Ac-P0RZJmzclnpPV9E2wZrp6Wee-aZZtt2MOECIzlJ5U9sCYFlsdRX-2_8f-Wu5KnYE',
     // threads: '@ronniewylder01',
-    image: '/assets/images/artists/mariprofile.jpeg',
+    image: '/assets/images/artists/mariprofile.JPG',
+    image2: '/assets/images/artists/mariprofile2.JPG',
     description: 'Mariposa, a dynamic singer-songwriter, concert promoter, and booking agent, thrives within the vibrant Pigeon Hat Collective. With her captivating voice and heartfelt lyrics, she effortlessly captivates audiences. Mariposa\'s astute business acumen and unwavering dedication to promoting fellow artists make her an invaluable force, connecting talent with the world\'s stage.'
   },
   {
     id: 12,
-    title: 'Ivan',
+    title: 'Ivan Gonzalez',
     query: 'ivan',
     // official: 'ronniewylder.com',
     // facebook: 'ronniewylder01',
