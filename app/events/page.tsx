@@ -10,7 +10,7 @@ import Link from 'next/link';
 const EventsPage: React.FC = () => {
   const [events, setEvents] = useState<Event[]>([]);
   interface Event {
-    id: number;
+    _id: number;
     artists: string[];
     visual: string[];
     vendors: string[] | null;
@@ -26,10 +26,14 @@ const EventsPage: React.FC = () => {
 
   useEffect(() => {
     const fetchEvents = async () => {
+      try {
       const res = await fetch('api/events');
       const data = await res.json();
       setEvents(data)
       console.log(data)
+    } catch(err) {
+      console.error(err)
+    }
     }
 
     fetchEvents();
@@ -65,7 +69,7 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
       <h1 className="text-2xl font-bold text-white text-shadow mb-4">Upcoming Events</h1>
       <div className="grid grid-cols-1 gap-4">
         {upcomingEvents.length > 0 ? upcomingEvents.map((event) => (
-          <Link href={event.tickets != null ? event.tickets : '/events'} target={event.tickets != '' ? '_blank' : '_self'} key={event.id}>
+          <Link href={`/events/${event._id}`} key={event.title}>
               <div
                 className="bg-white p-4 rounded"
                 style={{ backgroundImage: `url(https://aubrey.digital/vms_server/server/uploads/images/${event.image})` }}

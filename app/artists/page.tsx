@@ -76,7 +76,7 @@ const ArtistPage: React.FC = () => {
     },
     {
       id: 11,
-      query: 'ryan_pasion',
+      query: 'pasion',
       title: 'Ryan Pasion',
       image: '/assets/images/artists/pasionprofile.jpeg'
     },

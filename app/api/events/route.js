@@ -5,7 +5,7 @@ export const GET = async (request) => {
     try {
         await connectToDB()
 
-        const events = await Event.find({}).populate('creator')
+        const events = await Event.find({}).populate('creator').sort({ date: 1 });
 
         return new Response(JSON.stringify(events), { status: 200 })
     } catch (error) {

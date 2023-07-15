@@ -171,7 +171,7 @@ const artists = [
     // threads: '@ronniewylder01',
     image: '/assets/images/artists/mariprofile.JPG',
     image2: '/assets/images/artists/mariprofile2.JPG',
-    description: 'Mariposa, a dynamic singer-songwriter, concert promoter, and booking agent, thrives within the vibrant Pigeon Hat Collective. With her captivating voice and heartfelt lyrics, she effortlessly captivates audiences. Mariposa\'s astute business acumen and unwavering dedication to promoting fellow artists make her an invaluable force, connecting talent with the world\'s stage.'
+    description: 'MariposA, a dynamic singer-songwriter, concert promoter, and booking agent, thrives within the vibrant Pigeon Hat Collective. With her captivating voice and heartfelt lyrics, she effortlessly captivates audiences. Mariposa\'s astute business acumen and unwavering dedication to promoting fellow artists make her an invaluable force, connecting talent with the world\'s stage.'
   },
   {
     id: 12,

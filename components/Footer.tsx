@@ -1,11 +1,50 @@
 'use client';
-import React from 'react';
+import {useState, useEffect} from 'react';
 import Link from 'next/link';
 import { FaInstagram, FaFacebook, FaTwitter, FaTiktok, FaEnvelope } from 'react-icons/fa';
 import EventCard from './EventCard';
 import Logo from './Logo';
-
+import Event from '@models/event';
 const Footer: React.FC = () => {
+  const [events, setEvents] = useState([]);
+  const fetchEvents = async () => {
+    const response = await fetch("/api/events");
+    const data = await response.json();
+
+    setEvents(data);
+  };
+
+  useEffect(() => {
+    fetchEvents();
+  }, []);
+
+
+const dateFormat = (date: string) => {
+  const dateString = new Date(`${date}T00:00:00Z`);
+  const formattedDate = dateString.toLocaleDateString('en-US', {
+    timeZone: 'UTC',
+    month: 'long',
+    day: '2-digit',
+    year: 'numeric',
+  });
+  return formattedDate;
+};
+
+const currentDate = new Date();
+const currentDateTimezoneOffset = currentDate.getTimezoneOffset();
+const currentDateTimezoneOffsetMilliseconds = currentDateTimezoneOffset * 60 * 1000;
+const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimezoneOffsetMilliseconds);
+
+
+  const upcomingEvents = events.filter((event) => {
+    const eventDate = new Date(event.date);
+    const eventDatePlusOneDay = new Date(eventDate.getTime() + 24 * 60 * 60 * 1000);
+    return eventDatePlusOneDay > currentDateTimePacific;
+  }).sort((a, b) => {
+    const dateA: Date = new Date(a.date);
+    const dateB: Date = new Date(b.date);
+    return dateA.getTime() - dateB.getTime();
+  })
   // Example event data
   const latestEvent = {
     title: 'Next Event',
@@ -24,24 +63,8 @@ const Footer: React.FC = () => {
     phone: '+1 123-456-7890',
     email: 'info@example.com',
   };
-  const upcomingEvents = [
-    {
-      id: 1,
-      visual: ['Tagzi', 'Molasses Lush', 'Monica Sanchez', 'We Become Monsters', 'GC Records Pop Up', 'Seth Singer'],
-      artists: ['Moonbandits', 'The Rifleman', 'The Quitters', 'Smirl Haggard', 'Wyatt and the Ashes', 'The Groundskeeper'],
-      vendors: ['Murderfacee', 'JH Ghost Market', '999 Press', 'Miss Moon', 'Oddities Illustrations'],
-      venue: null,
-      address: '3065 East Patrick Lane, Las Vegas, NV',
-      cost: 0,
-      dayof: 0,
-      date: '2023-07-12',
-      image: '/assets/images/events/071223.jpg',
-      title: 'Nevada Climbing Center and GC Records Presents: Desert Daze',
-      tickets: null
-    }
-  ]
-  const {title, artists, venue, address, cost, dayof, image, date, tickets} = upcomingEvents[0]
-  const dateString = new Date(date);
+  
+  const dateString = new Date(upcomingEvents[0]?.date);
   const formattedDate = dateString.toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric', timeZone: 'UTC' });
   
   
@@ -69,11 +92,11 @@ const Footer: React.FC = () => {
           <div className="hidden lg:block p-2 rounded">
           <h2 className="hidden lg:block text-2xl italic mb-4" style={{ marginTop: '-10px' }}>{latestEvent.title}</h2>
 
-        <h3 className="text-lg font-semibold mb-2">{title}</h3>
-        <h4 className="text-md mb-2">{artists.join(' | ')}</h4>
+        <h3 className="text-lg font-semibold mb-2">{upcomingEvents[0]?.title}</h3>
+        <h4 className="text-md mb-2">{upcomingEvents[0]?.artists.join(' | ')}</h4>
         <p>{formattedDate}</p>
-        <h5>{venue}</h5>
-        <p>{address}</p>
+        <h5>{upcomingEvents[0]?.venue}</h5>
+        <p>{upcomingEvents[0]?.address}</p>
         {/* <button className="p-2 bg-white mt-5 rounded shadow" type="button">Buy Tickets</button> */}
           </div>
           {/* Latest Blog Post */}
