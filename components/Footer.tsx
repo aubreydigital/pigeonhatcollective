@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { FaInstagram, FaFacebook, FaTwitter, FaTiktok, FaEnvelope } from 'react-icons/fa';
 import EventCard from './EventCard';
 import Logo from './Logo';
-import Event from '@models/event';
+
 const Footer: React.FC = () => {
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState<Event[]>([]);
   const fetchEvents = async () => {
     const response = await fetch("/api/events");
     const data = await response.json();
@@ -36,15 +36,35 @@ const currentDateTimezoneOffsetMilliseconds = currentDateTimezoneOffset * 60 * 1
 const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimezoneOffsetMilliseconds);
 
 
-  const upcomingEvents = events.filter((event) => {
-    const eventDate = new Date(event.date);
-    const eventDatePlusOneDay = new Date(eventDate.getTime() + 24 * 60 * 60 * 1000);
-    return eventDatePlusOneDay > currentDateTimePacific;
-  }).sort((a, b) => {
-    const dateA: Date = new Date(a.date);
-    const dateB: Date = new Date(b.date);
-    return dateA.getTime() - dateB.getTime();
-  })
+  // const upcomingEvents = events.filter((event) => {
+  //   const eventDate = new Date(event.date);
+  //   const eventDatePlusOneDay = new Date(eventDate.getTime() + 24 * 60 * 60 * 1000);
+  //   return eventDatePlusOneDay > currentDateTimePacific;
+  // }).sort((a, b) => {
+  //   const dateA: Date = new Date(a.date);
+  //   const dateB: Date = new Date(b.date);
+  //   return dateA.getTime() - dateB.getTime();
+  // })
+
+
+  let upcomingEvent = {
+  _id:'64b08660de76828455083c29',
+  creator: '64ae354ab1eb67a2a07b4e95',
+  artists: [],
+  visual: [],
+  vendors: [],
+  venue: "Vegas Stand Up & Rock at OYO",
+  address: "115 E Tropicana Ave, Las Vegas, NV 89109",
+  cost: 10,
+  dayof: 10,
+  over21: true,
+  date: "2023-07-15",
+  image: "20230713IMG_20230712_113400_636.jpg",
+  title: "Sticker, Never Ending Last Words, 8radlee at OYO Stand Up & Rock",
+  tickets: '',
+  tags: ['rock show']
+  }
+  
   // Example event data
   const latestEvent = {
     title: 'Next Event',
@@ -64,7 +84,7 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
     email: 'info@example.com',
   };
   
-  const dateString = new Date(upcomingEvents[0]?.date);
+  const dateString = new Date(upcomingEvent.date);
   const formattedDate = dateString.toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric', timeZone: 'UTC' });
   
   
@@ -92,11 +112,11 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
           <div className="hidden lg:block p-2 rounded">
           <h2 className="hidden lg:block text-2xl italic mb-4" style={{ marginTop: '-10px' }}>{latestEvent.title}</h2>
 
-        <h3 className="text-lg font-semibold mb-2">{upcomingEvents[0]?.title}</h3>
-        <h4 className="text-md mb-2">{upcomingEvents[0]?.artists.join(' | ')}</h4>
+        <h3 className="text-lg font-semibold mb-2">{upcomingEvent.title}</h3>
+        <h4 className="text-md mb-2">{upcomingEvent.artists.join(' | ')}</h4>
         <p>{formattedDate}</p>
-        <h5>{upcomingEvents[0]?.venue}</h5>
-        <p>{upcomingEvents[0]?.address}</p>
+        <h5>{upcomingEvent.venue}</h5>
+        <p>{upcomingEvent.address}</p>
         {/* <button className="p-2 bg-white mt-5 rounded shadow" type="button">Buy Tickets</button> */}
           </div>
           {/* Latest Blog Post */}
