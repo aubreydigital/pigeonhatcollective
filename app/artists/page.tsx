@@ -31,7 +31,7 @@ const ArtistPage: React.FC = () => {
     },
     {
       id: 4,
-      title: 'Limn',
+      title: 'LIMN',
       query: 'limn',
       image: '/assets/images/artists/limnprofile.jpeg',
 
@@ -71,7 +71,7 @@ const ArtistPage: React.FC = () => {
     {
       id: 10,
       query: 'germs',
-      title: 'Jeremy Luker aka Germs aka Opossum',
+      title: 'Jeremy Luker aka Germs aka Oh Possum',
       image: '/assets/images/artists/germsprofile.JPG'
     },
     {

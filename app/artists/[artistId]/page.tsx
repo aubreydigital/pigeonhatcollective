@@ -45,7 +45,7 @@ const artists = [
   },
   {
     id: 3,
-    title: 'Limn',
+    title: 'LIMN',
     query: 'limn',
     image: '/assets/images/artists/limnprofile.jpeg',
     image2: '/assets/images/artists/limnprofile2.JPG',

@@ -7,17 +7,43 @@ import Logo from './Logo';
 
 const Footer: React.FC = () => {
   const [events, setEvents] = useState<Event[]>([]);
-  const fetchEvents = async () => {
-    const response = await fetch("/api/events");
-    const data = await response.json();
-
-    setEvents(data);
-  };
-
+  interface Event {
+    id: number;
+    artists: string[];
+    visual: string[];
+    vendors: string[] | null;
+    venue: string | null;
+    address: string;
+    cost: number;
+    dayof: number;
+    date: string;
+    image: string;
+    title: string;
+    tickets: string | null;
+  }
   useEffect(() => {
-    fetchEvents();
-  }, []);
+    const fetchEvents = async () => {
+      try {
+      const res = await fetch('api/events');
+      const data = await res.json();
+      const upcomingEvents = data.filter((event:Event) => {
+        const eventDate = new Date(event.date);
+        const eventDatePlusOneDay = new Date(eventDate.getTime() + 24 * 60 * 60 * 1000);
+        return eventDatePlusOneDay > currentDateTimePacific;
+      }).sort((a:Event, b:Event) => {
+        const dateA: Date = new Date(a.date);
+        const dateB: Date = new Date(b.date);
+        return dateA.getTime() - dateB.getTime();
+      })
+      setEvents(upcomingEvents)
+      console.log(events)
+    } catch(err) {
+      console.log(err)
+    }
+    }
 
+    fetchEvents();
+  }, [])
 
 const dateFormat = (date: string) => {
   const dateString = new Date(`${date}T00:00:00Z`);
@@ -34,36 +60,9 @@ const currentDate = new Date();
 const currentDateTimezoneOffset = currentDate.getTimezoneOffset();
 const currentDateTimezoneOffsetMilliseconds = currentDateTimezoneOffset * 60 * 1000;
 const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimezoneOffsetMilliseconds);
+  
 
 
-  // const upcomingEvents = events.filter((event) => {
-  //   const eventDate = new Date(event.date);
-  //   const eventDatePlusOneDay = new Date(eventDate.getTime() + 24 * 60 * 60 * 1000);
-  //   return eventDatePlusOneDay > currentDateTimePacific;
-  // }).sort((a, b) => {
-  //   const dateA: Date = new Date(a.date);
-  //   const dateB: Date = new Date(b.date);
-  //   return dateA.getTime() - dateB.getTime();
-  // })
-
-
-  let upcomingEvent = {
-  _id:'64b08660de76828455083c29',
-  creator: '64ae354ab1eb67a2a07b4e95',
-  artists: [],
-  visual: [],
-  vendors: [],
-  venue: "Vegas Stand Up & Rock at OYO",
-  address: "115 E Tropicana Ave, Las Vegas, NV 89109",
-  cost: 10,
-  dayof: 10,
-  over21: true,
-  date: "2023-07-15",
-  image: "20230713IMG_20230712_113400_636.jpg",
-  title: "Sticker, Never Ending Last Words, 8radlee at OYO Stand Up & Rock",
-  tickets: '',
-  tags: ['rock show']
-  }
   
   // Example event data
   const latestEvent = {
@@ -83,8 +82,8 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
     phone: '+1 123-456-7890',
     email: 'info@example.com',
   };
-  
-  const dateString = new Date(upcomingEvent.date);
+  console.log(events[0]?.date)
+  const dateString = new Date(events[0]?.date);
   const formattedDate = dateString.toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric', timeZone: 'UTC' });
   
   
@@ -112,11 +111,11 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
           <div className="hidden lg:block p-2 rounded">
           <h2 className="hidden lg:block text-2xl italic mb-4" style={{ marginTop: '-10px' }}>{latestEvent.title}</h2>
 
-        <h3 className="text-lg font-semibold mb-2">{upcomingEvent.title}</h3>
-        <h4 className="text-md mb-2">{upcomingEvent.artists.join(' | ')}</h4>
+        <h3 className="text-lg font-semibold mb-2">{events[0]?.title}</h3>
+        <h4 className="text-md mb-2">{events[0]?.artists.join(' | ')}</h4>
         <p>{formattedDate}</p>
-        <h5>{upcomingEvent.venue}</h5>
-        <p>{upcomingEvent.address}</p>
+        <h5>{events[0]?.venue}</h5>
+        <p>{events[0]?.address}</p>
         {/* <button className="p-2 bg-white mt-5 rounded shadow" type="button">Buy Tickets</button> */}
           </div>
           {/* Latest Blog Post */}
