@@ -21,7 +21,7 @@ const EventsPage: React.FC = () => {
     date: string;
     image: string;
     title: string;
-    tickets: string | null;
+    tickets: string;
   }
 
   useEffect(() => {
@@ -30,7 +30,6 @@ const EventsPage: React.FC = () => {
       const res = await fetch('api/events');
       const data = await res.json();
       setEvents(data)
-      console.log(data)
     } catch(err) {
       console.error(err)
     }
@@ -87,7 +86,8 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
                   </p><br /></>}
                 {/* <p className="text-shadow bg-black p-3 inline-block rounded">Type: {event.type}</p><br/> */}
                 <p className="text-shadow bg-black p-3 inline-block text-sm rounded mb-1">{dateFormat(event.date)}</p><br />
-                {event.venue != '' && <p className="text-shadow bg-black p-3 inline-block text-xs rounded">{event.venue}</p>}
+                {event.venue != '' && <><p className="text-shadow bg-black p-3 inline-block text-xs rounded mb-10">{event.venue}</p><br /></>}
+                {event.tickets != '' && <><Link className="text-shadow bg-black p-3 mb-10 inline-block text-xs rounded hover:text-black hover:bg-white" href={event.tickets} key={event.title}>Buy Tickets</Link><br /></>}
               </div>
           </Link>
         )) : 'There are currently no upcoming Pigeon Hat Collective Events'}

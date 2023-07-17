@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-      const res = await fetch('api/events');
+      const res = await fetch('/api/events');
       const data = await res.json();
       const upcomingEvents = data.filter((event:Event) => {
         const eventDate = new Date(event.date);
@@ -36,7 +36,6 @@ const Footer: React.FC = () => {
         return dateA.getTime() - dateB.getTime();
       })
       setEvents(upcomingEvents)
-      console.log(events)
     } catch(err) {
       console.log(err)
     }
@@ -82,7 +81,6 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
     phone: '+1 123-456-7890',
     email: 'info@example.com',
   };
-  console.log(events[0]?.date)
   const dateString = new Date(events[0]?.date);
   const formattedDate = dateString.toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric', timeZone: 'UTC' });
   

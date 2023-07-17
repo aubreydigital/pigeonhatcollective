@@ -40,7 +40,6 @@ const HomePage: FC = () => {
       const res = await fetch('api/events');
       const data = await res.json();
       setEvents(data)
-      console.log(data)
     }
 
     fetchEvents();
