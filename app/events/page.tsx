@@ -111,7 +111,7 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
       <div className="grid grid-cols-1 gap-4">
         {pastEvents.length > 0 ? pastEvents.map((event) => (
           // <Link href={`/events/${event._id}`} key={event.title}>
-              <div
+              <div key={event.title}
                 className="bg-white p-4 rounded"
                 style={{ backgroundImage: `url(https://aubrey.digital/vms_server/server/uploads/images/${event.image})` }}
               >
