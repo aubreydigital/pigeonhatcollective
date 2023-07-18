@@ -12,7 +12,6 @@ useEffect(() => {
   setEventImage(event.image)
   console.log(event.image)
 }, []);
-console.log(event.event.image)
 
 const dateFormat = (date: string) => {
   const dateString = new Date(`${date}T00:00:00Z`);

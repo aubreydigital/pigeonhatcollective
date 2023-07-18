@@ -107,6 +107,33 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
           </Link>
         )) : 'There are currently no upcoming Pigeon Hat Collective Events'}
       </div>
+      <h1 className="text-2xl font-bold text-white text-shadow my-10" style={{backgroundColor: 'rgba(0,0,0,.3'}}>Past Events</h1>
+      <div className="grid grid-cols-1 gap-4">
+        {pastEvents.length > 0 ? pastEvents.map((event) => (
+          // <Link href={`/events/${event._id}`} key={event.title}>
+              <div
+                className="bg-white p-4 rounded"
+                style={{ backgroundImage: `url(https://aubrey.digital/vms_server/server/uploads/images/${event.image})` }}
+              >
+                <div className="rounded flex" style={{width:'7rem', height: '11rem'}} />
+                <h3 className="text-lg bg-black p-3 inline-block rounded text-shadow text-md mx-4 font-semibold mb-2">{event.title}</h3><br />
+                <h4 className="text-lg bg-black p-3 inline-block rounded text-shadow text-sm mb-2 mx-8">
+                <p className="text-xs text-pink-300">Artists:</p> {event.artists.join(' | ')}
+                  </h4><br />
+                  {event.visual && event.visual.length > 0 && <><h5 className="text-lg bg-black p-3 inline-block rounded text-shadow text-sm mb-2 mx-8">
+                <p className="text-xs text-pink-300">Visual Artists:</p> {event.visual.length > 0 && event.visual.join(' | ')}
+                  </h5><br /></>}
+                  {event.vendors && event.vendors.length > 0 && <><p className="text-lg bg-black p-3 inline-block rounded text-shadow text-sm mb-2 mx-8">
+                <p className="text-xs text-pink-300">Vendors:</p> {event.vendors.join(' | ')}
+                  </p><br /></>}
+                {/* <p className="text-shadow bg-black p-3 inline-block rounded">Type: {event.type}</p><br/> */}
+                <p className="text-shadow bg-black p-3 inline-block text-sm rounded mb-1">{dateFormat(event.date)}</p><br />
+                {event.venue != '' && <><p className="text-shadow bg-black p-3 inline-block text-xs rounded mb-10">{event.venue}</p><br /></>}
+                {event.tickets != '' && <><Link className="text-shadow bg-black p-3 mb-10 inline-block text-xs rounded hover:text-black hover:bg-white" href={event.tickets} key={event.title}>Buy Tickets</Link><br /></>}
+              </div>
+          // </Link>
+        )) : 'There are currently no past Pigeon Hat Collective Events'}
+      </div>
       {/* <h2 className="text-2xl font-bold text-white text-shadow mt-8">Past Events</h2>
       <div className="grid grid-cols-1 gap-4">
         {pastEvents.length > 0 ? (

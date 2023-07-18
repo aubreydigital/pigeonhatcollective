@@ -110,10 +110,10 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
   {/* <h2 className={`text-2xl block text-center text-white font-bold mb-5 py-2 ${monser.className}`} style={{background: 'rgba(255,140,255,0.5)'}}>News Feed</h2> */}
   <h2 className={`text-2xl block text-center text-white font-bold mb-7 py-2 ${monser.className}`} style={{background: 'linear-gradient(to right, rgba(0, 133, 255, .4), rgba(255, 140, 255, 0))'}}>News Feed</h2>
 
-  <div className="grid grid-cols-1 mx-auto rounded gap-4" style={{ height: '500px' }}>
+  <div className="grid grid-cols-1 mx-auto rounded gap-4">
   {/* Blog post cards */}
   <div className="relative bg-cover rounded bg-center bg-no-repeat mx-10 lg:mx-5" style={{ backgroundImage: "url('/assets/images/pigeonsplash.jpg')" }}>
-    <div className="absolute inset-0 flex flex-col items-center justify-center">
+    <div className="inset-0 flex flex-col items-center py-3 justify-center">
       <h3 className="text-mg rounded font-semibold mb-2 bg-white bg-opacity-75 p-2">Pigeons Afoot</h3>
       {/* <p className="hidden lg:block bg-white text-xs rounded bg-opacity-75 p-2 text-gray-700">Author: </p> */}
       <p className="hidden lg:block bg-white rounded text-xs my-2 bg-opacity-75 p-2 text-gray-700">Date: 17th July 2023</p>
@@ -134,16 +134,6 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
     </div>
   </div>
 
-        {/* <div className="bg-white p-4 rounded shadow">
-          <h3 className="text-lg font-semibold mb-2">Blog Post 2</h3>
-          <p>Author: Jane Smith</p>
-          <p>Date: 10th June 2023</p>
-        </div>
-        <div className="bg-white p-4 rounded shadow">
-          <h3 className="text-lg font-semibold mb-2">Blog Post 3</h3>
-          <p>Author: Alex Johnson</p>
-          <p>Date: 15th June 2023</p>
-        </div> */}
       </div>
     </section>
 

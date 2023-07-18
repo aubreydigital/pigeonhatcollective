@@ -64,3 +64,7 @@ filter: blue(0);
 .event-card-content {
   z-index: 1;
 }
+
+.news-section {
+  height: 31.25rem;
+}

@@ -223,7 +223,7 @@ const Navigation = () => {
                 >My Profile</Link>   */}
                 <Link
                   href='/create-event'
-                  className='dropdown_link text-xs'
+                  className={`text-white lowercase transition-colors duration-500 hover:text-black hover:bg-white rounded pb-1 dropdown_link text-xs ${start.className}`}
                   onClick={() => setToggleDropdown(false)}
                 >Add Event</Link>  
               <button
@@ -232,7 +232,7 @@ const Navigation = () => {
                     setToggleDropdown(false);
                     signOut();
                   }}
-                  className='mt-1 text-xs font-sans text-white'
+                  className={`${start.className} mt-1 text-xs font-sans text-white hover:text-black hover:bg-white rounded pb-1 lowercase transition-colors duration-500`}
                 >
                   Sign Out
                 </button>

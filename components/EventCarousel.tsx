@@ -25,7 +25,10 @@ interface EventCarouselProps {
 const EventCarousel = ({ events }: EventCarouselProps) => {
   const [windowWidth, setWindowWidth] = useState<number>(0);
   const centerSlidePercentage = windowWidth >= 700 ? 33.33 : 100;
-  const fallbackImage = '/assets/images/aj_jerms_acoustic.JPG';
+  const fallbackImages = [
+    '/assets/images/aj_jerms_acoustic.JPG',
+    '/assets/images/pigeon_stickers.jpg',
+];
 
   useEffect(() => {
     const handleResize = () => {
@@ -70,13 +73,20 @@ const EventCarousel = ({ events }: EventCarouselProps) => {
       </div>
     ));
 
-    const placeholderItems = Array.from({ length: numPlaceholders }).map((_, index) => (
+    const placeholderItems = Array.from({ length: numPlaceholders }).map((_, index) => {
+      const randomImageIndex = Math.floor(Math.random() * fallbackImages.length);
+      const randomImageSrc = fallbackImages[randomImageIndex];
+      return(
       <div key={`placeholder-${index}`} className="event-carousel-item">
         <div className="image-container">
-          <Image width={300} height={500} src={fallbackImage} alt="Fallback Image" />
+          <Image width={300} height={500} src={randomImageSrc} alt="Fallback Image" />
         </div>
       </div>
-    ));
+    )});
+
+    // const placeholderItems:React.ReactNode[] = Array.from({ length: numPlaceholders }).map((_, index) => {
+    //   const randomImageIndex = Math.floor(Math.random() * fallbackImages.length);
+    //   const randomImageSrc = fallbackImages[randomImageIndex];
 
     return [...eventItems, ...placeholderItems];
   };
