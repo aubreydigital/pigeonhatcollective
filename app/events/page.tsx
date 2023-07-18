@@ -107,7 +107,7 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
           </Link>
         )) : 'There are currently no upcoming Pigeon Hat Collective Events'}
       </div>
-      <h2 className="text-2xl font-bold text-white text-shadow mt-8">Past Events</h2>
+      {/* <h2 className="text-2xl font-bold text-white text-shadow mt-8">Past Events</h2>
       <div className="grid grid-cols-1 gap-4">
         {pastEvents.length > 0 ? (
           pastEvents.map((event) => (
@@ -116,14 +116,13 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
                 className="bg-white p-4 rounded"
                 style={{ backgroundImage: `url(https://aubrey.digital/vms_server/server/uploads/images/${event.image})` }}
               >
-                {/* Event details */}
               </div>
             </Link>
           ))
         ) : (
           <p>There are no past Pigeon Hat Collective Events</p>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };

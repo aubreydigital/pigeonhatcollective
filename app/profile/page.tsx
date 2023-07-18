@@ -5,8 +5,9 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { connectToDB } from '@utils/database';
 import Image from 'next/image';
+import Profile from '@components/Profile'
 
-const Profile = () => {
+const ProfilePage = () => {
   const [user, setUser] = useState([])
   const router = useRouter();
   const { data: session } = useSession();
@@ -19,4 +20,4 @@ console.log(session)
   )
 }
 
-export default Profile
+export default ProfilePage
