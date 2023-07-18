@@ -123,10 +123,10 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
         Immerse yourself in the enchanting melodies and captivating rhythms of these talented artists as they take the stage this summer.<br /> 
         Get ready for an unforgettable musical experience that will transport you to new dimensions of sound and emotion.<br />
         <br /><br />
-        Join us and witness the fusion of AJ Wyatt's soulful vocals and Switterbeet's mesmerizing instrumentals.<br /> 
+        Join us and witness the fusion of AJ Wyatt&apos;s soulful vocals and Switterbeet&apos;s mesmerizing instrumentals.<br /> 
         From heartwarming ballads to energetic anthems, their performances promise to leave you in awe.<br /><br />
 
-        Don't miss out on this incredible opportunity to be a part of the magic. <br />
+        Don&apos;t miss out on this incredible opportunity to be a part of the magic. <br />
         Mark your calendars and stay tuned for more details about dates, venues, and ticket availability.<br /><br />
 
         <Link className="pl-1 text-sm font-bold no-underline transition-colors duration-300 text-gray-500 hover:text-gray-900" href="/events">Learn more...</Link>
