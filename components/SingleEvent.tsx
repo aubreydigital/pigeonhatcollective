@@ -24,6 +24,7 @@ const dateFormat = (date: string) => {
   });
   return formattedDate;
 };
+
 const {image, title, artists, visual, vendors, address, date, venue, tickets, cost, dayof} = event.event
 
 return (

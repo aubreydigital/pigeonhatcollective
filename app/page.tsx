@@ -74,6 +74,7 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
     return dateA.getTime() - dateB.getTime();
   })
 
+
   
   return (
     <CSSTransition
@@ -107,27 +108,31 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
     </div>
     <section className="mb-8">
   {/* <h2 className={`text-2xl block text-center text-white font-bold mb-5 py-2 ${monser.className}`} style={{background: 'rgba(255,140,255,0.5)'}}>News Feed</h2> */}
-  <h2 className={`text-2xl block text-center text-white font-bold mb-7 py-2 ${monser.className}`} style={{background: 'linear-gradient(to right, rgba(65, 105, 225, 0.7), rgba(255, 140, 255, 0))'}}>News Feed</h2>
+  <h2 className={`text-2xl block text-center text-white font-bold mb-7 py-2 ${monser.className}`} style={{background: 'linear-gradient(to right, rgba(0, 133, 255, .4), rgba(255, 140, 255, 0))'}}>News Feed</h2>
 
-  <div className="grid grid-cols-1 mx-auto max-w-2xl rounded gap-4" style={{ height: '400px' }}>
-    {/* Blog post cards */}
-    <div className="relative bg-cover rounded bg-center bg-no-repeat mx-5 lg:mx-0" style={{ backgroundImage: "url('/assets/images/pigeonsplash.jpg')" }}>
-      <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <h3 className="text-mg rounded font-semibold mb-2 bg-white bg-opacity-75 p-2">Summer is for Music</h3>
-        <p className="hidden lg:block bg-white text-xs rounded bg-opacity-75 p-2 text-gray-700">Author: pigeonhatcollective</p>
-        <p className="hidden lg:block bg-white rounded text-xs my-2 bg-opacity-75 p-2 text-gray-700">Date: 8th July 2023</p>
-        <p className="bg-white rounded my-4 mx-10 bg-opacity-75 p-5 text-center text-xs">
-        Get ready, feathered friends, because we&apos;ve got some exciting events happening soon! First off, mark your calendars for July 12th, as Desert Daze is back with a bang. Prepare for a sonic adventure amidst the sandy landscapes, featuring mind-blowing performances and psychedelic vibes.<br /><br />But wait there&apos;s more! On July 26th, we&apos;re flocking to Vegas Is For Songwriters. Songbird maestros from near and far will gather to showcase their lyrical prowess. It&apos;s a celebration of melodies, collaborations, and unforgettable harmonies.
+  <div className="grid grid-cols-1 mx-auto rounded gap-4" style={{ height: '500px' }}>
+  {/* Blog post cards */}
+  <div className="relative bg-cover rounded bg-center bg-no-repeat mx-10 lg:mx-5" style={{ backgroundImage: "url('/assets/images/pigeonsplash.jpg')" }}>
+    <div className="absolute inset-0 flex flex-col items-center justify-center">
+      <h3 className="text-mg rounded font-semibold mb-2 bg-white bg-opacity-75 p-2">Pigeons Afoot</h3>
+      {/* <p className="hidden lg:block bg-white text-xs rounded bg-opacity-75 p-2 text-gray-700">Author: </p> */}
+      <p className="hidden lg:block bg-white rounded text-xs my-2 bg-opacity-75 p-2 text-gray-700">Date: 17th July 2023</p>
+      <p className="bg-white rounded my-4 mx-10 bg-opacity-75 p-5 text-center text-xs">
+        {/* Write the Pigeon Hat news post discussing upcoming performances by AJ Wyatt and Switterbeet */}
+        Pigeon Hat Collective is excited to announce upcoming performances by AJ Wyatt and Switterbeet. <br />
+        Immerse yourself in the enchanting melodies and captivating rhythms of these talented artists as they take the stage this summer.<br /> 
+        Get ready for an unforgettable musical experience that will transport you to new dimensions of sound and emotion.<br />
+        <br /><br />
+        Join us and witness the fusion of AJ Wyatt's soulful vocals and Switterbeet's mesmerizing instrumentals.<br /> 
+        From heartwarming ballads to energetic anthems, their performances promise to leave you in awe.<br /><br />
 
-<Link className="pl-1 text-sm font-bold no-underline transition-colors duration-300 text-purple-500 hover:text-purple-900" href="/events">Learn more...</Link></p>
+        Don't miss out on this incredible opportunity to be a part of the magic. <br />
+        Mark your calendars and stay tuned for more details about dates, venues, and ticket availability.<br /><br />
 
-
-
-
-
-
-      </div>
+        <Link className="pl-1 text-sm font-bold no-underline transition-colors duration-300 text-gray-500 hover:text-gray-900" href="/events">Learn more...</Link>
+      </p>
     </div>
+  </div>
 
         {/* <div className="bg-white p-4 rounded shadow">
           <h3 className="text-lg font-semibold mb-2">Blog Post 2</h3>
@@ -164,7 +169,7 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
 
 <section>
   {/* <h2 className="text-center text-2xl font-bold mb-4">Featured Videos</h2> */}
-  <h2 className={`text-2xl block text-center text-white font-bold mb-8 mt-1 py-2 ${monser.className}`} style={{background: 'linear-gradient(to right, rgba(255, 140, 255, 0.5), rgba(255, 140, 255, 0))'}}>Featured Videos</h2>
+  <h2 className={`text-2xl block text-center text-white font-bold mb-8 mt-1 py-2 ${monser.className}`} style={{background: 'linear-gradient(to right, rgba(255, 100, 194, .4), rgba(255, 140, 255, 0))'}}>Featured Videos</h2>
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     {/* Video cards */}
     <div className="bg-white p-4 rounded text-center shadow">

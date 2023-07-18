@@ -53,6 +53,7 @@ const currentDate = new Date();
 const currentDateTimezoneOffset = currentDate.getTimezoneOffset();
 const currentDateTimezoneOffsetMilliseconds = currentDateTimezoneOffset * 60 * 1000;
 const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimezoneOffsetMilliseconds);
+
   const upcomingEvents = events.filter((event) => {
     const eventDate = new Date(event.date);
     const eventDatePlusOneDay = new Date(eventDate.getTime() + 24 * 60 * 60 * 1000);
@@ -62,6 +63,20 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
     const dateB: Date = new Date(b.date);
     return dateA.getTime() - dateB.getTime();
   })
+
+  const pastEvents = events
+    .filter((event) => {
+      const eventDate = new Date(event.date);
+      const eventDatePlusOneDay = new Date(eventDate.getTime() + 24 * 60 * 60 * 1000);
+      return eventDatePlusOneDay <= currentDateTimePacific;
+    })
+    .sort((a, b) => {
+      const dateA: Date = new Date(a.date);
+      const dateB: Date = new Date(b.date);
+      return dateB.getTime() - dateA.getTime();
+    });
+
+  console.log(events)
 
   return (
     <div className="container mx-auto py-8 px-4 lg:px-14 text-white text-shadow text-center">
@@ -91,6 +106,23 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
               </div>
           </Link>
         )) : 'There are currently no upcoming Pigeon Hat Collective Events'}
+      </div>
+      <h2 className="text-2xl font-bold text-white text-shadow mt-8">Past Events</h2>
+      <div className="grid grid-cols-1 gap-4">
+        {pastEvents.length > 0 ? (
+          pastEvents.map((event) => (
+            <Link href={`/events/${event._id}`} key={event.title}>
+              <div
+                className="bg-white p-4 rounded"
+                style={{ backgroundImage: `url(https://aubrey.digital/vms_server/server/uploads/images/${event.image})` }}
+              >
+                {/* Event details */}
+              </div>
+            </Link>
+          ))
+        ) : (
+          <p>There are no past Pigeon Hat Collective Events</p>
+        )}
       </div>
     </div>
   );

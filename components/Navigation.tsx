@@ -71,19 +71,19 @@ const Navigation = () => {
                 </Link> */}
                 <Link
                   href="/artists"
-                  className="text-gray-300 hover:bg-transparent hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-gray-300 hover:bg-transparent hover:text-white transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Artists
                 </Link>
                 <Link
                   href="/about"
-                  className="text-gray-300 hover:bg-transparent hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-gray-300 hover:bg-transparent hover:text-white px-3 py-2 transition-colors duration-300 rounded-md text-sm font-medium"
                 >
                   About
                 </Link>
                 <Link
                   href="/events"
-                  className="text-gray-300 hover:bg-transparent hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-gray-300 hover:bg-transparent hover:text-white px-3 transition-colors duration-300 py-2 rounded-md text-sm font-medium"
                 >
                   Events
                 </Link>
@@ -172,10 +172,10 @@ const Navigation = () => {
                 >My Profile</Link> {' '}  */}
                 <Link
                   href='/create-event'
-                  className={`ml-3 mt-6 ${start.className} lowercase hover:bg-gradient-to-br hover:from-yellow-100 hover:text-purple-500 hover:to-white rounded mt-4 text-xs font-sans text-white`}
+                  className={`ml-3 mt-6 ${start.className} lowercase hover:bg-gradient-to-br hover:from-yellow-100 hover:text-purple-500 transition-colors duration-500 hover:to-white rounded mt-4 text-xs font-sans text-white`}
                   onClick={() => setToggleDropdown(false)}
                 >Add Event</Link>&nbsp;&nbsp;  
-  <button className={`ml-3 ${start.className} lowercase hover:bg-gradient-to-br hover:from-yellow-100 hover:text-purple-500 hover:to-white rounded mt-4 text-xs font-sans text-white`} type='button' onClick={handleSignOut}>
+  <button className={`ml-3 ${start.className} lowercase hover:bg-gradient-to-br hover:from-yellow-100 hover:text-purple-500 hover:to-white transition-colors duration-500 rounded mt-4 text-xs font-sans text-white`} type='button' onClick={handleSignOut}>
     Sign Out
   </button>
   </div>
@@ -190,7 +190,7 @@ const Navigation = () => {
         onClick={() => {
           signIn((provider as any).id);
         }}
-        className={`black_btn rounded hover:py-1 hover:bg-white hover:bg-gradient-to-br hover:from-yellow-100 hover:text-purple-500 hover:to-white ${start.className} hidden text-xs lowercase text-white hover:text-purple-400 lg:block`}
+        className={`black_btn rounded hover:py-1 transition-colors duration-500 hover:bg-white hover:bg-gradient-to-br hover:from-yellow-100 hover:text-purple-500 hover:to-white ${start.className} hidden text-xs lowercase text-white hover:text-purple-400 lg:block`}
       >
         Sign In
       </button>

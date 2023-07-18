@@ -121,8 +121,12 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
           <h2 className="hidden lg:block text-2xl italic mb-4">{latestBlogPost.title}</h2>
             {/* <h2 className="text-2xl italic">{latestBlogPost.title}</h2> */}
             <p className="bg-white rounded my-4 mx-10 bg-opacity-75 p-5 text-center text-xs">
-            Get ready, feathered friends, because we&apos;ve got some exciting events coming up! First off, mark your calendars for July 12th, as Desert Daze is back with a bang. Prepare for a sonic adventure amidst the sandy landscapes, featuring mind-blowing performances and psychedelic vibes.<br /><br />And that&apos;s not all! On July 26th, we&apos;re flocking to Vegas Is For Songwriters. Songbird maestros from near and far will gather to showcase their lyrical prowess. It&apos;s a celebration of melodies, collaborations, and unforgettable harmonies.<br/><br/>So, grab your stylish pigeon hats, spread your wings, and let&apos;s soar into these remarkable events. Stay tuned for more updates from our collective blog!
-<Link className="pl-1 text-base font-bold no-underline transition-colors duration-300 text-purple-800 hover:text-purple-700 hover:shadow-md" href="/about">Learn more</Link>...</p>
+            Pigeon Hat Collective is excited to announce upcoming performances by AJ Wyatt and Switterbeet. <br />
+        Immerse yourself in the enchanting melodies and captivating rhythms of these talented artists as they take the stage this summer.<br /> 
+        Get ready for an unforgettable musical experience that will transport you to new dimensions of sound and emotion...<br />
+        <br /><br />
+
+<Link className="pl-1 text-base font-bold no-underline transition-colors duration-300 text-purple-800 hover:text-purple-700 hover:shadow-md" href="/about">Read more</Link>...</p>
           </div>
 
           {/* Contact Info and Social Links */}

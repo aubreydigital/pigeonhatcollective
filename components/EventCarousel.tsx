@@ -49,11 +49,22 @@ const EventCarousel = ({ events }: EventCarouselProps) => {
         <div className="image-container">
           <Image width={300} height={500} src={`https://aubrey.digital/vms_server/server/uploads/images/${event.image}`} alt={event.title} />
           <div className="flex row">
-            {event.cost !== 0 && event.tickets !== null && (
+            {event.tickets !== null && event.cost > 0 && (
               <Link href={event.tickets} target="_blank">
                 <h1 className="legend">Buy Tickets</h1>
               </Link>
             )}
+            {event.tickets !== null && event.cost == 0 && (
+              <Link href={event.tickets} target="_blank">
+                <h1 className="legend">Get <span className="text-green-400">Free</span> Tickets</h1>
+              </Link>
+            )}
+{/* future home of free ticket sales */}
+            {/* {event.tickets !== null && event.cost == 0 && (
+              <Link href={event.tickets} target="_blank">
+                <h1 className="legend">Get <span className="text-green-300 text-shadow">Free</span> Tickets</h1>
+              </Link>
+            )} */}
           </div>
         </div>
       </div>
