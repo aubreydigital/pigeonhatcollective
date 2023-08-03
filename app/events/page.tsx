@@ -21,7 +21,7 @@ const EventsPage: React.FC = () => {
     date: string;
     image: string;
     title: string;
-    tickets: string;
+    tickets: string | null;
   }
 
   useEffect(() => {
@@ -102,7 +102,7 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
                 {/* <p className="text-shadow bg-black p-3 inline-block rounded">Type: {event.type}</p><br/> */}
                 <p className="text-shadow bg-black p-3 inline-block text-sm rounded mb-1">{dateFormat(event.date)}</p><br />
                 {event.venue != '' && <><p className="text-shadow bg-black p-3 inline-block text-xs rounded mb-10">{event.venue}</p><br /></>}
-                {event.tickets != '' && <><Link className="text-shadow bg-black p-3 mb-10 inline-block text-xs rounded hover:text-black hover:bg-white" href={event.tickets} key={event.title}>Buy Tickets</Link><br /></>}
+                {event.tickets != null && <><Link className="text-shadow bg-black p-3 mb-10 inline-block text-xs rounded hover:text-black hover:bg-white" href={event.tickets} key={event.title}>Buy Tickets</Link><br /></>}
               </div>
           </Link>
         )) : 'There are currently no upcoming Pigeon Hat Collective Events'}
@@ -129,7 +129,7 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
                 {/* <p className="text-shadow bg-black p-3 inline-block rounded">Type: {event.type}</p><br/> */}
                 <p className="text-shadow bg-black p-3 inline-block text-sm rounded mb-1">{dateFormat(event.date)}</p><br />
                 {event.venue != '' && <><p className="text-shadow bg-black p-3 inline-block text-xs rounded mb-10">{event.venue}</p><br /></>}
-                {event.tickets != '' && <><Link className="text-shadow bg-black p-3 mb-10 inline-block text-xs rounded hover:text-black hover:bg-white" href={event.tickets} key={event.title}>Buy Tickets</Link><br /></>}
+                {event.tickets != null && <><Link className="text-shadow bg-black p-3 mb-10 inline-block text-xs rounded hover:text-black hover:bg-white" href={event.tickets} key={event.title}>Buy Tickets</Link><br /></>}
               </div>
           // </Link>
         )) : 'There are currently no past Pigeon Hat Collective Events'}

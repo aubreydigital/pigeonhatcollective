@@ -23,7 +23,7 @@ const CreateEvent = () => {
     image: '',
     title: '',
     over21: false,
-    tickets: '',
+    tickets: null,
     tags: [],
   })
 
