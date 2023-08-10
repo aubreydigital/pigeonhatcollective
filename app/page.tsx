@@ -21,7 +21,7 @@ const HomePage: FC = () => {
   const [showContent, setShowContent] = useState(false);
   const [events, setEvents] = useState<Event[]>([]);
   interface Event {
-    id: number;
+    _id: number;
     artists: string[];
     visual: string[];
     vendors: string[] | null;
@@ -122,13 +122,13 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
         Pigeon Hat Collective is excited to announce upcoming performances by AJ Wyatt and Switterbeet. <br />
         Immerse yourself in the enchanting melodies and captivating rhythms of these talented artists as they take the stage this summer.<br /> 
         Get ready for an unforgettable musical experience that will transport you to new dimensions of sound and emotion.<br />
-        <br /><br />
+        <p className="hidden lg:block"><br /><br />
         Join us and witness the fusion of AJ Wyatt&apos;s soulful vocals and Switterbeet&apos;s mesmerizing instrumentals.<br /> 
         From heartwarming ballads to energetic anthems, their performances promise to leave you in awe.<br /><br />
 
         Don&apos;t miss out on this incredible opportunity to be a part of the magic. <br />
         Mark your calendars and stay tuned for more details about dates, venues, and ticket availability.<br /><br />
-
+        </p>
         <Link className="pl-1 text-sm font-bold no-underline transition-colors duration-300 text-gray-500 hover:text-gray-900" href="/events">Learn more...</Link>
       </p>
     </div>

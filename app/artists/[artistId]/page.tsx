@@ -49,7 +49,7 @@ const artists = [
     query: 'limn',
     image: '/assets/images/artists/limnprofile.jpeg',
     image2: '/assets/images/artists/limnprofile2.JPG',
-    instagram: 'regis.philbin.still.alive',
+    instagram: 'nonewitheverything',
     soundcloud: 'shroudtime',
     description: 'LIMN [LIMN [LIMN [LIMN]]], aka LIMN, is an internet-based human organism of arcane gender currently stationed in Las Vegas. A lifelong lover of all volitional human activities, it is particularly passionate about producing meaning from noises, images, words and phrases. When not submitting to creative gestures, LIMN likes to spend its time in communication with other animals, especially humans, pets and worms. You can track its individual activities on Instagram or on Soundcloud.'
   },

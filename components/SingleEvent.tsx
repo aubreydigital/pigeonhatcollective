@@ -29,10 +29,10 @@ const {image, title, artists, visual, vendors, address, date, venue, tickets, co
 return (
 
 <div
-                className="bg-white p-4 rounded m-10 text-white text-center"
+                className="bg-white p-4 rounded m-10 h-full text-white text-center"
                 style={{ backgroundImage: `url(https://aubrey.digital/vms_server/server/uploads/images/${image})` }}
-              >
-                <div className="rounded flex" style={{width:'7rem', height: '11rem'}} />
+              ><div className="w-full">
+                <div className="w-1/2" style={{width:'7rem', height: '11rem'}} />
                 <h3 className="text-lg bg-black p-3 inline-block rounded text-shadow text-md mx-4 font-semibold mb-2">{title}</h3><br />
                 <h4 className="text-lg bg-black p-3 inline-block rounded text-shadow text-sm mb-2 mx-8">
                 <p className="text-xs text-pink-300">Artists:</p> {artists.join(' | ')}
@@ -47,9 +47,10 @@ return (
                 <p className="text-shadow bg-black p-3 inline-block text-sm rounded mb-3">{dateFormat(date)}</p><br />
                 {venue != '' && <p className="text-shadow bg-black p-3 inline-block text-xs rounded">{venue}</p>}<br />
                 {address != '' && <p className="text-shadow bg-black p-3 mb-10 inline-block text-xs rounded">{address}</p>}<br />
-                {tickets != '' && <><Link className="text-shadow bg-black p-3 mb-10 inline-block text-xs rounded hover:bg-white hover:text-black" href={tickets} target='_blank' key={title}>Buy Tickets</Link><br /></>}
+                {tickets != null && <><Link className="text-shadow bg-black p-3 mb-10 inline-block text-xs rounded hover:bg-white hover:text-black" href={tickets} target='_blank' key={title}>Buy Tickets</Link><br /></>}
                 <Link className="text-shadow bg-black p-3 inline-block text-sm rounded hover:text-blue-300 mb-10" href="/events">Back</Link>
 
+              </div>
               </div>
   )
 }

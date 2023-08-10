@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 interface Event {
-  id: number;
+  _id: number;
   artists: string[];
   visual: string[];
   vendors: string[] | null;
@@ -28,6 +28,7 @@ const EventCarousel = ({ events }: EventCarouselProps) => {
   const fallbackImages = [
     '/assets/images/aj_jerms_acoustic.JPG',
     '/assets/images/pigeon_stickers.jpg',
+    '/assets/images/pigeon-bunch.JPG'
 ];
 
   useEffect(() => {
@@ -47,11 +48,14 @@ const EventCarousel = ({ events }: EventCarouselProps) => {
     const numEvents = events.length;
     const numPlaceholders = Math.max(4 - numEvents, 0);
 
-    const eventItems = events.map((event) => (
-      <div key={event.id} className="event-carousel-item">
+    const eventItems = events.map((event) => {
+      return (
+      <div key={event._id} className="event-carousel-item">
         <div className="image-container">
+        <Link href={event._id ?`/events/${event._id}` : '/events' }>
           <Image width={300} height={500} src={`https://aubrey.digital/vms_server/server/uploads/images/${event.image}`} alt={event.title} />
-          <div className="flex row">
+          </Link>
+          {/* <div className="flex row">
             {event.tickets !== null && event.cost > 0 && (
               <Link href={event.tickets} target="_blank">
                 <h1 className="legend">Buy Tickets</h1>
@@ -61,28 +65,41 @@ const EventCarousel = ({ events }: EventCarouselProps) => {
               <Link href={event.tickets} target="_blank">
                 <h1 className="legend">Get <span className="text-green-400">Free</span> Tickets</h1>
               </Link>
-            )}
+            )} */}
 {/* future home of free ticket sales */}
             {/* {event.tickets !== null && event.cost == 0 && (
               <Link href={event.tickets} target="_blank">
                 <h1 className="legend">Get <span className="text-green-300 text-shadow">Free</span> Tickets</h1>
               </Link>
             )} */}
-          </div>
-        </div>
-      </div>
-    ));
-
-    const placeholderItems = Array.from({ length: numPlaceholders }).map((_, index) => {
-      const randomImageIndex = Math.floor(Math.random() * fallbackImages.length);
-      const randomImageSrc = fallbackImages[randomImageIndex];
-      return(
-      <div key={`placeholder-${index}`} className="event-carousel-item">
-        <div className="image-container">
-          <Image width={300} height={500} src={randomImageSrc} alt="Fallback Image" />
+          {/* </div> */}
         </div>
       </div>
     )});
+
+    let previousImageIndex = -1; // Initialize with a value that is out of range
+
+const placeholderItems = Array.from({ length: numPlaceholders }).map((_, index) => {
+  let randomImageIndex;
+
+  // Generate a new randomImageIndex that is not the same as the previous one
+  do {
+    randomImageIndex = Math.floor(Math.random() * fallbackImages.length);
+  } while (randomImageIndex === previousImageIndex);
+
+  previousImageIndex = randomImageIndex; // Update previousImageIndex
+
+  const randomImageSrc = fallbackImages[randomImageIndex];
+  
+  return (
+    <div key={`placeholder-${index}`} className="event-carousel-item">
+      <div className="image-container">
+        <Image width={300} height={500} src={randomImageSrc} alt="Fallback Image" />
+      </div>
+    </div>
+  );
+});
+
 
     // const placeholderItems:React.ReactNode[] = Array.from({ length: numPlaceholders }).map((_, index) => {
     //   const randomImageIndex = Math.floor(Math.random() * fallbackImages.length);
