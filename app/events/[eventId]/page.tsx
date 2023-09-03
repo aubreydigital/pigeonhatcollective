@@ -67,6 +67,9 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
   return <SingleEvent event={event} />
 } else {
   // Handle case when event item is not found
-  return <div className="text-center text-white pt-10">Event not found</div>;
+  return  <div className="loader text-center align-center justify-center flex">
+  <h2>Loading...</h2>
+  <div className="loader-inner"></div>
+</div>;
 }
 };

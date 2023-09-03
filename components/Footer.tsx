@@ -111,7 +111,7 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
 
         <h3 className="text-lg font-semibold mb-2">{events[0]?.title}</h3>
         <h4 className="text-md mb-2">{events[0]?.artists.join(' | ')}</h4>
-        <p>{formattedDate}</p>
+        <p>{formattedDate != 'Invalid Date' ? formattedDate : 'No upcoming events' }</p>
         <h5>{events[0]?.venue}</h5>
         <p>{events[0]?.address}</p>
         {/* <button className="p-2 bg-white mt-5 rounded shadow" type="button">Buy Tickets</button> */}
