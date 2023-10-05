@@ -128,6 +128,7 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
 
         Don&apos;t miss out on this incredible opportunity to be a part of the magic. <br />
         Mark your calendars and stay tuned for more details about dates, venues, and ticket availability.<br /><br />
+        
         </p>
         <Link className="pl-1 text-sm font-bold no-underline transition-colors duration-300 text-gray-500 hover:text-gray-900" href="/events">Learn more...</Link>
       </p>

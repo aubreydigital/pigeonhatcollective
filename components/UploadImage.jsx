@@ -1,10 +1,21 @@
 'use client'
 import { useState } from "react";
+import worker from '../utils/tesseract'; // Path to your tesseract.js configuration
 
 const UploadImage = ({ onImageUpload, setImageFile }) => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [extractedText, setExtractedText] = useState('');
 
-  const handleImageChange = (event) => {
+
+  const handleImageChange = async (event) => {
+    const imageFile = event.target.files[0];
+    await worker.load();
+    await worker.loadLanguage('eng');
+    await worker.initialize('eng');
+    const { data: { text } } = await worker.recognize(imageFile);
+    setExtractedText(text);
+    await worker.terminate();
+    console.log(extractedText);
     setSelectedImage(event.target.files[0]);
     console.log(event.target.files[0])
     setImageFile(event.target.files[0]);

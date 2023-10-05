@@ -8,7 +8,8 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
 
   
   const handleImageUpload = (imageUrl) => {
-    let currentDate = new Date();
+    let currentDateEastern = new Date();
+    let currentDate = new Date(currentDateEastern.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
 let year = currentDate.getFullYear();
 let month = String(currentDate.getMonth() + 1).padStart(2, '0');
 let day = String(currentDate.getDate()).padStart(2, '0');
