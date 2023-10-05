@@ -113,7 +113,7 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
   <div className="grid grid-cols-1 mx-auto rounded gap-4">
   {/* Blog post cards */}
   <div className="relative bg-cover rounded bg-center bg-no-repeat mx-10 lg:mx-5" style={{ backgroundImage: "url('/assets/images/pigeonsplash.jpg')" }}>
-    <div className="inset-0 flex flex-col items-center py-3 mx-10 justify-center">
+    <div className="inset-0 flex flex-col items-center py-3 mx-2 lg:mx-10 justify-center">
       <h3 className="text-mg rounded font-semibold mb-2 bg-black text-white bg-opacity-75 p-2">Fall Update</h3>
       <p className="hidden lg:block bg-white text-xs rounded bg-opacity-75 p-2 text-gray-700">Author: MariposA</p>
       <p className="hidden lg:block bg-white rounded text-xs my-2 bg-opacity-75 p-2 text-gray-700">Date: 4th October 2023</p>
