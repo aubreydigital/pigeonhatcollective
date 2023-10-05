@@ -114,10 +114,10 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
   {/* Blog post cards */}
   <div className="relative bg-cover rounded bg-center bg-no-repeat mx-10 lg:mx-5" style={{ backgroundImage: "url('/assets/images/pigeonsplash.jpg')" }}>
     <div className="inset-0 flex flex-col items-center py-3 mx-10 justify-center">
-      <h3 className="text-mg rounded font-semibold mb-2 bg-black bg-opacity-75 p-2">Fall Update</h3>
+      <h3 className="text-mg rounded font-semibold mb-2 bg-black text-white bg-opacity-75 p-2">Fall Update</h3>
       <p className="hidden lg:block bg-white text-xs rounded bg-opacity-75 p-2 text-gray-700">Author: MariposA</p>
       <p className="hidden lg:block bg-white rounded text-xs my-2 bg-opacity-75 p-2 text-gray-700">Date: 4th October 2023</p>
-      <p className="bg-black rounded my-4 mx-10 bg-opacity-75 p-5 text-center text-xs lg:text-sm">
+      <p className="bg-black text-white rounded my-4 mx-10 bg-opacity-75 p-5 text-center text-xs lg:text-sm">
       Autumn is here, and PHC is grinding their gears to bring you mindful fun and entertainment with a side of the usual shenanigans. Our big project this season is our Haunted Carnival music festival on October 28- featuring a wide variety of some of Vegas&apos; best acts, and some special guests from Los Angeles- Glossy and The Sleeperz. We are also in the process of shooting our 2023 Halloween special- featuring several PHC artists and bands, and a horror short featuring PHC members and guest local comedians. Stay tuned...
 <br /> <br />
 Over the summer, we&apos;ve welcomed new friends into the coop- including one of our new favorite bands, The Patterns. You&apos;ll be able to read more about them soon. In the meantime, check out their debut psychedelia revival/pop LP entitled &quot;Pop!&quot;, and their newly released EP &quot;The Noise Room&quot; on most streaming services.
