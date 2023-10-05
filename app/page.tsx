@@ -113,23 +113,17 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
   <div className="grid grid-cols-1 mx-auto rounded gap-4">
   {/* Blog post cards */}
   <div className="relative bg-cover rounded bg-center bg-no-repeat mx-10 lg:mx-5" style={{ backgroundImage: "url('/assets/images/pigeonsplash.jpg')" }}>
-    <div className="inset-0 flex flex-col items-center py-3 justify-center">
-      <h3 className="text-mg rounded font-semibold mb-2 bg-white bg-opacity-75 p-2">Pigeons Afoot</h3>
-      {/* <p className="hidden lg:block bg-white text-xs rounded bg-opacity-75 p-2 text-gray-700">Author: </p> */}
-      <p className="hidden lg:block bg-white rounded text-xs my-2 bg-opacity-75 p-2 text-gray-700">Date: 17th July 2023</p>
-      <p className="bg-white rounded my-4 mx-10 bg-opacity-75 p-5 text-center text-xs">
-        {/* Write the Pigeon Hat news post discussing upcoming performances by AJ Wyatt and Switterbeet */}
-        Pigeon Hat Collective is excited to announce upcoming performances by AJ Wyatt and Switterbeet. <br />
-        Immerse yourself in the enchanting melodies and captivating rhythms of these talented artists as they take the stage this summer.<br /> 
-        Get ready for an unforgettable musical experience that will transport you to new dimensions of sound and emotion.<br />
-        <p className="hidden lg:block"><br /><br />
-        Join us and witness the fusion of AJ Wyatt&apos;s soulful vocals and Switterbeet&apos;s mesmerizing instrumentals.<br /> 
-        From heartwarming ballads to energetic anthems, their performances promise to leave you in awe.<br /><br />
-
-        Don&apos;t miss out on this incredible opportunity to be a part of the magic. <br />
-        Mark your calendars and stay tuned for more details about dates, venues, and ticket availability.<br /><br />
-        
-        </p>
+    <div className="inset-0 flex flex-col items-center py-3 mx-10 justify-center">
+      <h3 className="text-mg rounded font-semibold mb-2 bg-black bg-opacity-75 p-2">Fall Update</h3>
+      <p className="hidden lg:block bg-white text-xs rounded bg-opacity-75 p-2 text-gray-700">Author: MariposA</p>
+      <p className="hidden lg:block bg-white rounded text-xs my-2 bg-opacity-75 p-2 text-gray-700">Date: 4th October 2023</p>
+      <p className="bg-black rounded my-4 mx-10 bg-opacity-75 p-5 text-center text-xs lg:text-sm">
+      Autumn is here, and PHC is grinding their gears to bring you mindful fun and entertainment with a side of the usual shenanigans. Our big project this season is our Haunted Carnival music festival on October 28- featuring a wide variety of some of Vegas&apos; best acts, and some special guests from Los Angeles- Glossy and The Sleeperz. We are also in the process of shooting our 2023 Halloween special- featuring several PHC artists and bands, and a horror short featuring PHC members and guest local comedians. Stay tuned...
+<br /> <br />
+Over the summer, we&apos;ve welcomed new friends into the coop- including one of our new favorite bands, The Patterns. You&apos;ll be able to read more about them soon. In the meantime, check out their debut psychedelia revival/pop LP entitled "Pop!", and their newly released EP "The Noise Room" on most streaming services.
+<br / > <br />
+There is more to be announced on the horizon. Mark your calendars for 10/28 and we will see you there
+        <br />
         <Link className="pl-1 text-sm font-bold no-underline transition-colors duration-300 text-gray-500 hover:text-gray-900" href="/events">Learn more...</Link>
       </p>
     </div>
