@@ -1,7 +1,7 @@
 'use client'
 import { useState } from "react";
-import worker from '../utils/tesseract'; // Path to your tesseract.js configuration
-
+// import worker from '../utils/tesseract'; // Path to your tesseract.js configuration
+import Image from 'next/image'
 const UploadImage = ({ onImageUpload, setImageFile }) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [extractedText, setExtractedText] = useState('');
@@ -9,13 +9,13 @@ const UploadImage = ({ onImageUpload, setImageFile }) => {
 
   const handleImageChange = async (event) => {
     const imageFile = event.target.files[0];
-    await worker.load();
-    await worker.loadLanguage('eng');
-    await worker.initialize('eng');
-    const { data: { text } } = await worker.recognize(imageFile);
-    setExtractedText(text);
-    await worker.terminate();
-    console.log(extractedText);
+    // await worker.load();
+    // await worker.loadLanguage('eng');
+    // await worker.initialize('eng');
+    // const { data: { text } } = await worker.recognize(imageFile);
+    // setExtractedText(text);
+    // await worker.terminate();
+    // console.log(extractedText);
     setSelectedImage(event.target.files[0]);
     console.log(event.target.files[0])
     setImageFile(event.target.files[0]);
@@ -52,7 +52,7 @@ const UploadImage = ({ onImageUpload, setImageFile }) => {
     <div className="text-center w-full items-center flex flex-col">
       {selectedImage && (
         <div>
-          <img
+          <Image
             alt="not found"
             width="250px"
             src={URL.createObjectURL(selectedImage)}
