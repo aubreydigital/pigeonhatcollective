@@ -120,7 +120,7 @@ const currentDateTimePacific = new Date(currentDate.getTime() - currentDateTimez
           <div className="hidden lg:block">
           <h2 className="hidden lg:block text-2xl italic mb-4">{latestBlogPost.title}</h2>
             {/* <h2 className="text-2xl italic">{latestBlogPost.title}</h2> */}
-            <p className="bg-white rounded my-4 mx-10 bg-opacity-75 p-5 text-center text-xs">
+            <p className="bg-black rounded my-4 mx-10 bg-opacity-75 p-5 text-center text-xs">
             Autumn is here, and PHC is grinding their gears to bring you mindful fun and entertainment with a side of the usual shenanigans. Our big project this season is our Haunted Carnival music festival on October 28- featuring a wide variety of some of Vegas&apos; best acts, and some special guests from Los Angeles- Glossy and The Sleeperz. We are also in the process of shooting our 2023 Halloween special- featuring several PHC artists and bands, and a horror short featuring PHC members and guest local comedians. Stay tuned...
 <br /> <br />
 Over the summer, we&apos;ve welcomed new friends into the coop- including one of our new favorite bands, The Patterns. You&apos;ll be able to read more about them soon. In the meantime, check out their debut psychedelia revival/pop LP entitled &quot;Pop!&quot;, and their newly released EP &quot;The Noise Room&quot; on most streaming services.
